@@ -4,7 +4,7 @@ import { ButtonDownloadBlock } from '../../blocks/ButtonDownloadBlock/config'
 export const ButtonsBlock: Block = {
   slug: 'buttonsBlock',
   interfaceName: 'ButtonsBlock',
-  imageURL: '/blocks/buttons-block.png',
+  imageURL: '/blocks/buttons.png',
   fields: [
     {
       type: 'blocks',

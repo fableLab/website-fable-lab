@@ -14,6 +14,9 @@ import { ButtonDownloadBlock } from '@/blocks/ButtonDownloadBlock/Component'
 import { ButtonsBlock } from '@/blocks/ButtonsBlock/Component'
 import { LicenseBlock } from '@/blocks/LicenseBlock/Component'
 import { LicenseItemBlock } from '@/blocks/LicenseItemBlock/Component'
+import { ListBlock } from '@/blocks/ListBlock/Component'
+import { ListItemBlock } from '@/blocks/ListItemBlock/Component'
+
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -27,7 +30,9 @@ const blockComponents = {
   buttonDownloadBlock: ButtonDownloadBlock,
   buttonsBlock: ButtonsBlock,
   licenseBlock: LicenseBlock,
-  licenseItemBlock: LicenseItemBlock
+  licenseItemBlock: LicenseItemBlock,
+  listBlock: ListBlock,
+  listItemBlock: ListItemBlock
 }
 
 export const RenderBlocks: React.FC<{
