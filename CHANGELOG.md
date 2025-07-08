@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.31.0](https://github.com/fableLab/website-fable-lab/compare/0.30.0...0.31.0) (2025-07-08)
+
+
+### Features
+
+* **ParagraphBlock:** implement ParagraphBlock component in PayloadCMS ([e4e4030](https://github.com/fableLab/website-fable-lab/commit/e4e4030d5ce20dd06e2ecd911568b402ae229097))
+
 # [0.30.0](https://github.com/fableLab/website-fable-lab/compare/0.28.0...0.30.0) (2025-07-08)
 
 
