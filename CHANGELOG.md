@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.32.0](https://github.com/fableLab/website-fable-lab/compare/0.31.0...0.32.0) (2025-07-08)
+
+
+### Features
+
+* **ImageParagraphBlock:** implement ImageParagraphBlock component in PayloadCMS ([f4718fe](https://github.com/fableLab/website-fable-lab/commit/f4718fee26104f05134f7c0d382f8ddb35745b1e))
+
 # [0.31.0](https://github.com/fableLab/website-fable-lab/compare/0.30.0...0.31.0) (2025-07-08)
 
 
