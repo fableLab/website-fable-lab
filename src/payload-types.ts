@@ -148,7 +148,16 @@ export interface UserAuthOperations {
 export interface Page {
   id: number;
   title: string;
-  layout: (ContentBlock | ImageBlock | TitleBlock | SubTitleBlock | ButtonsBlock | LicenseBlock | ListBlock)[];
+  layout: (
+    | ContentBlock
+    | ImageBlock
+    | TitleBlock
+    | SubTitleBlock
+    | ButtonsBlock
+    | LicenseBlock
+    | ListBlock
+    | ButtonLinkBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -491,6 +500,17 @@ export interface ListItemBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'listItemBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ButtonLinkBlock".
+ */
+export interface ButtonLinkBlock {
+  label: string;
+  url: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'buttonLinkBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -937,6 +957,7 @@ export interface PagesSelect<T extends boolean = true> {
         buttonsBlock?: T | ButtonsBlockSelect<T>;
         licenseBlock?: T | LicenseBlockSelect<T>;
         listBlock?: T | ListBlockSelect<T>;
+        buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
       };
   meta?:
     | T
@@ -1076,6 +1097,16 @@ export interface ListItemBlockSelect<T extends boolean = true> {
     | {
         buttonsBlock?: T | ButtonsBlockSelect<T>;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ButtonLinkBlock_select".
+ */
+export interface ButtonLinkBlockSelect<T extends boolean = true> {
+  label?: T;
+  url?: T;
   id?: T;
   blockName?: T;
 }
