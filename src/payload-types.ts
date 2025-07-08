@@ -157,6 +157,7 @@ export interface Page {
     | LicenseBlock
     | ListBlock
     | ButtonLinkBlock
+    | ImageParagraphBlock
   )[];
   meta?: {
     title?: string | null;
@@ -310,6 +311,7 @@ export interface SubTitleBlock {
  * via the `definition` "ButtonsBlock".
  */
 export interface ButtonsBlock {
+  direction?: ('horizontal' | 'vertical') | null;
   blocks?: ButtonDownloadBlock[] | null;
   id?: string | null;
   blockName?: string | null;
@@ -393,6 +395,34 @@ export interface ButtonLinkBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'buttonLinkBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageParagraphBlock".
+ */
+export interface ImageParagraphBlock {
+  title: string;
+  orientation?: ('left' | 'right') | null;
+  image: number | Media;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  buttons?: ButtonsBlock[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'imageParagraphBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -933,6 +963,7 @@ export interface PagesSelect<T extends boolean = true> {
         licenseBlock?: T | LicenseBlockSelect<T>;
         listBlock?: T | ListBlockSelect<T>;
         buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
+        imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
       };
   meta?:
     | T
@@ -990,6 +1021,7 @@ export interface SubTitleBlockSelect<T extends boolean = true> {
  * via the `definition` "ButtonsBlock_select".
  */
 export interface ButtonsBlockSelect<T extends boolean = true> {
+  direction?: T;
   blocks?:
     | T
     | {
@@ -1066,6 +1098,23 @@ export interface ListItemBlockSelect<T extends boolean = true> {
 export interface ButtonLinkBlockSelect<T extends boolean = true> {
   label?: T;
   url?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageParagraphBlock_select".
+ */
+export interface ImageParagraphBlockSelect<T extends boolean = true> {
+  title?: T;
+  orientation?: T;
+  image?: T;
+  body?: T;
+  buttons?:
+    | T
+    | {
+        buttonsBlock?: T | ButtonsBlockSelect<T>;
+      };
   id?: T;
   blockName?: T;
 }

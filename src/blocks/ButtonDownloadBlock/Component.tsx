@@ -21,7 +21,7 @@ export const ButtonDownloadBlock: React.FC<Props> = (props) => {
         href={media?.url || "#"}
         target="_blank"
         className={`${colorAndCursor}
-        rounded-full transition duration-200 block max-w-64
+        rounded-full transition duration-200 block max-w-60
         grid grid-cols-6 gap-0 items-center place-items-center text-base
         py-4 px-6 group`}
       >

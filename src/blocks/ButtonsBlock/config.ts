@@ -7,6 +7,16 @@ export const ButtonsBlock: Block = {
   imageURL: '/blocks/buttons.png',
   fields: [
     {
+      name: 'direction',
+      type: 'select',
+      label: 'Orientation',
+      defaultValue: 'horizontal',
+       options: [
+         { value: 'horizontal', label: 'horizontal' },
+         { value: 'vertical', label: 'vertical' },
+     ],
+    },
+    {
       type: 'blocks',
       blocks: [ButtonDownloadBlock],
       name: 'blocks'

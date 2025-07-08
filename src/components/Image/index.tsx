@@ -1,18 +1,22 @@
+import { cn } from '@/utilities/ui'
+
 export const Image: React.FC<MediaProps> = (props) => {
   const {
     alt,
     size,
     src,
     loading,
-    media
+    media,
+    className,
+    full
   } = props
 
   return (
     <>
       {
         media?.url ?
-          <figure className='w-1/2 mx-auto'>
-            <img src={media?.url} alt={media.alt} />
+          <figure className={cn(full ? 'w-full': 'w-1/2 mx-auto')}>
+            <img src={media?.url} alt={media.alt} className={cn(className,'w-full')} />
             <figcaption className="text-center">{media.alt}</figcaption>
           </figure >
           :

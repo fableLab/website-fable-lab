@@ -8,6 +8,7 @@ import { ParagraphBlock } from '../../blocks/ParagraphBlock/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
+import { ImageParagraphBlock } from '../../blocks/ImageParagraphBlock/config'
 import { TitleBlock } from '../../blocks/TitleBlock/config'
 import { SubTitleBlock } from '../../blocks/SubTitleBlock/config'
 import { ButtonDownloadBlock } from '../../blocks/ButtonDownloadBlock/config'
@@ -80,7 +81,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ListBlock, ButtonLinkBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ListBlock, ButtonLinkBlock, ImageParagraphBlock],
               required: true,
               admin: {
                 initCollapsed: true,

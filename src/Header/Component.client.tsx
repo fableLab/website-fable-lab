@@ -58,13 +58,13 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <header className="h-20 bg-camelot-800 grid grid-cols-12 border-3 border-white">
-      <div className="md:col-span-4 col-span-12 flex items-center h-full">
+      <div className="md:col-span-3 col-span-12 flex items-center h-full">
         <Link href="/">
           <img src="/logo/logo_white.png" alt="Logo white" className="h-8 ms-4 p-1" />
         </Link>
       </div>
 
-      <nav className="md:col-span-8 col-span-0 md:visible invisible flex flex-row items-center h-full">
+      <nav className="md:col-span-9 col-span-0 md:visible invisible flex flex-row items-center h-full">
         {headerLinks.map((link) => (
           <div
             key={link.label}
