@@ -17,7 +17,7 @@ import { LicenseBlock } from '@/blocks/LicenseBlock/Component'
 import { LicenseItemBlock } from '@/blocks/LicenseItemBlock/Component'
 import { ListBlock } from '@/blocks/ListBlock/Component'
 import { ListItemBlock } from '@/blocks/ListItemBlock/Component'
-import { ButtonLinkBlock } from '@/blocks/ButtonLinkBlock/Component'
+import { ButtonLinkBlock } from './ButtonLinkBlock/Component'
 
 
 const blockComponents = {

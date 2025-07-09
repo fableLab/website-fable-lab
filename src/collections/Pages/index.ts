@@ -29,7 +29,6 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import ButtonLinkBlock from '@/blocks/ButtonLinkBlock/config'
-import { FrameCardBlock } from '@/blocks/FrameCardBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
