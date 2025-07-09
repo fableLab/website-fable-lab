@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.33.0](https://github.com/fableLab/website-fable-lab/compare/0.32.0...0.33.0) (2025-07-09)
+
+
+### Features
+
+* **ButtonLinkBlock:** add button link block ([32afb0c](https://github.com/fableLab/website-fable-lab/commit/32afb0c6408647785ee758b6a969a5b694255623))
+
 # [0.32.0](https://github.com/fableLab/website-fable-lab/compare/0.31.0...0.32.0) (2025-07-08)
 
 
