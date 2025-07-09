@@ -29,6 +29,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import ButtonLinkBlock from '@/blocks/ButtonLinkBlock/config'
+import { FrameCardBlock } from '@/blocks/FrameCardBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -80,7 +81,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ListBlock, ButtonLinkBlock, ImageParagraphBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ListBlock, ButtonLinkBlock, ImageParagraphBlock, FrameCardBlock],
               required: true,
               admin: {
                 initCollapsed: true,

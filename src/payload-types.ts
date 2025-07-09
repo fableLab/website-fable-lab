@@ -158,6 +158,29 @@ export interface Page {
     | ListBlock
     | ButtonLinkBlock
     | ImageParagraphBlock
+    | {
+        title: string;
+        color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+        body: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        image?: (number | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'framecardBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -964,6 +987,16 @@ export interface PagesSelect<T extends boolean = true> {
         listBlock?: T | ListBlockSelect<T>;
         buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
+        framecardBlock?:
+          | T
+          | {
+              title?: T;
+              color?: T;
+              body?: T;
+              image?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T

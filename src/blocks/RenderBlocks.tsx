@@ -18,6 +18,7 @@ import { LicenseItemBlock } from '@/blocks/LicenseItemBlock/Component'
 import { ListBlock } from '@/blocks/ListBlock/Component'
 import { ListItemBlock } from '@/blocks/ListItemBlock/Component'
 import { ButtonLinkBlock } from './ButtonLinkBlock/Component'
+import { FrameCardBlock } from './FrameCardBlock/Component'
 
 
 const blockComponents = {
@@ -36,7 +37,8 @@ const blockComponents = {
   listBlock: ListBlock,
   listItemBlock: ListItemBlock,
   buttonLinkBlock: ButtonLinkBlock,
-  imageParagraphBlock: ImageParagraphBlock
+  imageParagraphBlock: ImageParagraphBlock,
+  framecardBlock: FrameCardBlock
 }
 
 export const RenderBlocks: React.FC<{
