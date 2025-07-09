@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.34.0](https://github.com/fableLab/website-fable-lab/compare/0.33.0...0.34.0) (2025-07-09)
+
+
+### Features
+
+* **FrameCardBlock:** create framecard block ([4b3d9fd](https://github.com/fableLab/website-fable-lab/commit/4b3d9fdc64d4b5aec030a74006321ce0cfb4c36d))
+
 # [0.33.0](https://github.com/fableLab/website-fable-lab/compare/0.32.0...0.33.0) (2025-07-09)
 
 
