@@ -179,6 +179,8 @@ const config = {
             {
               '--tw-prose-body': 'var(--text)',
               '--tw-prose-headings': 'var(--text)',
+              '--tw-prose-bullets': '#000000',
+              '--tw-prose-counters': '#000000',
               h1: {
                 fontWeight: 'normal',
                 marginBottom: '0.25em',

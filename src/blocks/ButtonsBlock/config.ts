@@ -1,5 +1,6 @@
 import type { Block } from 'payload'
 import { ButtonDownloadBlock } from '../../blocks/ButtonDownloadBlock/config'
+import { ButtonLinkBlock } from '../../blocks/ButtonLinkBlock/config'
 
 export const ButtonsBlock: Block = {
   slug: 'buttonsBlock',
@@ -8,7 +9,7 @@ export const ButtonsBlock: Block = {
   fields: [
     {
       name: 'direction',
-      type: 'select',
+      type: 'radio',
       label: 'Orientation',
       defaultValue: 'horizontal',
        options: [
@@ -18,7 +19,7 @@ export const ButtonsBlock: Block = {
     },
     {
       type: 'blocks',
-      blocks: [ButtonDownloadBlock],
+      blocks: [ButtonDownloadBlock, ButtonLinkBlock],
       name: 'blocks'
     }
   ],

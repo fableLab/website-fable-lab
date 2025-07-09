@@ -11,6 +11,7 @@ import {
 export const ImageParagraphBlock: Block = {
   slug: 'imageParagraphBlock',
   interfaceName: 'ImageParagraphBlock',
+  imageURL: '/blocks/image-paragraph.png',
   fields: [
     {
       name: 'title',
@@ -19,7 +20,7 @@ export const ImageParagraphBlock: Block = {
     },
     {
       name: 'orientation',
-      type: 'select',
+      type: 'radio',
       label: 'Image orientation',
       defaultValue: 'right',
        options: [

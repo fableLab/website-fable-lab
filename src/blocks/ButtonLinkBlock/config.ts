@@ -1,8 +1,10 @@
-import { Block } from 'payload/types';
+import type { Block } from 'payload'
 
-const ButtonLinkBlock: Block = {
+export const ButtonLinkBlock: Block = {
     slug: 'buttonLinkBlock',
     interfaceName: 'ButtonLinkBlock',
+    imageURL: '/blocks/button-link.png',
+    label: 'Link button',
     fields: [
         {
       name: 'label',
@@ -16,5 +18,3 @@ const ButtonLinkBlock: Block = {
     },
     ],
 };
-
-export default ButtonLinkBlock;

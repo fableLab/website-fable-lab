@@ -155,7 +155,6 @@ export interface Page {
     | SubTitleBlock
     | ButtonsBlock
     | LicenseBlock
-    | ListBlock
     | ButtonLinkBlock
     | ImageParagraphBlock
     | {
@@ -335,7 +334,7 @@ export interface SubTitleBlock {
  */
 export interface ButtonsBlock {
   direction?: ('horizontal' | 'vertical') | null;
-  blocks?: ButtonDownloadBlock[] | null;
+  blocks?: (ButtonDownloadBlock | ButtonLinkBlock)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'buttonsBlock';
@@ -350,6 +349,17 @@ export interface ButtonDownloadBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'buttonDownloadBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ButtonLinkBlock".
+ */
+export interface ButtonLinkBlock {
+  label: string;
+  url: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'buttonLinkBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -372,52 +382,6 @@ export interface LicenseItemBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'licenseItemBlock';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ListBlock".
- */
-export interface ListBlock {
-  blocks?: ListItemBlock[] | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'listBlock';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ListItemBlock".
- */
-export interface ListItemBlock {
-  richText?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  buttons?: ButtonsBlock[] | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'listItemBlock';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ButtonLinkBlock".
- */
-export interface ButtonLinkBlock {
-  label: string;
-  url: string;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'buttonLinkBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -984,7 +948,6 @@ export interface PagesSelect<T extends boolean = true> {
         subTitleBlock?: T | SubTitleBlockSelect<T>;
         buttonsBlock?: T | ButtonsBlockSelect<T>;
         licenseBlock?: T | LicenseBlockSelect<T>;
-        listBlock?: T | ListBlockSelect<T>;
         buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
         framecardBlock?:
@@ -1059,6 +1022,7 @@ export interface ButtonsBlockSelect<T extends boolean = true> {
     | T
     | {
         buttonDownloadBlock?: T | ButtonDownloadBlockSelect<T>;
+        buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
       };
   id?: T;
   blockName?: T;
@@ -1070,6 +1034,16 @@ export interface ButtonsBlockSelect<T extends boolean = true> {
 export interface ButtonDownloadBlockSelect<T extends boolean = true> {
   label?: T;
   media?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ButtonLinkBlock_select".
+ */
+export interface ButtonLinkBlockSelect<T extends boolean = true> {
+  label?: T;
+  url?: T;
   id?: T;
   blockName?: T;
 }
@@ -1094,43 +1068,6 @@ export interface LicenseBlockSelect<T extends boolean = true> {
 export interface LicenseItemBlockSelect<T extends boolean = true> {
   title?: T;
   description?: T;
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ListBlock_select".
- */
-export interface ListBlockSelect<T extends boolean = true> {
-  blocks?:
-    | T
-    | {
-        listItemBlock?: T | ListItemBlockSelect<T>;
-      };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ListItemBlock_select".
- */
-export interface ListItemBlockSelect<T extends boolean = true> {
-  richText?: T;
-  buttons?:
-    | T
-    | {
-        buttonsBlock?: T | ButtonsBlockSelect<T>;
-      };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ButtonLinkBlock_select".
- */
-export interface ButtonLinkBlockSelect<T extends boolean = true> {
-  label?: T;
-  url?: T;
   id?: T;
   blockName?: T;
 }

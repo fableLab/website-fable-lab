@@ -35,7 +35,6 @@ export const ImageParagraphBlock: React.FC<ContentBlockProps> = (props) => {
         {image && (
           <Image
             media={image}
-            className="border-[6px] border-solid border-lavender-400 rounded-xl"
             full={true}
           />
         )}

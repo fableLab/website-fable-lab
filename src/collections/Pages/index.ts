@@ -14,7 +14,6 @@ import { SubTitleBlock } from '../../blocks/SubTitleBlock/config'
 import { ButtonDownloadBlock } from '../../blocks/ButtonDownloadBlock/config'
 import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 import { LicenseBlock } from '../../blocks/LicenseBlock/config'
-import { ListBlock } from '../../blocks/ListBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -28,7 +27,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
-import ButtonLinkBlock from '@/blocks/ButtonLinkBlock/config'
+import { ButtonLinkBlock } from '@/blocks/ButtonLinkBlock/config'
 import { FrameCardBlock } from '@/blocks/FrameCardBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
@@ -81,7 +80,11 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
+<<<<<<< HEAD
               blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ListBlock, ButtonLinkBlock, ImageParagraphBlock, FrameCardBlock],
+=======
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ButtonLinkBlock, ImageParagraphBlock],
+>>>>>>> de07f86 (style: adjusted styles for displaying Blocks components)
               required: true,
               admin: {
                 initCollapsed: true,

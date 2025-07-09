@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { cn } from '@/utilities/ui'
 
 import type { Page } from '@/payload-types'
 
@@ -41,6 +42,13 @@ const blockComponents = {
   framecardBlock: FrameCardBlock
 }
 
+const marginByBlockType: Record<string, string> = {
+  titleBlock: "mb-4",
+  subTitleBlock: "mb-4",
+  buttonLinkBlock: "",
+  buttonDownloadBlock: "",
+};
+
 export const RenderBlocks: React.FC<{
   blocks: Page['layout'][0][]
 }> = (props) => {
@@ -59,7 +67,7 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div key={index}>
+                <div key={index} className={cn(marginByBlockType[blockType] ?? "mb-14")}>
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
                 </div>

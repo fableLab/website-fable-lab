@@ -1,19 +1,33 @@
 import type { Block, Field } from 'payload'
+import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 
 import {
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
+  BlocksFeature,
   lexicalEditor,
+  ParagraphFeature,
+  UnorderedListFeature,
+  OrderedListFeature,
+  AlignFeature,
+  BlockquoteFeature,
+  BoldFeature,
+  ItalicFeature,
+  UnderlineFeature,
+  StrikethroughFeature,
+  InlineCodeFeature,
+  IndentFeature,
 } from '@payloadcms/richtext-lexical'
 
 export const ParagraphBlock: Block = {
   slug: 'paragraphBlock',
   interfaceName: 'ParagraphBlock',
+  imageURL: '/blocks/paragraph.png',
   fields: [
     {
       name: 'orientation',
-      type: 'select',
+      type: 'radio',
       defaultValue: 'full',
       options: [
         {
@@ -44,8 +58,19 @@ export const ParagraphBlock: Block = {
           HeadingFeature({ enabledHeadingSizes: ['h4'] }),
           FixedToolbarFeature(),
           InlineToolbarFeature(),
+          ParagraphFeature(),////
+          UnorderedListFeature(),
+          OrderedListFeature(),
+          AlignFeature(),
+          BoldFeature(),
+          ItalicFeature(),
+          UnderlineFeature(),
+          StrikethroughFeature(),
+          InlineCodeFeature(),
+          IndentFeature(),
         ],
-      }),
+      }
+      ),
       required: true,
     },
   ],

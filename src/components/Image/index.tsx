@@ -16,7 +16,7 @@ export const Image: React.FC<MediaProps> = (props) => {
       {
         media?.url ?
           <figure className={cn(full ? 'w-full': 'w-1/2 mx-auto')}>
-            <img src={media?.url} alt={media.alt} className={cn(className,'w-full')} />
+            <img src={media?.url} alt={media.alt} className="w-full border-8 border-solid border-lavender-400 rounded-xl"/>
             <figcaption className="text-center">{media.alt}</figcaption>
           </figure >
           :

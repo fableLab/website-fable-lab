@@ -76,7 +76,9 @@ export default async function Page({ params: paramsPromise }: Args) {
       {draft && <LivePreviewListener />}
 
       <RenderHero {...hero} />
-      <RenderBlocks blocks={layout} />
+      <div className="flex flex-col pt-8 px-12 2xl:px-32">
+        <RenderBlocks blocks={layout} />
+      </div>
     </article>
   )
 }
