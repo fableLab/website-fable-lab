@@ -26,7 +26,7 @@ export const FrameCardBlock: Block = {
                 { label: 'Orange', value: 'orange' },
                 { label: 'Prune', value: 'prune' },
             ],
-            defaultValue: 'yellow',
+            defaultValue: 'prune',
         },
         {
       name: 'body',

@@ -21,4 +21,4 @@ node_modules/
 /playwright/.cache/
 
 #Editor/IDE Folders
-.vscode/
+.vscode/*

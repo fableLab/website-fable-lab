@@ -9,27 +9,35 @@ export const primaryColorsMap: Record<ColorsList, string> = {
   prune: 'camelot-800',
 };
 export const bgPrimaryColorsMap: Record<ColorsList, string> = {
-  yellow: `bg-${primaryColorsMap['yellow']}`,
-  violet: `bg-${primaryColorsMap['violet']}`,
-  blue: `bg-${primaryColorsMap['blue']}`,
-  orange: `bg-${primaryColorsMap['orange']}`,
-  prune: `bg-${primaryColorsMap['prune']}`,
+  yellow: 'bg-bees-400',
+  violet: 'bg-lavender-400',
+  blue: 'bg-azure-800',
+  orange: 'bg-cinnabar-500',
+  prune: 'bg-camelot-800',
 };
 
 export const borderPrimaryColorsMap: Record<ColorsList, string> = {
-  yellow: `border-${primaryColorsMap['yellow']}`,
-  violet: `border-${primaryColorsMap['violet']}`,
-  blue: `border-${primaryColorsMap['blue']}`,
-  orange: `border-${primaryColorsMap['orange']}`,
-  prune: `border-${primaryColorsMap['prune']}`,
+  yellow: 'border-bees-400',
+  violet: 'border-lavender-400',
+  blue: 'border-azure-800',
+  orange: 'border-cinnabar-500',
+  prune: 'border-camelot-800',
 };
 
 export const fillPrimaryColorsMap: Record<ColorsList, string> = {
-  yellow: `fill-${primaryColorsMap['yellow']}`,
-  violet: `fill-${primaryColorsMap['violet']}`,
-  blue: `fill-${primaryColorsMap['blue']}`,
-  orange: `fill-${primaryColorsMap['orange']}`,
-  prune: `fill-${primaryColorsMap['prune']}`,
+  yellow: 'fill-bees-400',
+  violet: 'fill-lavender-400',
+  blue: 'fill-azure-800',
+  orange: 'fill-cinnabar-500',
+  prune: 'fill-camelot-800',
+};
+
+export const strokePrimaryColorsMap: Record<ColorsList, string> = {
+  yellow: 'stroke-bees-400',
+  violet: 'stroke-lavender-400',
+  blue: 'stroke-azure-800',
+  orange: 'stroke-cinnabar-500',
+  prune: 'stroke-camelot-800',
 };
 
 /* Secondary Colors Map */
@@ -42,25 +50,27 @@ export const secondaryColorsMap: Record<ColorsList, string> = {
 };
 
 export const bgSecondaryColorsMap: Record<ColorsList, string> = {
-  yellow: `bg-${secondaryColorsMap['yellow']}`,
-  violet: `bg-${secondaryColorsMap['violet']}`,
-  blue: `bg-${secondaryColorsMap['blue']}`,
-  orange: `bg-${secondaryColorsMap['orange']}`,
-  prune: `bg-${secondaryColorsMap['prune']}`,
+  yellow: 'bg-bees-100',
+  violet: 'bg-lavender-200',
+  blue: 'bg-azure-100',
+  orange: 'bg-cinnabar-200',
+  prune: 'bg-camelot-700',
 };
 
 export const borderSecondaryColorsMap: Record<ColorsList, string> = {
-  yellow: `border-${secondaryColorsMap['yellow']}`,
-  violet: `border-${secondaryColorsMap['violet']}`,
-  blue: `border-${secondaryColorsMap['blue']}`,
-  orange: `border-${secondaryColorsMap['orange']}`,
-  prune: `border-${secondaryColorsMap['prune']}`,
+  yellow: 'border-bees-100',
+  violet: 'border-lavender-200',
+  blue: 'border-azure-100',
+  orange: 'border-cinnabar-200',
+  prune: 'border-camelot-700',
 };
 
 export const fillSecondaryColorsMap: Record<ColorsList, string> = {
-  yellow: `fill-${secondaryColorsMap['yellow']}`,
-  violet: `fill-${secondaryColorsMap['violet']}`,
-  blue: `fill-${secondaryColorsMap['blue']}`,
-  orange: `fill-${secondaryColorsMap['orange']}`,
-  prune: `fill-${secondaryColorsMap['prune']}`,
+  yellow: 'fill-bees-100',
+  violet: 'fill-lavender-200',
+  blue: 'fill-azure-100',
+  orange: 'fill-cinnabar-200',
+  prune: 'fill-camelot-700',
 };
+
+

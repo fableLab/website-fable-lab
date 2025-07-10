@@ -181,6 +181,12 @@ export interface Page {
         blockType: 'framecardBlock';
       }
     | TicketPaperBlock
+    | {
+        color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'dividerBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -987,6 +993,13 @@ export interface PagesSelect<T extends boolean = true> {
               blockName?: T;
             };
         ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
+        dividerBlock?:
+          | T
+          | {
+              color?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T

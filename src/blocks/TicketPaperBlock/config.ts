@@ -14,7 +14,7 @@ export const TicketPaperBlock: Block = {
     {
             name: 'color',
             type: 'select',
-            label: 'Border Color',
+            label: 'Color',
             options: [
                 { label: 'Jaune', value: 'yellow' },
                 { label: 'Violet', value: 'violet' },
@@ -22,7 +22,7 @@ export const TicketPaperBlock: Block = {
                 { label: 'Orange', value: 'orange' },
                 { label: 'Prune', value: 'prune' },
             ],
-            defaultValue: 'yellow',
+            defaultValue: 'blue',
         },
     {
           name: 'body',
