@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.35.0](https://github.com/fableLab/website-fable-lab/compare/0.34.1...0.35.0) (2025-07-10)
+
+
+### Features
+
+* **TicketPaperBlock:** create ticket paper block and add color constant file ([ea49876](https://github.com/fableLab/website-fable-lab/commit/ea49876e07462c3d6c1419f8f7e6a97ea2e74d7f))
+
 ## [0.34.2](https://github.com/fableLab/website-fable-lab/compare/0.34.1...0.34.2) (2025-07-10)
 
 ## [0.34.1](https://github.com/fableLab/website-fable-lab/compare/0.34.0...0.34.1) (2025-07-10)
