@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.36.0](https://github.com/fableLab/website-fable-lab/compare/0.35.0...0.36.0) (2025-07-10)
+
+
+### Features
+
+* **DividerBlock:** create DividerBlock ([eab9e21](https://github.com/fableLab/website-fable-lab/commit/eab9e210d11ffc435e953c1c9390770bd4604cc4))
+
 # [0.35.0](https://github.com/fableLab/website-fable-lab/compare/0.34.1...0.35.0) (2025-07-10)
 
 
