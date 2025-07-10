@@ -1,17 +1,7 @@
 import React from 'react';
 import { FrameCardType } from '@/payload-types';
 import RichText from '@/components/RichText';
-import { Image } from '@/components/Image';
-
-type FrameCardColor = 'yellow' | 'violet' | 'blue' | 'orange' | 'prune';
-
-const borderColorsMap: Record<FrameCardColor, string> = {
-  yellow: 'border-bees-400',
-  violet: 'border-lavender-400',
-  blue: 'border-azure-400',
-  orange: 'border-cinnabar-400',
-  prune: 'border-camelot-800',
-};
+import { borderPrimaryColorsMap } from "@/constants/ColorMaps"
 
 export const FrameCardBlock: React.FC<FrameCardType> = ({
   title,
@@ -19,9 +9,8 @@ export const FrameCardBlock: React.FC<FrameCardType> = ({
   body,
   image,
 }) => {
-
   return (
-    <div className={`flex flex-col md:flex-row gap-6 border-[6px] p-8 rounded-[22px] w-4/5 m-auto ${borderColorsMap[color]}`}>
+    <div className={`flex flex-col md:flex-row gap-6 border-[6px] p-8 rounded-[22px] w-4/5 m-auto ${borderPrimaryColorsMap[color]}`}>
       <div className={`${image ? 'w-2/3' : 'w-full'} space-y-4`}>
         <h3 className="font-bold text-2xl text-black">{title}</h3>
         {body && (

@@ -20,6 +20,7 @@ import { ListBlock } from '@/blocks/ListBlock/Component'
 import { ListItemBlock } from '@/blocks/ListItemBlock/Component'
 import { ButtonLinkBlock } from './ButtonLinkBlock/Component'
 import { FrameCardBlock } from './FrameCardBlock/Component'
+import { TicketPaperBlock } from './TicketPaperBlock/Component'
 
 
 const blockComponents = {
@@ -39,7 +40,8 @@ const blockComponents = {
   listItemBlock: ListItemBlock,
   buttonLinkBlock: ButtonLinkBlock,
   imageParagraphBlock: ImageParagraphBlock,
-  framecardBlock: FrameCardBlock
+  framecardBlock: FrameCardBlock,
+  ticketPaperBlock: TicketPaperBlock
 }
 
 const marginByBlockType: Record<string, string> = {

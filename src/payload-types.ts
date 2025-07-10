@@ -180,6 +180,7 @@ export interface Page {
         blockName?: string | null;
         blockType: 'framecardBlock';
       }
+    | TicketPaperBlock
   )[];
   meta?: {
     title?: string | null;
@@ -410,6 +411,31 @@ export interface ImageParagraphBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'imageParagraphBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TicketPaperBlock".
+ */
+export interface TicketPaperBlock {
+  color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ticketPaperBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -960,6 +986,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
       };
   meta?:
     | T
@@ -1085,6 +1112,16 @@ export interface ImageParagraphBlockSelect<T extends boolean = true> {
     | {
         buttonsBlock?: T | ButtonsBlockSelect<T>;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TicketPaperBlock_select".
+ */
+export interface TicketPaperBlockSelect<T extends boolean = true> {
+  color?: T;
+  body?: T;
   id?: T;
   blockName?: T;
 }
