@@ -25,16 +25,17 @@ const headerLinks = [
       { label: "La communauté fable-lab", href: "/pages/communaute-fable-lab" }
     ]
   },
-  {
-    label: "Projets", subLinks: [
-      { label: 'Médiation linguistique', href: "/projets" },
-      { label: 'Médiation littéraire', href: "/projets" },
-      { label: 'Tous les projets', href: "/projets" }
-    ]
-  },
+  // {
+  //   label: "Projets", subLinks: [
+  //     { label: 'Médiation linguistique', href: "/projets" },
+  //     { label: 'Médiation littéraire', href: "/projets" },
+  //     { label: 'Tous les projets', href: "/projects" }
+  //   ]
+  // },
 ];
 
 const headerBasicLinks = [
+  { label: "Projets", href: "/projects" },
   { label: "Ressources", href: "/ressources" },
   { label: "Contact", href: "/contact" },
   { label: "Boutique", href: "https://boutique.fable-lab.org/" }

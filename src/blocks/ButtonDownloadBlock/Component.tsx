@@ -26,7 +26,7 @@ export const ButtonDownloadBlock: React.FC<Props> = (props) => {
         py-4 px-6 group`}
       >
         <div className="col-span-5">
-          <p className="text-center font-medium px-2">{!media?.url && "Fichier indisponible:"} {label}</p>
+          <span className="text-center font-medium px-2 text-black">{!media?.url && "Fichier indisponible:"} {label}</span>
         </div>
         <div className="col-span-1 text-center relative w-9 h-9">
           {/* Icône normale */}

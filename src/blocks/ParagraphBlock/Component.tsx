@@ -21,7 +21,7 @@ export const ParagraphBlock: React.FC<ContentBlockProps> = (props) => {
   return (
       <div className="grid grid-cols-12">
               <div
-                className={cn(`col-span-12 lg:col-span-${col} [&_h4]:text-lavender-400 [&_h4]:text-xl [&_h4]:font-bold`, {
+                className={cn(`col-span-12 lg:col-span-${col}`, {
                   'lg:col-start-3': orientation === 'center',
                   'lg:col-start-5': orientation === 'right'
                 })}

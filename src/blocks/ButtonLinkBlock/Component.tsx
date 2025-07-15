@@ -13,7 +13,7 @@ export const ButtonLinkBlock: React.FC<Props> = ({ label, url }) => {
       <Link className="rounded-full transition duration-200 w-64 group
        grid grid-cols-6 gap-0 items-center place-items-center text-base bg-lavender-400 hover:bg-lavender-200 py-4 px-6" href={url} >
         <div className="col-span-5">
-          <p className="text-center font-medium px-2">{label}</p>
+          <span className="text-center font-medium px-2 text-black">{label}</span>
         </div>
         <div className="col-span-1 text-center relative w-9 h-9">
           {/* Icône normale */}

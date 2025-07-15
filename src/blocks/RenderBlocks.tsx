@@ -49,6 +49,7 @@ const blockComponents = {
 const marginByBlockType: Record<string, string> = {
   titleBlock: "mb-4",
   subTitleBlock: "mb-4",
+  licenseItemBlock: "mb-4",
   buttonLinkBlock: "",
   buttonDownloadBlock: "",
 };

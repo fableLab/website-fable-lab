@@ -2,26 +2,27 @@ import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
+import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
-import { homeStatic } from '@/endpoints/seed/home-static'
+import RichText from '@/components/RichText'
+
+import type { Project } from '@/payload-types'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
-import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
-import Banner from '@/components/Banner/Banner'
 
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import Summary from '@/components/Summary'
+import Banner from '@/components/Banner/Banner'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
-  const pages = await payload.find({
-    collection: 'pages',
+  const projects = await payload.find({
+    collection: 'projects',
     draft: false,
     limit: 1000,
     overrideAccess: false,
@@ -31,13 +32,15 @@ export async function generateStaticParams() {
     },
   })
 
-  const params = pages.docs
-    ?.filter((doc) => {
-      return doc.slug !== 'home'
-    })
-    .map(({ slug }) => {
-      return { slug }
-    })
+  // const params = projects.docs.map(({ slug }) => {
+  //   return { slug }
+  // })
+
+  const params = projects.docs.map(({ slug }) => {
+    if (typeof slug === 'string') return { slug }
+    if (slug && typeof slug.current === 'string') return { slug: slug.current }
+    return { slug: '' }
+  })
 
   return params
 }
@@ -48,51 +51,34 @@ type Args = {
   }>
 }
 
-export default async function Page({ params: paramsPromise }: Args) {
+export default async function Project({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode()
-  const { slug = 'home' } = await paramsPromise
-  const url = '/' + slug
+  const { slug = '' } = await paramsPromise
+  const url = '/projects/' + slug
+  const project = await queryProjectBySlug({ slug })
 
-  let page: RequiredDataFromCollectionSlug<'pages'> | null
+  if (!project) return <PayloadRedirects url={url} />
+  const { layout } = project
 
-  page = await queryPageBySlug({
-    slug,
-  })
-
-  // Remove this code once your website is seeded
-  if (!page && slug === 'home') {
-    page = homeStatic
-  }
-
-  if (!page) {
-    return <PayloadRedirects url={url} />
-  }
-
-  const { hero, layout } = page
 
   return (
     <>
     <PageClient />
     {/* Allows redirects for valid pages too */}
     <PayloadRedirects disableNotFound url={url} />
+    {draft && <LivePreviewListener />}
+
 
     <aside className="grid grid-cols-12 flex-grow">
-      <div className="md:col-span-3 col-span-0 bg-lavender-200">
+      <div className="md:col-span-3 col-span-0 bg-cinnabar-200">
         <Summary />
       </div>
       <div className="md:col-span-9 col-span-12">
         <article className="pb-24">
-          <Banner title={page.title} className="bg-lavender-400" />
-          <PageClient />
-          {/* Allows redirects for valid pages too */}
-          <PayloadRedirects disableNotFound url={url} />
-
-          {draft && <LivePreviewListener />}
-
-          <RenderHero {...hero} />
+          <Banner title={project.name} className="bg-cinnabar-500" />
           <div className="flex flex-col pt-8 px-12 2xl:px-32
-            [&_h2]:text-camelot-800 [&_h3]:text-camelot-800 [&_h4]:text-camelot-800 text-camelot-800
-            [&_p]:text-2xl [&_h4]:text-3xl [&_h4]:font-bold">
+              [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 [&_p]:text-2xl text-black
+              [&_h4]:text-3xl [&_h4]:font-bold">
             <RenderBlocks blocks={layout} />
           </div>
         </article>
@@ -103,25 +89,23 @@ export default async function Page({ params: paramsPromise }: Args) {
 }
 
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-  const { slug = 'home' } = await paramsPromise
-  const page = await queryPageBySlug({
-    slug,
-  })
+  const { slug = '' } = await paramsPromise
+  const project = await queryProjectBySlug({ slug })
 
-  return generateMeta({ doc: page })
+  return generateMeta({ doc: project })
 }
 
-const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
+const queryProjectBySlug = cache(async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
   const payload = await getPayload({ config: configPromise })
 
   const result = await payload.find({
-    collection: 'pages',
+    collection: 'projects',
     draft,
     limit: 1,
-    pagination: false,
     overrideAccess: draft,
+    pagination: false,
     where: {
       slug: {
         equals: slug,

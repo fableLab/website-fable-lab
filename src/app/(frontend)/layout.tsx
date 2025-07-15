@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(figtree.variable, playFair.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn(figtree.variable, playFair.variable, "scroll-smooth")} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
@@ -52,14 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
 
           <Header />
-          <aside className="grid grid-cols-12 flex-grow">
-            <div className="md:col-span-3 col-span-0 bg-lavender-200">
-              <Summary />
-            </div>
-            <div className="md:col-span-9 col-span-12">
-                {children}
-            </div>
-          </aside>
+          {children}
           <Footer />
         </Providers>
       </body>

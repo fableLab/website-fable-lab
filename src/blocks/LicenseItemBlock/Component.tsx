@@ -11,7 +11,7 @@ export const LicenseItemBlock: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <h3 className="text-3xl text-azure-800 font-extrabold font basis">{ title }</h3>
+      <h4 className="font-extrabold">{ title }</h4>
       <p>{ description }</p>
     </div>
   )
