@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.37.0](https://github.com/fableLab/website-fable-lab/compare/0.36.0...0.37.0) (2025-07-15)
+
+
+### Features
+
+* **Project:** add Project collection ([7852239](https://github.com/fableLab/website-fable-lab/commit/785223960e9fae48c55b87b9313ae96b9d03be4c))
+
 # [0.36.0](https://github.com/fableLab/website-fable-lab/compare/0.35.0...0.36.0) (2025-07-10)
 
 
