@@ -93,12 +93,12 @@ export interface Config {
   globals: {
     header: Header;
     footer: Footer;
-    projectsPage: ProjectsPage;
+    textsPage: TextsPage;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
-    projectsPage: ProjectsPageSelect<false> | ProjectsPageSelect<true>;
+    textsPage: TextsPageSelect<false> | TextsPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1072,7 +1072,37 @@ export interface Header {
  */
 export interface Footer {
   id: number;
-  navItems?:
+  leftColumn?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: number | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  centerColumn?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: number | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  rightColumn?:
     | {
         link: {
           type?: ('reference' | 'custom') | null;
@@ -1092,11 +1122,11 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projectsPage".
+ * via the `definition` "textsPage".
  */
-export interface ProjectsPage {
+export interface TextsPage {
   id: number;
-  description: {
+  projects?: {
     root: {
       type: string;
       children: {
@@ -1110,7 +1140,22 @@ export interface ProjectsPage {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
+  resources?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1142,7 +1187,35 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
-  navItems?:
+  leftColumn?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  centerColumn?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  rightColumn?:
     | T
     | {
         link?:
@@ -1162,10 +1235,11 @@ export interface FooterSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projectsPage_select".
+ * via the `definition` "textsPage_select".
  */
-export interface ProjectsPageSelect<T extends boolean = true> {
-  description?: T;
+export interface TextsPageSelect<T extends boolean = true> {
+  projects?: T;
+  resources?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

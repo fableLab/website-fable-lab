@@ -6,13 +6,30 @@ import type { Footer } from '@/payload-types'
 
 import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import { CMSLink } from '@/components/Link'
-import { Logo } from '@/components/Logo/Logo'
 import ScrollToTop from './ScrollToTop.tsx'
+
+export const getHrefFromLink = (link: {
+  type: string
+  url?: string
+  reference?: {
+    relationTo: string
+    value?: { slug: string }
+  }
+}): string => {
+  if (link.type === 'reference' && typeof link.reference?.value === 'object') {
+    const { relationTo, value } = link.reference;
+    const prefix = relationTo !== 'pages' ? `/${relationTo}` : '';
+    return `${prefix}/${value.slug}`;
+  }
+  return link.url || '';
+}
 
 export async function Footer() {
   const footerData: Footer = await getCachedGlobal('footer', 1)()
 
-  const navItems = footerData?.navItems || []
+  const leftColumnLinks = footerData?.leftColumn || []
+  const centerColumnLinks = footerData?.centerColumn || []
+  const rightColumnLinks = footerData?.rightColumn || []
 
   const zigZagStyle = {
     borderImageSource: 'url("/zigzags/zigzag-footer.svg")',
@@ -22,33 +39,37 @@ export async function Footer() {
 
   return (
     <footer className="bg-camelot-800 grid grid-cols-12 text-white">
-      <div className="md:col-span-4 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
+      <div className="md:col-span-3 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
         style={zigZagStyle}>
         <ul>
           {
-            ["Mentions légales", "CGU", "Plan du site", "License Creative Commons"].map((item) => (
-              <li className='mb-2 text-lg' key={item}>
-                <Link href="#" className='mb-2 text-lg'>{item}</Link>
+              leftColumnLinks.map((item) => (
+              <li className='mb-2 text-lg' key={item.id}>
+                <Link href={getHrefFromLink(item.link)} className='mb-2 text-lg'>{item.link?.label}</Link>
               </li>
             ))
           }
         </ul>
       </div>
-      <div className="md:col-span-3 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
-        style={zigZagStyle}>
-        <ul>
-          <li className='mb-2 text-lg'>
-            <Link href="#" className='mb-2 text-lg'>Abonner-vous à la newsletter</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="md:col-span-3 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
+      <div className="md:col-span-4 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
         style={zigZagStyle}>
         <ul>
           {
-            ["Documentation", "Lexique", "Presse"].map((item) => (
-              <li className='mb-2 text-lg' key={item}>
-                <Link href="#" className='mb-2 text-lg'>{item}</Link>
+              centerColumnLinks.map((item) => (
+              <li className='mb-2 text-lg' key={item.id}>
+                <Link href={getHrefFromLink(item.link)} className='mb-2 text-lg'>{item.link?.label}</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div className="md:col-span-4 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
+        style={zigZagStyle}>
+        <ul>
+          {
+              rightColumnLinks.map((item) => (
+              <li className='mb-2 text-lg' key={item.id}>
+                <Link href={getHrefFromLink(item.link)} className='mb-2 text-lg'>{item.link?.label}</Link>
               </li>
             ))
           }

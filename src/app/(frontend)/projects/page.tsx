@@ -12,8 +12,8 @@ import { Project } from '@/components/Project'
 export default async function ProjectsPage() {
   const payload = await getPayload({ config: config })
 
-  const projectsPage = await payload.findGlobal({
-    slug: 'projectsPage', // required
+  const textsPage = await payload.findGlobal({
+    slug: 'textsPage', // required
     depth: 1,
     fallbackLocale: false,
     overrideAccess: false,
@@ -40,7 +40,7 @@ export default async function ProjectsPage() {
               [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 [&_p]:text-2xl text-black [&_a]:text-cinnabar-500
               [&_h4]:text-3xl [&_h4]:font-bold">
                 <div>
-                  {projectsPage?.description && <RichText data={projectsPage.description} enableGutter={false} />}
+                  {textsPage?.projects && <RichText data={textsPage.projects} enableGutter={false} />}
                 </div>
 
                 <div className="my-6">

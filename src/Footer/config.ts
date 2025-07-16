@@ -10,12 +10,41 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: 'navItems',
+      name: 'leftColumn',
+      label: 'Left column',
       type: 'array',
       fields: [
-        link({
-          appearances: false,
-        }),
+        link({ appearances: false }),
+      ],
+      maxRows: 6,
+      admin: {
+        initCollapsed: true,
+        components: {
+          RowLabel: '@/Footer/RowLabel#RowLabel',
+        },
+      },
+    },
+    {
+      name: 'centerColumn',
+      label: 'Center column',
+      type: 'array',
+      fields: [
+        link({ appearances: false }),
+      ],
+      maxRows: 6,
+      admin: {
+        initCollapsed: true,
+        components: {
+          RowLabel: '@/Footer/RowLabel#RowLabel',
+        },
+      },
+    },
+    {
+      name: 'rightColumn',
+      label: 'Right column',
+      type: 'array',
+      fields: [
+        link({ appearances: false }),
       ],
       maxRows: 6,
       admin: {
