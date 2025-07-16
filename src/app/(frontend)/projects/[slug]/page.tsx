@@ -64,8 +64,6 @@ export default async function Project({ params: paramsPromise }: Args) {
   return (
     <>
     <PageClient />
-    {/* Allows redirects for valid pages too */}
-    <PayloadRedirects disableNotFound url={url} />
     {draft && <LivePreviewListener />}
 
 
