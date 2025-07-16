@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.39.0](https://github.com/fableLab/website-fable-lab/compare/0.38.0...0.39.0) (2025-07-16)
+
+
+### Features
+
+* **TextsPage:** implementation of a global page for editing texts used throughout the site ([0b0d10c](https://github.com/fableLab/website-fable-lab/commit/0b0d10c086b6ef6dc012d41998ff1ede12b06d1a))
+
 # [0.38.0](https://github.com/fableLab/website-fable-lab/compare/0.37.0...0.38.0) (2025-07-16)
 
 # [0.37.0](https://github.com/fableLab/website-fable-lab/compare/0.36.0...0.37.0) (2025-07-15)
