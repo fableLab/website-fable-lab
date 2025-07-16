@@ -3,8 +3,6 @@ import { cn } from '@/utilities/ui'
 
 import type { Page } from '@/payload-types'
 
-import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
-import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ParagraphBlock } from '@/blocks/ParagraphBlock/Component'
 import { ImageParagraphBlock } from '@/blocks/ImageParagraphBlock/Component'
 import { FormBlock } from '@/blocks/Form/Component'
@@ -23,11 +21,8 @@ import { FrameCardBlock } from './FrameCardBlock/Component'
 import { TicketPaperBlock } from './TicketPaperBlock/Component'
 import { DividerBlock } from './DividerBlock/Component'
 
-
 const blockComponents = {
-  archive: ArchiveBlock,
   paragraphBlock: ParagraphBlock,
-  cta: CallToActionBlock,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
   imageBlock: ImageBlock,
