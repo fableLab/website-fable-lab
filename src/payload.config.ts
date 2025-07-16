@@ -13,7 +13,7 @@ import { Projects } from './collections/Projects'
 import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
-import { ProjectsPage } from './projectsPage/config'
+import { TextsPage } from './TextsPage/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
@@ -67,7 +67,7 @@ export default buildConfig({
   }),
   collections: [Pages, Media, Users, Projects],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer, ProjectsPage],
+  globals: [Header, Footer, TextsPage],
   plugins: [
     ...plugins,
     // storage-adapter-placeholder
