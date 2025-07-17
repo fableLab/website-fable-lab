@@ -1,5 +1,13 @@
 # Changelog
 
+# [0.40.0](https://github.com/fableLab/website-fable-lab/compare/0.38.0...0.40.0) (2025-07-17)
+
+
+### Features
+
+* **Footer:** implement dynamic links in the footer ([e0514b5](https://github.com/fableLab/website-fable-lab/commit/e0514b5bd38fa9118de34f777fb8c62a29c59f97))
+* **Header:** implement dynamic links in the header ([50f4d81](https://github.com/fableLab/website-fable-lab/commit/50f4d8145d09c71f67792efe641fe2d876e84060))
+
 # [0.39.0](https://github.com/fableLab/website-fable-lab/compare/0.38.0...0.39.0) (2025-07-16)
 
 
