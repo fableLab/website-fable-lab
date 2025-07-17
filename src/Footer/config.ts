@@ -10,49 +10,66 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: 'leftColumn',
-      label: 'Left column',
-      type: 'array',
-      fields: [
-        link({ appearances: false }),
-      ],
-      maxRows: 6,
-      admin: {
-        initCollapsed: true,
-        components: {
-          RowLabel: '@/Footer/RowLabel#RowLabel',
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Left column',
+          fields: [
+            {
+              name: 'leftColumn',
+              type: 'array',
+              fields: [
+                link({ appearances: false }),
+              ],
+              maxRows: 6,
+              admin: {
+                initCollapsed: true,
+                components: {
+                  RowLabel: '@/Footer/RowLabel#RowLabel',
+                },
+              },
+            },
+          ],
         },
-      },
-    },
-    {
-      name: 'centerColumn',
-      label: 'Center column',
-      type: 'array',
-      fields: [
-        link({ appearances: false }),
-      ],
-      maxRows: 6,
-      admin: {
-        initCollapsed: true,
-        components: {
-          RowLabel: '@/Footer/RowLabel#RowLabel',
+        {
+          label: 'Center column',
+          fields: [
+            {
+              name: 'centerColumn',
+              type: 'array',
+              fields: [
+                link({ appearances: false }),
+              ],
+              maxRows: 6,
+              admin: {
+                initCollapsed: true,
+                components: {
+                  RowLabel: '@/Footer/RowLabel#RowLabel',
+                },
+              },
+            },
+          ],
         },
-      },
-    },
-    {
-      name: 'rightColumn',
-      label: 'Right column',
-      type: 'array',
-      fields: [
-        link({ appearances: false }),
-      ],
-      maxRows: 6,
-      admin: {
-        initCollapsed: true,
-        components: {
-          RowLabel: '@/Footer/RowLabel#RowLabel',
+        {
+          label: 'Right column',
+          fields: [
+            {
+              name: 'rightColumn',
+              type: 'array',
+              fields: [
+                link({ appearances: false }),
+              ],
+              maxRows: 6,
+              admin: {
+                initCollapsed: true,
+                components: {
+                  RowLabel: '@/Footer/RowLabel#RowLabel',
+                },
+              },
+            },
+          ],
         },
-      },
+      ],
     },
   ],
   hooks: {

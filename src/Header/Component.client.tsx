@@ -14,32 +14,21 @@ interface HeaderClientProps {
   data: Header
 }
 
-const headerLinks = [
-  {
-    label: "L'association", subLinks: [
-      { label: 'Manifeste', href: "/pages/manifeste" },
-      { label: 'Notre histoire', href: "/pages/notre-histoire" },
-      { label: 'Notre équipe', href: "/pages/notre-equipe" },
-      { label: 'Nos savoir-faire', href: "/pages/nos-savoir-faire" },
-      { label: "Les rapports d'activités", href: "/pages/rapports-d-activites" },
-      { label: "La communauté fable-lab", href: "/pages/communaute-fable-lab" }
-    ]
-  },
-  // {
-  //   label: "Projets", subLinks: [
-  //     { label: 'Médiation linguistique', href: "/projets" },
-  //     { label: 'Médiation littéraire', href: "/projets" },
-  //     { label: 'Tous les projets', href: "/projects" }
-  //   ]
-  // },
-];
-
-const headerBasicLinks = [
-  { label: "Projets", href: "/projects" },
-  { label: "Ressources", href: "/ressources" },
-  { label: "Contact", href: "/contact" },
-  { label: "Boutique", href: "https://boutique.fable-lab.org/" }
-];
+export const getHrefFromLink = (link: {
+  type: string
+  url?: string
+  reference?: {
+    relationTo: string
+    value?: { slug: string }
+  }
+}): string => {
+  if (link.type === 'reference' && typeof link.reference?.value === 'object') {
+    const { relationTo, value } = link.reference;
+    const prefix = relationTo !== 'pages' ? `/${relationTo}` : '';
+    return `${prefix}/${value.slug}`;
+  }
+  return link.url || '';
+}
 
 export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   /* Storing the value in a useState to avoid hydration errors */
@@ -66,14 +55,26 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
       </div>
 
       <nav className="md:col-span-9 col-span-0 md:visible invisible flex flex-row items-center h-full">
-        {headerLinks.map((link) => (
-          <div
-            key={link.label}
+        {data.links?.map((link) =>
+          link.type === 'singleLink' ? (
+            <div
+              key={link.id}
+              className="flex-1 h-full border-l-[3px] border-white hidden md:flex items-center justify-center relative"
+            >
+              <Link
+                href={getHrefFromLink(link.singleLink.link)}
+                className="text-white text-center w-full inline-block py-5 text-2xl"
+              >
+                {link.singleLink.link.label}
+              </Link>
+            </div>
+          ) :
+          <div key={link.id}
             className="flex-1 h-full border-l-[3px] border-white hidden md:flex justify-center relative"
           >
             <Menu>
               <div className="flex items-center h-full">
-                <MenuButton className="w-full text-white text-center inline-block py-5 text-2xl cursor-pointer w-full">
+                <MenuButton className="w-full text-white text-center inline-block py-5 text-2xl cursor-pointer">
                   {link.label}
                 </MenuButton>
               </div>
@@ -82,32 +83,21 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                 transition
                 className="absolute left-0 top-full origin-top-right bg-camelot-800 ring-3 ring-white w-full transition focus:outline-none"
               >
-                {link?.subLinks?.map((subLink) => (
+                {link.listLink?.map((subLink) => (
                   <Link
-                    href={subLink.href}
-                    key={subLink.label}
+                    href={getHrefFromLink(subLink.link)}
+                    key={subLink.id}
                     className="w-full block py-5 ring ring-3 ring-white bg-camelot-800 text-white text-center text-2xl"
                   >
                     <MenuItem>
-                      <span>{subLink.label}</span>
+                      <span>{subLink.link?.label}</span>
                     </MenuItem>
                   </Link>
                 ))}
               </MenuItems>
             </Menu>
           </div>
-        ))}
-
-        {headerBasicLinks.map((link, key) => (
-          <div key={key} className="flex-1 h-full border-l-[3px] border-white hidden md:flex items-center justify-center relative">
-            <Link
-              href={link.href}
-              className="text-white text-center w-full inline-block py-5 text-2xl"
-            >
-              {link.label}
-            </Link>
-          </div>
-        ))}
+        )}
       </nav>
     </header>
   )

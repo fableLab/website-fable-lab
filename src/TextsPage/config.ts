@@ -22,8 +22,7 @@ import {
 export const TextsPage: GlobalConfig = {
   slug: 'textsPage',
   labels: {
-    singular: 'Texte',
-    plural: 'Textes',
+    plural: 'Texts',
   },
   access: {
     read: () => true,
