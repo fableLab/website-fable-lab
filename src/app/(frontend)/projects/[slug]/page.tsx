@@ -58,7 +58,7 @@ export default async function Project({ params: paramsPromise }: Args) {
   const project = await queryProjectBySlug({ slug })
 
   if (!project) return <PayloadRedirects url={url} />
-  const { layout } = project
+  const { blocks } = project
 
 
   return (
@@ -77,7 +77,7 @@ export default async function Project({ params: paramsPromise }: Args) {
           <div className="flex flex-col pt-8 px-12 2xl:px-32
               [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 [&_p]:text-2xl text-black
               [&_h4]:text-3xl [&_h4]:font-bold">
-            <RenderBlocks blocks={layout} />
+            <RenderBlocks blocks={blocks} />
           </div>
         </article>
       </div>

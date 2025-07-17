@@ -9,6 +9,11 @@ import {
 
 export const FrameCardBlock: Block = {
     slug: 'framecardBlock',
+    imageURL: '/blocks/frame-card.png',
+    labels: {
+      singular: "Frame card",
+      plural: "Frame card",
+    },
     fields: [
         {
             name: 'title',

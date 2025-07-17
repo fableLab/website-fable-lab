@@ -80,9 +80,9 @@ export const Pages: CollectionConfig<'pages'> = {
         {
           fields: [
             {
-              name: 'layout',
+              name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ButtonLinkBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock],
 
               required: true,
               admin: {

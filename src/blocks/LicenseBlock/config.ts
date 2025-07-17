@@ -5,6 +5,10 @@ export const LicenseBlock: Block = {
   slug: 'licenseBlock',
   interfaceName: 'LicenseBlock',
   imageURL: '/blocks/license.png',
+  labels: {
+    singular: "License",
+    plural: "License",
+  },
   fields: [
     {
       type: 'text',

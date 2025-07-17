@@ -12,6 +12,10 @@ export const ImageParagraphBlock: Block = {
   slug: 'imageParagraphBlock',
   interfaceName: 'ImageParagraphBlock',
   imageURL: '/blocks/image-paragraph.png',
+  labels: {
+    singular: "Paragraph with image",
+    plural: "Paragraph with image",
+  },
   fields: [
     {
       name: 'title',

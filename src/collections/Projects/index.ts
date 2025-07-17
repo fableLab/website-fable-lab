@@ -72,6 +72,11 @@ export const Projects: CollectionConfig<'projects'> = {
       required: true,
     },
     {
+      name: 'description',
+      type: 'text',
+      required: true,
+    },
+    {
       name: 'mediation',
       label: 'médiation',
       type: 'radio',
@@ -79,11 +84,6 @@ export const Projects: CollectionConfig<'projects'> = {
         { value: 'littéraire', label: 'littéraire' },
         { value: 'linguistique', label: 'linguistique'}
       ],
-      required: true,
-    },
-    {
-      name: 'description',
-      type: 'text',
       required: true,
     },
     {
@@ -98,9 +98,9 @@ export const Projects: CollectionConfig<'projects'> = {
         {
           fields: [
             {
-              name: 'layout',
+              name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ButtonLinkBlock, ImageParagraphBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock],
               required: true,
               admin: {
                 initCollapsed: true,

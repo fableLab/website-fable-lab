@@ -6,6 +6,10 @@ export const ButtonsBlock: Block = {
   slug: 'buttonsBlock',
   interfaceName: 'ButtonsBlock',
   imageURL: '/blocks/buttons.png',
+  labels: {
+    singular: "Buttons",
+    plural: "Buttons",
+  },
   fields: [
     {
       name: 'direction',
@@ -19,6 +23,7 @@ export const ButtonsBlock: Block = {
     },
     {
       type: 'blocks',
+      label: 'buttons',
       blocks: [ButtonDownloadBlock, ButtonLinkBlock],
       name: 'blocks'
     }

@@ -140,14 +140,13 @@ export interface UserAuthOperations {
 export interface Page {
   id: number;
   title: string;
-  layout: (
+  blocks: (
     | ParagraphBlock
     | ImageBlock
     | TitleBlock
     | SubTitleBlock
     | ButtonsBlock
     | LicenseBlock
-    | ButtonLinkBlock
     | ImageParagraphBlock
     | {
         title: string;
@@ -467,17 +466,16 @@ export interface User {
 export interface Project {
   id: number;
   name: string;
-  mediation: 'littéraire' | 'linguistique';
   description: string;
+  mediation: 'littéraire' | 'linguistique';
   image: number | Media;
-  layout: (
+  blocks: (
     | ParagraphBlock
     | ImageBlock
     | TitleBlock
     | SubTitleBlock
     | ButtonsBlock
     | LicenseBlock
-    | ButtonLinkBlock
     | ImageParagraphBlock
   )[];
   meta?: {
@@ -662,7 +660,7 @@ export interface PayloadMigration {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
-  layout?:
+  blocks?:
     | T
     | {
         paragraphBlock?: T | ParagraphBlockSelect<T>;
@@ -671,7 +669,6 @@ export interface PagesSelect<T extends boolean = true> {
         subTitleBlock?: T | SubTitleBlockSelect<T>;
         buttonsBlock?: T | ButtonsBlockSelect<T>;
         licenseBlock?: T | LicenseBlockSelect<T>;
-        buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
         framecardBlock?:
           | T
@@ -950,10 +947,10 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface ProjectsSelect<T extends boolean = true> {
   name?: T;
-  mediation?: T;
   description?: T;
+  mediation?: T;
   image?: T;
-  layout?:
+  blocks?:
     | T
     | {
         paragraphBlock?: T | ParagraphBlockSelect<T>;
@@ -962,7 +959,6 @@ export interface ProjectsSelect<T extends boolean = true> {
         subTitleBlock?: T | SubTitleBlockSelect<T>;
         buttonsBlock?: T | ButtonsBlockSelect<T>;
         licenseBlock?: T | LicenseBlockSelect<T>;
-        buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
       };
   meta?:

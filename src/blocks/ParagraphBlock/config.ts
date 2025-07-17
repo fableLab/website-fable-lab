@@ -24,6 +24,10 @@ export const ParagraphBlock: Block = {
   slug: 'paragraphBlock',
   interfaceName: 'ParagraphBlock',
   imageURL: '/blocks/paragraph.png',
+  labels: {
+    singular: "Paragraph",
+    plural: "Paragraph",
+  },
   fields: [
     {
       name: 'orientation',

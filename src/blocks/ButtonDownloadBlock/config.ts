@@ -4,7 +4,10 @@ export const ButtonDownloadBlock: Block = {
   slug: 'buttonDownloadBlock',
   interfaceName: 'ButtonDownloadBlock',
   imageURL: '/blocks/button-download.png',
-  label: 'Link download',
+  labels: {
+    singular: "Download Button",
+    plural: "Download Buttons",
+  },
   fields: [
     {
       name: 'label',

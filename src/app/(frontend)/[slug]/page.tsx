@@ -67,7 +67,7 @@ export default async function Page({ params: paramsPromise }: Args) {
     return <PayloadRedirects url={url} />
   }
 
-  const { layout } = page
+  const { blocks } = page
 
   return (
     <>
@@ -84,7 +84,7 @@ export default async function Page({ params: paramsPromise }: Args) {
           <div className="flex flex-col pt-8 px-12 2xl:px-32
             [&_h2]:text-camelot-800 [&_h3]:text-camelot-800 [&_h4]:text-camelot-800 text-camelot-800
             [&_p]:text-2xl [&_h4]:text-3xl [&_h4]:font-bold">
-            <RenderBlocks blocks={layout} />
+            <RenderBlocks blocks={blocks} />
           </div>
         </article>
       </div>

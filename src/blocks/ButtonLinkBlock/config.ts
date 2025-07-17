@@ -4,7 +4,10 @@ export const ButtonLinkBlock: Block = {
     slug: 'buttonLinkBlock',
     interfaceName: 'ButtonLinkBlock',
     imageURL: '/blocks/button-link.png',
-    label: 'Link button',
+    labels: {
+      singular: "Link button",
+      plural: "Link buttons",
+    },
     fields: [
         {
       name: 'label',

@@ -10,6 +10,7 @@ import {
 export const TicketPaperBlock: Block = {
   slug: 'ticketPaperBlock',
   interfaceName: 'TicketPaperBlock',
+  imageURL: '/blocks/ticket-paper.png',
   fields: [
     {
             name: 'color',

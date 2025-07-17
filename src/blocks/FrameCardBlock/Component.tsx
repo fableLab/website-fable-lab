@@ -22,6 +22,7 @@ export const FrameCardBlock: React.FC<FrameCardType> = ({
         <div className="w-full md:w-1/3 flex justify-center items-center">
           <img
             src={image?.url}
+            className="rounded-2xl"
           />
         </div>
       )}

@@ -2,6 +2,11 @@ import { Block } from 'playload/types';
 
 export const DividerBlock: Block = {
     slug: 'dividerBlock',
+    imageURL: '/blocks/divider.png',
+    labels: {
+      singular: "Divider",
+      plural: "Dividers",
+    },
     fields: [
         {
             name: 'color',

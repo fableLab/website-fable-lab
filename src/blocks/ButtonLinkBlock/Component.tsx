@@ -9,8 +9,8 @@ type Props = {
 
 export const ButtonLinkBlock: React.FC<Props> = ({ label, url }) => {
    return (
-    <button className='m-6 ml-16'>
-      <Link className="rounded-full transition duration-200 w-64 group
+    <button>
+      <Link className="rounded-full transition duration-200 w-60 group
        grid grid-cols-6 gap-0 items-center place-items-center text-base bg-lavender-400 hover:bg-lavender-200 py-4 px-6" href={url} >
         <div className="col-span-5">
           <span className="text-center font-medium px-2 text-black">{label}</span>
