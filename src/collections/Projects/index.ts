@@ -2,16 +2,11 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Archive } from '../../blocks/ArchiveBlock/config'
-import { CallToAction } from '../../blocks/CallToAction/config'
 import { ParagraphBlock } from '../../blocks/ParagraphBlock/config'
-import { FormBlock } from '../../blocks/Form/config'
-import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
 import { ImageParagraphBlock } from '../../blocks/ImageParagraphBlock/config'
 import { TitleBlock } from '../../blocks/TitleBlock/config'
 import { SubTitleBlock } from '../../blocks/SubTitleBlock/config'
-import { ButtonDownloadBlock } from '../../blocks/ButtonDownloadBlock/config'
 import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 import { LicenseBlock } from '../../blocks/LicenseBlock/config'
 import { slugField } from '@/fields/slug'
@@ -26,8 +21,8 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
-import { ButtonLinkBlock } from '@/blocks/ButtonLinkBlock/config'
 import { FrameCardBlock } from '@/blocks/FrameCardBlock/config'
+import { DividerBlock } from '@/blocks/DividerBlock/config'
 
 export const Projects: CollectionConfig<'projects'> = {
   slug: 'projects',
@@ -82,7 +77,7 @@ export const Projects: CollectionConfig<'projects'> = {
       type: 'radio',
       options: [
         { value: 'littéraire', label: 'littéraire' },
-        { value: 'linguistique', label: 'linguistique'}
+        { value: 'linguistique', label: 'linguistique' }
       ],
       required: true,
     },
@@ -100,7 +95,7 @@ export const Projects: CollectionConfig<'projects'> = {
             {
               name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, DividerBlock],
               required: true,
               admin: {
                 initCollapsed: true,

@@ -1,21 +1,18 @@
 import React from 'react'
 
-import type { MediaBlock as MediaBlockProps } from '@/payload-types'
 import { Image } from '../../components/Image'
+import type { Media } from '@/payload-types'
 
-type Props = MediaBlockProps
+type ImageBlockProps = {
+  media: Media
+};
 
-export const ImageBlock: React.FC<Props> = (props) => {
-  const {
-    media,
-    alt
-  } = props
-
+export const ImageBlock: React.FC<ImageBlockProps> = ({ media }) => {
   return (
-      media && (
-        <Image
-          media={media}
-        />
-      )
+    media && (
+      <Image
+        media={media}
+      />
+    )
   )
 }

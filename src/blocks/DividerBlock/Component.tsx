@@ -1,8 +1,11 @@
 import React from 'react';
-// import { DividerBlock as DividerProps } from '@/payload-types';
-import { strokePrimaryColorsMap } from "@/constants/ColorMaps"
+import { strokePrimaryColorsMap, ColorsList } from "@/constants/ColorMaps"
 
-export const DividerBlock: React.FC<{ color: string }> = ({
+type DividerBlockProps = {
+  color: ColorsList
+};
+
+export const DividerBlock: React.FC<DividerBlockProps> = ({
   color,
 }) => {
   return (

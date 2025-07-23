@@ -1,16 +1,11 @@
 import React from 'react'
 
-import type { TextBlock as TextBlockProps } from '@/payload-types'
+import type { SubTitleBlock as SubTitleBlockProps } from '@/payload-types'
 import { SubTitle } from '../../components/SubTitle'
 
-type Props = TextBlockProps
-
-export const SubTitleBlock: React.FC<Props> = (props) => {
-  const {
-    id, name
-  } = props
+export const SubTitleBlock: React.FC<SubTitleBlockProps> = ({ id, name }) => {
 
   return (
-    <SubTitle {...{id, name}} />
+    <SubTitle {...{ id, name }} />
   )
 }

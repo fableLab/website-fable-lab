@@ -1,9 +1,8 @@
-import type { Block, Field } from 'payload'
+import type { Block } from 'payload'
 import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 
 import {
   FixedToolbarFeature,
-  HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
@@ -27,10 +26,10 @@ export const ImageParagraphBlock: Block = {
       type: 'radio',
       label: 'Image orientation',
       defaultValue: 'right',
-       options: [
-         { value: 'left', label: 'left' },
-         { value: 'right', label: 'right' },
-     ],
+      options: [
+        { value: 'left', label: 'left' },
+        { value: 'right', label: 'right' },
+      ],
     },
     {
       name: 'image',

@@ -1,9 +1,18 @@
 import React from 'react';
-import { FrameCardType } from '@/payload-types';
-import RichText from '@/components/RichText';
-import { borderPrimaryColorsMap } from "@/constants/ColorMaps"
+import type { FrameCardBlock as PayloadCMSFrameCardProps } from '@/payload-types'
+import type { Media } from '@/payload-types'
 
-export const FrameCardBlock: React.FC<FrameCardType> = ({
+import RichText from '@/components/RichText';
+import { borderPrimaryColorsMap, ColorsList } from "@/constants/ColorMaps"
+
+type FrameCardProps = {
+  title: PayloadCMSFrameCardProps['title'],
+  body: PayloadCMSFrameCardProps['body'],
+  image: Media
+  color: ColorsList
+};
+
+export const FrameCardBlock: React.FC<FrameCardProps> = ({
   title,
   color,
   body,
@@ -21,7 +30,7 @@ export const FrameCardBlock: React.FC<FrameCardType> = ({
       {image && (
         <div className="w-full md:w-1/3 flex justify-center items-center">
           <img
-            src={image?.url}
+            src={image?.url || ""}
             className="rounded-2xl"
           />
         </div>

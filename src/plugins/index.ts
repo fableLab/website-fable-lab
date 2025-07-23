@@ -1,24 +1,28 @@
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
-import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
-import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
-import { redirectsPlugin } from '@payloadcms/plugin-redirects'
-import { seoPlugin } from '@payloadcms/plugin-seo'
-import { searchPlugin } from '@payloadcms/plugin-search'
-import { Plugin } from 'payload'
-import { revalidateRedirects } from '@/hooks/revalidateRedirects'
-import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
-import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
-import { searchFields } from '@/search/fieldOverrides'
-import { beforeSyncWithSearch } from '@/search/beforeSync'
 
-import { Page, Post } from '@/payload-types'
+import { Plugin } from 'payload'
+import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
+import { seoPlugin } from '@payloadcms/plugin-seo'
+// import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
+// import { searchFields } from '@/search/fieldOverrides'
+// import { searchPlugin } from '@payloadcms/plugin-search'
+// import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+// import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
+// import { redirectsPlugin } from '@payloadcms/plugin-redirects'
+
+// import { revalidateRedirects } from '@/hooks/revalidateRedirects'
+// import { beforeSyncWithSearch } from '@/search/beforeSync'
+
+import { Page, Project } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
-const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
+type Titleable = { title?: string; name?: string }
+
+const generateTitle: GenerateTitle<Titleable> = ({ doc }) => {
   return (doc?.title || doc?.name) ? `${(doc?.title || doc?.name)} | fable-Lab` : 'fable-Lab'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
+const generateURL: GenerateURL<Project | Page> = ({ doc }) => {
   const url = getServerSideURL()
 
   return doc?.slug ? `${url}/${doc.slug}` : url

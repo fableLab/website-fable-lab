@@ -4,20 +4,28 @@ import RichText from '@/components/RichText'
 import { Image } from '../../components/Image'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 
-import type { ContentBlock as ContentBlockProps } from '@/payload-types'
+import type { ImageParagraphBlock as PayloadCMSImageParagraphBlockProps } from '@/payload-types'
+import type { Media as MediaBlock } from '@/payload-types'
 
-import { CMSLink } from '../../components/Link'
+type ImageParagraphBlockProps = {
+  image: MediaBlock
+  title: PayloadCMSImageParagraphBlockProps['title'],
+  body: PayloadCMSImageParagraphBlockProps['body'],
+  buttons: PayloadCMSImageParagraphBlockProps['buttons'],
+  orientation: PayloadCMSImageParagraphBlockProps['orientation'],
+};
 
-export const ImageParagraphBlock: React.FC<ContentBlockProps> = (props) => {
-  const { title, body, image, buttons, orientation } = props
+
+export const ImageParagraphBlock: React.FC<ImageParagraphBlockProps> = ({ title, body, image, buttons, orientation }) => {
   const isImageLeft = orientation === 'left';
 
   return (
     <div className="grid grid-cols-12 gap-6">
       <div
-        className={`col-span-12 lg:col-span-7 ${
-          isImageLeft ? 'order-2 lg:order-2' : 'order-1 lg:order-1'
-        }`}
+        className={cn(
+          "col-span-12 lg:col-span-7",
+          isImageLeft ? "order-2 lg:order-2" : "order-1 lg:order-1"
+        )}
       >
         <h4 className="mb-2">{title}</h4>
         {body && <RichText data={body} enableGutter={false} />}
@@ -28,9 +36,10 @@ export const ImageParagraphBlock: React.FC<ContentBlockProps> = (props) => {
         )}
       </div>
       <div
-        className={`col-span-12 lg:col-span-5 ${
-          isImageLeft ? 'order-1 lg:order-1' : 'order-2 lg:order-2'
-        }`}
+        className={cn(
+          "col-span-12 lg:col-span-5",
+          isImageLeft ? "order-1 lg:order-1" : "order-2 lg:order-2"
+        )}
       >
         {image && (
           <Image

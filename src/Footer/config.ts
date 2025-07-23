@@ -21,13 +21,6 @@ export const Footer: GlobalConfig = {
               fields: [
                 link({ appearances: false }),
               ],
-              maxRows: 6,
-              admin: {
-                initCollapsed: true,
-                components: {
-                  RowLabel: '@/Footer/RowLabel#RowLabel',
-                },
-              },
             },
           ],
         },
@@ -40,13 +33,6 @@ export const Footer: GlobalConfig = {
               fields: [
                 link({ appearances: false }),
               ],
-              maxRows: 6,
-              admin: {
-                initCollapsed: true,
-                components: {
-                  RowLabel: '@/Footer/RowLabel#RowLabel',
-                },
-              },
             },
           ],
         },
@@ -59,13 +45,6 @@ export const Footer: GlobalConfig = {
               fields: [
                 link({ appearances: false }),
               ],
-              maxRows: 6,
-              admin: {
-                initCollapsed: true,
-                components: {
-                  RowLabel: '@/Footer/RowLabel#RowLabel',
-                },
-              },
             },
           ],
         },

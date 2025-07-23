@@ -2,16 +2,14 @@ import React from 'react'
 import Link from "next/link"
 import Image from "next/image"
 
-import type { MediaBlock as MediaBlockProps } from '@/payload-types'
+import type { Media } from '@/payload-types'
 
-type Props = MediaBlockProps
+type ButtonDownloadBlockProps = {
+  media: Media;
+  label: string;
+};
 
-export const ButtonDownloadBlock: React.FC<Props> = (props) => {
-  const {
-    media,
-    label
-  } = props
-
+export const ButtonDownloadBlock: React.FC<ButtonDownloadBlockProps> = ({ media, label }) => {
   const colorAndCursor = media?.url ? "bg-bees-400 hover:bg-bees-200" : "bg-gray-200 cursor-not-allowed pointer-events-none text-red-400"
 
   return (

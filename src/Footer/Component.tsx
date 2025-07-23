@@ -4,9 +4,7 @@ import React from 'react'
 
 import type { Footer } from '@/payload-types'
 
-import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
-import { CMSLink } from '@/components/Link'
-import ScrollToTop from './ScrollToTop.tsx'
+import ScrollToTop from './ScrollToTop'
 
 export const getHrefFromLink = (link: {
   type: string
@@ -43,9 +41,15 @@ export async function Footer() {
         style={zigZagStyle}>
         <ul>
           {
-              leftColumnLinks.map((item) => (
+            leftColumnLinks.map((item) => (
               <li className='mb-2 text-lg' key={item.id}>
-                <Link href={getHrefFromLink(item.link)} className='mb-2 text-lg'>{item.link?.label}</Link>
+                <Link href={
+                  item.link?.type
+                    ? getHrefFromLink(item.link as { type: string })
+                    : "#"
+                } className='mb-2 text-lg'>
+                  {item.link?.label}
+                </Link>
               </li>
             ))
           }
@@ -55,9 +59,15 @@ export async function Footer() {
         style={zigZagStyle}>
         <ul>
           {
-              centerColumnLinks.map((item) => (
+            centerColumnLinks.map((item) => (
               <li className='mb-2 text-lg' key={item.id}>
-                <Link href={getHrefFromLink(item.link)} className='mb-2 text-lg'>{item.link?.label}</Link>
+                <Link href={
+                  item.link?.type
+                    ? getHrefFromLink(item.link as { type: string })
+                    : "#"
+                } className='mb-2 text-lg'>
+                  {item.link?.label}
+                </Link>
               </li>
             ))
           }
@@ -67,9 +77,15 @@ export async function Footer() {
         style={zigZagStyle}>
         <ul>
           {
-              rightColumnLinks.map((item) => (
+            rightColumnLinks.map((item) => (
               <li className='mb-2 text-lg' key={item.id}>
-                <Link href={getHrefFromLink(item.link)} className='mb-2 text-lg'>{item.link?.label}</Link>
+                <Link href={
+                  item.link?.type
+                    ? getHrefFromLink(item.link as { type: string })
+                    : "#"
+                } className='mb-2 text-lg'>
+                  {item.link?.label}
+                </Link>
               </li>
             ))
           }

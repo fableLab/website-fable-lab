@@ -148,36 +148,9 @@ export interface Page {
     | ButtonsBlock
     | LicenseBlock
     | ImageParagraphBlock
-    | {
-        title: string;
-        color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
-        body: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        };
-        image?: (number | null) | Media;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'framecardBlock';
-      }
+    | FrameCardBlock
     | TicketPaperBlock
-    | {
-        color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'dividerBlock';
-      }
+    | DividerBlock
   )[];
   meta?: {
     title?: string | null;
@@ -411,6 +384,33 @@ export interface ImageParagraphBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FrameCardBlock".
+ */
+export interface FrameCardBlock {
+  title: string;
+  color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  image?: (number | null) | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'frameCardBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "TicketPaperBlock".
  */
 export interface TicketPaperBlock {
@@ -433,6 +433,16 @@ export interface TicketPaperBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'ticketPaperBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DividerBlock".
+ */
+export interface DividerBlock {
+  color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'dividerBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -477,6 +487,8 @@ export interface Project {
     | ButtonsBlock
     | LicenseBlock
     | ImageParagraphBlock
+    | FrameCardBlock
+    | DividerBlock
   )[];
   meta?: {
     title?: string | null;
@@ -670,24 +682,9 @@ export interface PagesSelect<T extends boolean = true> {
         buttonsBlock?: T | ButtonsBlockSelect<T>;
         licenseBlock?: T | LicenseBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
-        framecardBlock?:
-          | T
-          | {
-              title?: T;
-              color?: T;
-              body?: T;
-              image?: T;
-              id?: T;
-              blockName?: T;
-            };
+        frameCardBlock?: T | FrameCardBlockSelect<T>;
         ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
-        dividerBlock?:
-          | T
-          | {
-              color?: T;
-              id?: T;
-              blockName?: T;
-            };
+        dividerBlock?: T | DividerBlockSelect<T>;
       };
   meta?:
     | T
@@ -818,11 +815,32 @@ export interface ImageParagraphBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FrameCardBlock_select".
+ */
+export interface FrameCardBlockSelect<T extends boolean = true> {
+  title?: T;
+  color?: T;
+  body?: T;
+  image?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "TicketPaperBlock_select".
  */
 export interface TicketPaperBlockSelect<T extends boolean = true> {
   color?: T;
   body?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DividerBlock_select".
+ */
+export interface DividerBlockSelect<T extends boolean = true> {
+  color?: T;
   id?: T;
   blockName?: T;
 }
@@ -960,6 +978,8 @@ export interface ProjectsSelect<T extends boolean = true> {
         buttonsBlock?: T | ButtonsBlockSelect<T>;
         licenseBlock?: T | LicenseBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
+        frameCardBlock?: T | FrameCardBlockSelect<T>;
+        dividerBlock?: T | DividerBlockSelect<T>;
       };
   meta?:
     | T

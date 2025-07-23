@@ -1,18 +1,13 @@
 import React from 'react'
 
-import type { TextBlock as TextBlockProps } from '@/payload-types'
+import type { LicenseItemBlock as LicenseItemBlockProps } from '@/payload-types'
 
-type Props = TextBlockProps
-
-export const LicenseItemBlock: React.FC<Props> = (props) => {
-  const {
-    title, description
-  } = props
+export const LicenseItemBlock: React.FC<LicenseItemBlockProps> = ({ title, description }) => {
 
   return (
     <div>
-      <h4 className="font-extrabold">{ title }</h4>
-      <p>{ description }</p>
+      <h4 className="font-extrabold">{title}</h4>
+      <p>{description}</p>
     </div>
   )
 }

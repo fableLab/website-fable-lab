@@ -2,12 +2,9 @@ import { cn } from '@/utilities/ui'
 import React from 'react'
 import RichText from '@/components/RichText'
 
-import type { ContentBlock as ContentBlockProps } from '@/payload-types'
+import type { ParagraphBlock as ParagraphBlockProps } from '@/payload-types'
 
-import { CMSLink } from '../../components/Link'
-
-export const ParagraphBlock: React.FC<ContentBlockProps> = (props) => {
-  const { orientation, body } = props
+export const ParagraphBlock: React.FC<ParagraphBlockProps> = ({ orientation, body }) => {
 
   const colsSpanClasses = {
     full: '12',
@@ -17,17 +14,16 @@ export const ParagraphBlock: React.FC<ContentBlockProps> = (props) => {
   }
   const col = colsSpanClasses[orientation]
 
-
   return (
-      <div className="grid grid-cols-12">
-              <div
-                className={cn(`col-span-12 lg:col-span-${col}`, {
-                  'lg:col-start-3': orientation === 'center',
-                  'lg:col-start-5': orientation === 'right'
-                })}
-              >
-                {body && <RichText data={body} enableGutter={false} />}
-              </div>
+    <div className="grid grid-cols-12">
+      <div
+        className={cn(`col-span-12 lg:col-span-${col}`, {
+          'lg:col-start-3': orientation === 'center',
+          'lg:col-start-5': orientation === 'right'
+        })}
+      >
+        {body && <RichText data={body} enableGutter={false} />}
       </div>
+    </div>
   )
 }

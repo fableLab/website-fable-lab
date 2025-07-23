@@ -4,13 +4,11 @@ import {
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
-  BlocksFeature,
   lexicalEditor,
   ParagraphFeature,
   UnorderedListFeature,
   OrderedListFeature,
   AlignFeature,
-  BlockquoteFeature,
   BoldFeature,
   ItalicFeature,
   UnderlineFeature,
@@ -21,7 +19,7 @@ import {
 
 export const TextsPage: GlobalConfig = {
   slug: 'textsPage',
-  labels: {
+  label: {
     plural: 'Texts',
   },
   access: {

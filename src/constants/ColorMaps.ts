@@ -6,7 +6,7 @@ export const primaryColorsMap: Record<ColorsList, string> = {
   violet: 'lavender-400',
   blue: 'azure-800',
   orange: 'cinnabar-500',
-  prune: 'camelot-800',
+  prune: 'camelot-800'
 };
 export const bgPrimaryColorsMap: Record<ColorsList, string> = {
   yellow: 'bg-bees-400',
@@ -72,5 +72,3 @@ export const fillSecondaryColorsMap: Record<ColorsList, string> = {
   orange: 'fill-cinnabar-200',
   prune: 'fill-camelot-700',
 };
-
-

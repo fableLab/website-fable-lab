@@ -1,12 +1,15 @@
 import React from 'react'
 import RichText from '@/components/RichText'
-import type { ContentBlock as ContentBlockProps } from '@/payload-types'
+import type { TicketPaperBlock as PayloadCMSTicketPaperBlockProps } from '@/payload-types'
 import { cn } from "@/utilities/ui"
-import { bgSecondaryColorsMap, fillSecondaryColorsMap } from "@/constants/ColorMaps"
+import { bgSecondaryColorsMap, fillSecondaryColorsMap, ColorsList } from "@/constants/ColorMaps"
 
-export const TicketPaperBlock: React.FC<ContentBlockProps> = (props) => {
-  const { body, color } = props
+type TicketPaperBlockProps = {
+  body: PayloadCMSTicketPaperBlockProps['body'],
+  color: ColorsList
+};
 
+export const TicketPaperBlock: React.FC<TicketPaperBlockProps> = ({ body, color }) => {
 
   return (
     <div className={cn("w-full", fillSecondaryColorsMap[color])}>

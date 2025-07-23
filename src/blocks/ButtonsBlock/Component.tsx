@@ -3,7 +3,7 @@ import React from 'react'
 import type { ButtonsBlock as ButtonsBlockProps } from '@/payload-types'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 
-export const ButtonsBlock: React.FC<Props> = ({ blocks, direction }) => {
+export const ButtonsBlock: React.FC<ButtonsBlockProps> = ({ blocks, direction }) => {
   const isVertical = direction === 'vertical';
 
   return (
@@ -12,7 +12,7 @@ export const ButtonsBlock: React.FC<Props> = ({ blocks, direction }) => {
         isVertical ? 'flex-col' : ''
       }`}
     >
-      <RenderBlocks blocks={blocks} />
+      <RenderBlocks blocks={blocks ?? []} />
     </div>
   );
 }

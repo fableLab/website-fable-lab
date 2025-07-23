@@ -8,7 +8,7 @@ export default function ScrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }}
     >
-      <img src="/arrows/arrow-footer.svg" className="md:w-3/4 2xl:w-1/4 mx-auto" />
+      <img src="/arrows/arrow-footer.svg" className="md:w-3/4 2xl:w-1/4 mx-auto" alt="scroll to the top button" />
       <p className="text-center mt-3">Retour en haut</p>
     </div>
   );

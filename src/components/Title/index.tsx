@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Title: React.FC<Props> = (props) => {
+export const Title: React.FC<{ id?: any, name: string }> = (props) => {
   const {
     id, name
   } = props

@@ -2,12 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import Image from "next/image";
 
-type Props = {
-    label: string
-    url: string
-}
+import type { ButtonLinkBlock as ButtonLinkBlockProps } from '@/payload-types'
 
-export const ButtonLinkBlock: React.FC<Props> = ({ label, url }) => {
+export const ButtonLinkBlock: React.FC<ButtonLinkBlockProps> = ({ label, url }) => {
    return (
     <button>
       <Link className="rounded-full transition duration-200 w-60 group

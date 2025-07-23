@@ -1,13 +1,9 @@
 import { cn } from '@/utilities/ui'
+import type { Media as MediaProps } from '@/payload-types'
 
-export const Image: React.FC<MediaProps> = (props) => {
+export const Image: React.FC<{ media: MediaProps, full?: boolean }> = (props) => {
   const {
-    alt,
-    size,
-    src,
-    loading,
     media,
-    className,
     full
   } = props
 
@@ -15,8 +11,8 @@ export const Image: React.FC<MediaProps> = (props) => {
     <>
       {
         media?.url ?
-          <figure className={cn(full ? 'w-full': 'w-1/2 mx-auto')}>
-            <img src={media?.url} alt={media.alt} className="w-full border-8 border-solid border-lavender-400 rounded-xl"/>
+          <figure className={cn(full ? 'w-full' : 'w-1/2 mx-auto')}>
+            <img src={media?.url} alt={media.alt || ""} className="w-full border-8 border-solid border-lavender-400 rounded-xl" />
             <figcaption className="text-center">{media.alt}</figcaption>
           </figure >
           :

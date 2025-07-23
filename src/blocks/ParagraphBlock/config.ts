@@ -1,17 +1,14 @@
-import type { Block, Field } from 'payload'
-import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
+import type { Block } from 'payload'
 
 import {
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
-  BlocksFeature,
   lexicalEditor,
   ParagraphFeature,
   UnorderedListFeature,
   OrderedListFeature,
   AlignFeature,
-  BlockquoteFeature,
   BoldFeature,
   ItalicFeature,
   UnderlineFeature,

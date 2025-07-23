@@ -7,9 +7,6 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 import type { Header } from '@/payload-types'
 
-import { Logo } from '@/components/Logo/Logo'
-import { HeaderNav } from './Nav'
-
 interface HeaderClientProps {
   data: Header
 }
@@ -62,41 +59,49 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               className="flex-1 h-full border-l-[3px] border-white hidden md:flex items-center justify-center relative"
             >
               <Link
-                href={getHrefFromLink(link.singleLink.link)}
+                href={
+                  link.singleLink?.link
+                    ? getHrefFromLink(link.singleLink?.link as { type: string })
+                    : "#"
+                }
                 className="text-white text-center w-full inline-block py-5 text-2xl"
               >
-                {link.singleLink.link.label}
+                {link.singleLink?.link.label}
               </Link>
             </div>
           ) :
-          <div key={link.id}
-            className="flex-1 h-full border-l-[3px] border-white hidden md:flex justify-center relative"
-          >
-            <Menu>
-              <div className="flex items-center h-full">
-                <MenuButton className="w-full text-white text-center inline-block py-5 text-2xl cursor-pointer">
-                  {link.label}
-                </MenuButton>
-              </div>
+            <div key={link.id}
+              className="flex-1 h-full border-l-[3px] border-white hidden md:flex justify-center relative"
+            >
+              <Menu>
+                <div className="flex items-center h-full">
+                  <MenuButton className="w-full text-white text-center inline-block py-5 text-2xl cursor-pointer">
+                    {link.label}
+                  </MenuButton>
+                </div>
 
-              <MenuItems
-                transition
-                className="absolute left-0 top-full origin-top-right bg-camelot-800 ring-3 ring-white w-full transition focus:outline-none"
-              >
-                {link.listLink?.map((subLink) => (
-                  <Link
-                    href={getHrefFromLink(subLink.link)}
-                    key={subLink.id}
-                    className="w-full block py-5 ring ring-3 ring-white bg-camelot-800 text-white text-center text-2xl"
-                  >
-                    <MenuItem>
-                      <span>{subLink.link?.label}</span>
-                    </MenuItem>
-                  </Link>
-                ))}
-              </MenuItems>
-            </Menu>
-          </div>
+                <MenuItems
+                  transition
+                  className="absolute left-0 top-full origin-top-right bg-camelot-800 ring-3 ring-white w-full transition focus:outline-none"
+                >
+                  {link.listLink?.map((subLink) => (
+                    <Link
+                      href={
+                        subLink?.link
+                          ? getHrefFromLink(subLink?.link as { type: string })
+                          : "#"
+                      }
+                      key={subLink.id}
+                      className="w-full block py-5 ring ring-3 ring-white bg-camelot-800 text-white text-center text-2xl"
+                    >
+                      <MenuItem>
+                        <span>{subLink.link?.label}</span>
+                      </MenuItem>
+                    </Link>
+                  ))}
+                </MenuItems>
+              </Menu>
+            </div>
         )}
       </nav>
     </header>
