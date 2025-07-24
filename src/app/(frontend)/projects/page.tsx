@@ -10,6 +10,7 @@ import { Project } from '@/components/Project'
 export default async function ProjectsPage() {
   const payload = await getPayload({ config: config })
 
+
   const textsPage = await payload.findGlobal({
     slug: 'textsPage', // required
     depth: 1,
@@ -33,7 +34,7 @@ export default async function ProjectsPage() {
         <div className="md:col-span-9 col-span-12">
           <article className="pb-24">
             <Banner title="Nos projets de médiation" color="orange" />
-            <div className="flex flex-col pt-8 px-12 2xl:px-32
+            <div className="flex flex-col pt-8 px-6 md:px-12 2xl:px-32
               [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 [&_p]:text-2xl text-black [&_a]:text-cinnabar-500
               [&_h4]:text-3xl [&_h4]:font-bold">
               <div>
