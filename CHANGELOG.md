@@ -1,5 +1,16 @@
 # Changelog
 
+# [0.45.0](https://github.com/fableLab/website-fable-lab/compare/0.42.0...0.45.0) (2025-07-24)
+
+
+### Features
+
+* **Header:** implement mobile Header menu ([c28077b](https://github.com/fableLab/website-fable-lab/commit/c28077bc4504df794fa02b296117ca720ebadc60))
+* **Header:** implement mobile Header menu ([a4b1349](https://github.com/fableLab/website-fable-lab/commit/a4b1349998506f2e5d86c8cd18aafc5e7be52751))
+* **Members:** I add members component ([a017d57](https://github.com/fableLab/website-fable-lab/commit/a017d5795d7151204bbaa643ecfc896d38795293))
+* **Project:** add project filter links in header ([5075f9b](https://github.com/fableLab/website-fable-lab/commit/5075f9b1b2d09c1fc174c1e054cc324cdcc76953))
+* **Project:** add project filter links in header ([97121b5](https://github.com/fableLab/website-fable-lab/commit/97121b58aa0c2c0812d79a09e83c644b6c9bdbd9))
+
 # [0.44.0](https://github.com/fableLab/website-fable-lab/compare/0.42.0...0.44.0) (2025-07-24)
 
 
