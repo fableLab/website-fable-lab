@@ -6,10 +6,26 @@ import Banner from '@/components/Banner/Banner'
 import RichText from '@/components/RichText'
 import { Title } from '@/components/Title'
 import { Project } from '@/components/Project'
+import { DividerBlock } from '@/blocks/DividerBlock/Component'
 
-export default async function ProjectsPage() {
-  const payload = await getPayload({ config: config })
+// interface PageProps {
+//   searchParams?: {
+//     mediation?: string;
+//   };
+// }
+// export default async function ProjectsPage({ searchParams }: PageProps) {
+//   const payload = await getPayload({ config: config })
+//   const mediationFilter = searchParams?.mediation
 
+type PageProps = {
+  searchParams: Promise<{
+    mediation?: string;
+  }>;
+};
+
+export default async function ProjectsPage({ searchParams: searchParamsPromise }: PageProps) {
+  const payload = await getPayload({ config });
+  const { mediation } = await searchParamsPromise;
 
   const textsPage = await payload.findGlobal({
     slug: 'textsPage', // required
@@ -23,7 +39,14 @@ export default async function ProjectsPage() {
     collection: 'projects',
     depth: 1,
     page: 1,
-    limit: 10
+    limit: 10,
+    ...(mediation ? {
+      where: {
+        mediation: {
+          equals: mediation
+        }
+      }
+    } : {})
   })
 
   return (
@@ -41,7 +64,9 @@ export default async function ProjectsPage() {
                 {textsPage?.projects && <RichText data={textsPage.projects} enableGutter={false} />}
               </div>
 
-              <div className="my-6">
+              <DividerBlock color='orange' className="my-12" />
+
+              <div>
                 <Title name="Tous les projets" />
                 <section className="my-6 columns-1 md:columns-2 2xl:columns-3 gap-12 *:mb-12">
                   {projects.docs.map(project => (
