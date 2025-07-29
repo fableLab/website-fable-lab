@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.45.0](https://github.com/fableLab/website-fable-lab/compare/0.44.0...0.45.0) (2025-07-29)
+
+
+### Features
+
+* **Members:** I add members component ([35d5e56](https://github.com/fableLab/website-fable-lab/commit/35d5e5652f47961f2f7cccbf2506aa35d90c423a))
+
 # [0.44.0](https://github.com/fableLab/website-fable-lab/compare/0.42.0...0.44.0) (2025-07-24)
 
 
