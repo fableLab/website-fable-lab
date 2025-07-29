@@ -1,59 +1,30 @@
-"use client"
-
-import React, { useState, useEffect } from 'react'
+'use client'
+import React, { useState } from 'react'
 import { MemberCard } from '@/components/Member'
 import Banner from '@/components/Banner/Banner'
-import { shuffleArray } from '../../../utilities/shuffle'
 import { Divider } from '@/components/Divider'
+
 import type { Member } from '@/payload-types'
-import { bgSecondaryColorsMap } from '@/constants/ColorMaps'
 
-type MemberWithColor = Member & {
-  bgColor: string;
+export type MemberWithExpanded = Member & {
+  expanded: boolean,
+  position: string,
+  color: string
 }
 
-type ShuffledData = {
-  shuffledMembers: MemberWithColor[]
-  positions: string[]
-}
+import { cn } from '@/utilities/ui'
 
-export default function MembersView({ members }: { members: Member[] }) {
+export default function MembersView({ members: initialMembers }: { members: MemberWithExpanded[] }) {
+  const [members, setMembers] = useState(initialMembers)
 
-  const [expandedMemberId, setExpandedMemberId] = useState<string | number | null>(null)
-  const [shuffledData, setShuffledData] = useState<ShuffledData | null>(null)
-
-  useEffect(() => {
-
-     if (!members || members.length === 0) {
-      return
-    }
-
-
-    const colorValues = Object.values(bgSecondaryColorsMap);
-
-    const membersWithColors = members.map(member => ({
-      ...member,
-      bgColor: colorValues[Math.floor(Math.random() * colorValues.length)],
-    }))
-
-    const shuffledMembers = shuffleArray(membersWithColors)
-
-    const positions = shuffleArray([
-      'col-start-1',
-      'sm:col-start-2',
-      'md:col-start-3',
-      'lg:col-start-4',
-    ])
-    setShuffledData({ shuffledMembers, positions })
-  }, [members])
-
-  const handleToggleExpand = (memberId: string | number) => {
-    setExpandedMemberId(currentId => (currentId === memberId ? null : memberId))
-  }
-
-  if (!shuffledData) {
-    return null
-  }
+  const handleToggleExpand = (memberId: number) => {
+    setMembers(prevMembers =>
+      prevMembers.map(member => ({
+        ...member,
+        expanded: member.id === memberId ? !member.expanded : false
+      }))
+    );
+  };
 
   return (
     <div className="grid grid-cols-12 flex-grow">
@@ -80,33 +51,18 @@ export default function MembersView({ members }: { members: Member[] }) {
 
       {/* Main content */}
       <main className="col-span-12 md:col-span-9 mb-14">
-        <Banner title="Notre équipe" className="bg-lavender-400 mb-14" />
-        <Divider color="yellow" />
+        <Banner title="Notre équipe" color="violet" />
+        <Divider color="yellow" className="mt-8" />
         <div className="flex flex-col px-4 py-16 gap-12 w-full overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-14 w-full">
-            {shuffledData.shuffledMembers.map((member, index) => {
-              const isExpanded = expandedMemberId === member.id
-
-              const positionClass = shuffledData.positions[index % shuffledData.positions.length]
-              // const sizingClasses = isExpanded
-              //   ? 'col-span-full md:col-span-2 lg:col-span-3 z-10'
-              //   : 'col-span-1'
-
-
-
+            {members.map((member) => {
               return (
-                <div key={member.id} id={member.slug} className={`cflex justify-center transition-all duration-500 ${positionClass}`}>
+                <div key={member.id} className={cn('cflex justify-center transition-all', member.position)}>
                   <MemberCard
-                    firstName={member.firstName}
-                    lastName={member.lastName}
-                    photo={member.photo?.url}
-                    role={member.role ?? undefined}
-                    since={member.since ?? undefined}
-                    skills={member.skills ?? undefined}
-                    email={member.email ?? undefined}
-                    isExpanded={isExpanded}
-                    onToggleExpand={() => handleToggleExpand(member.id)}
-                    bgColor={member.bgColor}
+                    member={member}
+                    expanded={member.expanded}
+                    color={member.color}
+                    onClick={() => handleToggleExpand(member.id)}
                   />
                 </div>
               )
@@ -114,7 +70,7 @@ export default function MembersView({ members }: { members: Member[] }) {
           </div>
         </div>
         <Divider color="yellow" />
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }

@@ -525,15 +525,6 @@ export interface Member {
       }[]
     | null;
   email?: string | null;
-  layout?: DividerBlock[] | null;
-  meta?: {
-    title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
   publishedAt?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -1052,18 +1043,6 @@ export interface MembersSelect<T extends boolean = true> {
         id?: T;
       };
   email?: T;
-  layout?:
-    | T
-    | {
-        dividerBlock?: T | DividerBlockSelect<T>;
-      };
-  meta?:
-    | T
-    | {
-        title?: T;
-        image?: T;
-        description?: T;
-      };
   publishedAt?: T;
   slug?: T;
   slugLock?: T;
