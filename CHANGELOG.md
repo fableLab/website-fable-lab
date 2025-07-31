@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.46.0](https://github.com/fableLab/website-fable-lab/compare/0.45.0...0.46.0) (2025-07-31)
+
+
+### Features
+
+* **Home:** add home page ([f488a8c](https://github.com/fableLab/website-fable-lab/commit/f488a8c27eef131518e8c70b1ad9d01e87f36407))
+
 ## [0.45.1](https://github.com/fableLab/website-fable-lab/compare/0.45.0...0.45.1) (2025-07-29)
 
 # [0.45.0](https://github.com/fableLab/website-fable-lab/compare/0.44.0...0.45.0) (2025-07-29)
