@@ -93,4 +93,9 @@ export default buildConfig({
     },
     tasks: [],
   },
+  upload: {
+    limits: {
+      fileSize: 100000000,
+    },
+  },
 })
