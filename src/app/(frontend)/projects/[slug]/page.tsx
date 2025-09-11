@@ -72,7 +72,8 @@ export default async function Project({ params: paramsPromise }: Args) {
           <article className="pb-24">
             <Banner title={project.name} color="orange" />
             <div className="flex flex-col pt-8 px-12 2xl:px-32
-              [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 [&_p]:text-2xl text-black
+              [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 text-black
+              [&_p]:text-2xl [&_li]:text-2xl
               [&_h4]:text-3xl [&_h4]:font-bold">
               <RenderBlocks blocks={blocks} />
             </div>
