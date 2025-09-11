@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.47.0](https://github.com/fableLab/website-fable-lab/compare/0.46.0...0.47.0) (2025-09-11)
+
+
+### Features
+
+* **ZigZagBlock:** implement ZigZagBlock component in PayloadCMS ([1bcd62a](https://github.com/fableLab/website-fable-lab/commit/1bcd62a35eabc6ef7b2f57bc9ffea56eafc154c9))
+
 # [0.46.0](https://github.com/fableLab/website-fable-lab/compare/0.45.0...0.46.0) (2025-07-31)
 
 
