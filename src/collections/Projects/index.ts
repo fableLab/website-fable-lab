@@ -9,6 +9,7 @@ import { TitleBlock } from '../../blocks/TitleBlock/config'
 import { SubTitleBlock } from '../../blocks/SubTitleBlock/config'
 import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 import { LicenseBlock } from '../../blocks/LicenseBlock/config'
+import { ZigZagBlock } from '../../blocks/ZigZagBlock/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -95,7 +96,7 @@ export const Projects: CollectionConfig<'projects'> = {
             {
               name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, DividerBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, DividerBlock, ZigZagBlock],
               required: true,
               admin: {
                 initCollapsed: true,
