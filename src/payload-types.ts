@@ -390,7 +390,7 @@ export interface ImageParagraphBlock {
  * via the `definition` "FrameCardBlock".
  */
 export interface FrameCardBlock {
-  title: string;
+  title?: string | null;
   color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
   body: {
     root: {

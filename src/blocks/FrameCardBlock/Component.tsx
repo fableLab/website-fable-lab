@@ -21,7 +21,7 @@ export const FrameCardBlock: React.FC<FrameCardProps> = ({
   return (
     <div className={`flex flex-col md:flex-row gap-6 border-[6px] p-8 rounded-[22px] w-4/5 m-auto ${borderPrimaryColorsMap[color]}`}>
       <div className={`${image ? 'w-2/3' : 'w-full'} space-y-4`}>
-        <h3 className="font-bold text-2xl text-black">{title}</h3>
+        {title && <h3 className="font-bold text-2xl text-black">{title}</h3>}
         {body && (
           <RichText data={body} enableGutter={false} />
         )}

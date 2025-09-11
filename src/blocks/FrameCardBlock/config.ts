@@ -19,8 +19,7 @@ export const FrameCardBlock: Block = {
   fields: [
     {
       name: 'title',
-      type: 'text',
-      required: true,
+      type: 'text'
     },
     {
       name: 'color',
