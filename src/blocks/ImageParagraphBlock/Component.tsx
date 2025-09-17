@@ -43,8 +43,10 @@ export const ImageParagraphBlock: React.FC<ImageParagraphBlockProps> = ({ title,
       >
         {image && (
           <Image
+            size="xl"
             media={image}
             full={true}
+            borderColor='prune'
           />
         )}
       </div>

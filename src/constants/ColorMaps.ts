@@ -1,4 +1,4 @@
-export type ColorsList = 'yellow' | 'violet' | 'blue' | 'orange' | 'prune';
+export type ColorsList = 'yellow' | 'violet' | 'blue' | 'orange' | 'prune' | 'transparent';
 
 /* Primary Colors Map */
 export const primaryColorsMap: Record<ColorsList, string> = {
@@ -6,7 +6,8 @@ export const primaryColorsMap: Record<ColorsList, string> = {
   violet: 'lavender-400',
   blue: 'azure-800',
   orange: 'cinnabar-500',
-  prune: 'camelot-800'
+  prune: 'camelot-800',
+  transparent: 'transparent'
 };
 export const bgPrimaryColorsMap: Record<ColorsList, string> = {
   yellow: 'bg-bees-400',
@@ -14,6 +15,7 @@ export const bgPrimaryColorsMap: Record<ColorsList, string> = {
   blue: 'bg-azure-800',
   orange: 'bg-cinnabar-500',
   prune: 'bg-camelot-800',
+  transparent: 'bg-transparent'
 };
 
 export const borderPrimaryColorsMap: Record<ColorsList, string> = {
@@ -22,6 +24,7 @@ export const borderPrimaryColorsMap: Record<ColorsList, string> = {
   blue: 'border-azure-800',
   orange: 'border-cinnabar-500',
   prune: 'border-camelot-800',
+  transparent: 'border-transparent'
 };
 
 export const fillPrimaryColorsMap: Record<ColorsList, string> = {
@@ -30,6 +33,7 @@ export const fillPrimaryColorsMap: Record<ColorsList, string> = {
   blue: 'fill-azure-800',
   orange: 'fill-cinnabar-500',
   prune: 'fill-camelot-800',
+  transparent: 'fill-transparent'
 };
 
 export const strokePrimaryColorsMap: Record<ColorsList, string> = {
@@ -38,6 +42,7 @@ export const strokePrimaryColorsMap: Record<ColorsList, string> = {
   blue: 'stroke-azure-800',
   orange: 'stroke-cinnabar-500',
   prune: 'stroke-camelot-800',
+  transparent: 'stroke-transparent'
 };
 
 /* Secondary Colors Map */
@@ -47,6 +52,7 @@ export const secondaryColorsMap: Record<ColorsList, string> = {
   blue: 'azure-100',
   orange: 'cinnabar-200',
   prune: 'camelot-700',
+  transparent: 'stroke-transparent'
 };
 
 export const bgSecondaryColorsMap: Record<ColorsList, string> = {
@@ -55,6 +61,7 @@ export const bgSecondaryColorsMap: Record<ColorsList, string> = {
   blue: 'bg-azure-100',
   orange: 'bg-cinnabar-200',
   prune: 'bg-camelot-700',
+  transparent: 'bg-transparent'
 };
 
 export const borderSecondaryColorsMap: Record<ColorsList, string> = {
@@ -63,6 +70,7 @@ export const borderSecondaryColorsMap: Record<ColorsList, string> = {
   blue: 'border-azure-100',
   orange: 'border-cinnabar-200',
   prune: 'border-camelot-700',
+  transparent: 'border-transparent'
 };
 
 export const fillSecondaryColorsMap: Record<ColorsList, string> = {
@@ -71,4 +79,5 @@ export const fillSecondaryColorsMap: Record<ColorsList, string> = {
   blue: 'fill-azure-100',
   orange: 'fill-cinnabar-200',
   prune: 'fill-camelot-700',
+  transparent: 'fill-transparent'
 };

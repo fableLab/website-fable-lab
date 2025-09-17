@@ -201,6 +201,9 @@ export interface ParagraphBlock {
  */
 export interface ImageBlock {
   media: number | Media;
+  align?: ('left' | 'center' | 'right') | null;
+  size?: ('xs' | 'sm' | 'md' | 'lg' | 'xl') | null;
+  borderColor?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune' | 'transparent') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'imageBlock';
@@ -760,6 +763,9 @@ export interface ParagraphBlockSelect<T extends boolean = true> {
  */
 export interface ImageBlockSelect<T extends boolean = true> {
   media?: T;
+  align?: T;
+  size?: T;
+  borderColor?: T;
   id?: T;
   blockName?: T;
 }
