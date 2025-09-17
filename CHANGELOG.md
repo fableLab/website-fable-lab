@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.50.0](https://github.com/fableLab/website-fable-lab/compare/0.49.1...0.50.0) (2025-09-17)
+
+
+### Features
+
+* **SpacerBlock:** implement spacer ([16a493c](https://github.com/fableLab/website-fable-lab/commit/16a493cc6bbe016c93de9afa1d082d3541c18b94))
+
 ## [0.49.1](https://github.com/fableLab/website-fable-lab/compare/0.49.0...0.49.1) (2025-09-17)
 
 
