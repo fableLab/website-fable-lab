@@ -47,7 +47,6 @@ export const ImageParagraphBlock: Block = {
           InlineToolbarFeature(),
         ],
       }),
-      required: true,
     },
     {
       type: 'blocks',
