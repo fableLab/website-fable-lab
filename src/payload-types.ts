@@ -368,7 +368,7 @@ export interface ImageParagraphBlock {
   title: string;
   orientation?: ('left' | 'right') | null;
   image: number | Media;
-  body: {
+  body?: {
     root: {
       type: string;
       children: {
@@ -382,7 +382,7 @@ export interface ImageParagraphBlock {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   buttons?: ButtonsBlock[] | null;
   id?: string | null;
   blockName?: string | null;
