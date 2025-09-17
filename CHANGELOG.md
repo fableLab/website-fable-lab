@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.49.1](https://github.com/fableLab/website-fable-lab/compare/0.49.0...0.49.1) (2025-09-17)
+
+
+### Bug Fixes
+
+* **ImageParagraph:** remove required body field ([150a260](https://github.com/fableLab/website-fable-lab/commit/150a260c1ded4f76ace67bfc95d3a54d56045403))
+* **Summary:** fix subtitle link bug ([c2b78d4](https://github.com/fableLab/website-fable-lab/commit/c2b78d4367b1032708810ff50cdc0006eb11c75c))
+
 # [0.49.0](https://github.com/fableLab/website-fable-lab/compare/0.47.4...0.49.0) (2025-09-17)
 
 
