@@ -65,14 +65,12 @@ export const MemberCard: React.FC<MemberProps> = ({
         expanded && (
           <div className="mt-6 w-full animate-fade-in text-left">
             <ul className="list-disc list-inside space-y-1 text-lg text-black">
-              {since && <li>depuis {new Date(since).getFullYear()}</li>}
               {role && <li>{role}</li>}
               {skillsText && <li>{skillsText}</li>}
+              {since && <li>depuis {new Date(since).getFullYear()}</li>}
               {email && (
                 <li>
-                  <a href={`${email}`} className="underline hover:text-[#5C1B33]">
-                    {email}
-                  </a>
+                  {email}
                 </li>
               )}
             </ul>
