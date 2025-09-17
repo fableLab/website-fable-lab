@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.49.0](https://github.com/fableLab/website-fable-lab/compare/0.47.4...0.49.0) (2025-09-17)
+
+
+### Features
+
+* **ImageBlock:** add size and border parameters ([15b75b5](https://github.com/fableLab/website-fable-lab/commit/15b75b52fcb690faf2ee118c029a695d74cb1772))
+
 # [0.48.0](https://github.com/fableLab/website-fable-lab/compare/0.47.4...0.48.0) (2025-09-17)
 
 
