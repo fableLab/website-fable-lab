@@ -10,6 +10,7 @@ import { SubTitleBlock } from '../../blocks/SubTitleBlock/config'
 import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 import { LicenseBlock } from '../../blocks/LicenseBlock/config'
 import { ZigZagBlock } from '../../blocks/ZigZagBlock/config'
+import { SpacerBlock } from '../../blocks/SpacerBlock/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -76,7 +77,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock, ZigZagBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock, ZigZagBlock, SpacerBlock],
 
               required: true,
               admin: {
