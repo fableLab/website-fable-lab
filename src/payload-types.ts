@@ -154,6 +154,7 @@ export interface Page {
     | TicketPaperBlock
     | DividerBlock
     | ZigZagBlock
+    | SpacerBlock
   )[];
   meta?: {
     title?: string | null;
@@ -462,6 +463,16 @@ export interface ZigZagBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SpacerBlock".
+ */
+export interface SpacerBlock {
+  size?: ('xs' | 'sm' | 'md' | 'lg' | 'xl') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'spacerBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -506,6 +517,7 @@ export interface Project {
     | FrameCardBlock
     | DividerBlock
     | ZigZagBlock
+    | SpacerBlock
   )[];
   meta?: {
     title?: string | null;
@@ -732,6 +744,7 @@ export interface PagesSelect<T extends boolean = true> {
         ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
         dividerBlock?: T | DividerBlockSelect<T>;
         zigZagBlock?: T | ZigZagBlockSelect<T>;
+        spacerBlock?: T | SpacerBlockSelect<T>;
       };
   meta?:
     | T
@@ -905,6 +918,15 @@ export interface ZigZagBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SpacerBlock_select".
+ */
+export interface SpacerBlockSelect<T extends boolean = true> {
+  size?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
@@ -1040,6 +1062,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         frameCardBlock?: T | FrameCardBlockSelect<T>;
         dividerBlock?: T | DividerBlockSelect<T>;
         zigZagBlock?: T | ZigZagBlockSelect<T>;
+        spacerBlock?: T | SpacerBlockSelect<T>;
       };
   meta?:
     | T

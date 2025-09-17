@@ -18,6 +18,7 @@ import { FrameCardBlock } from './FrameCardBlock/Component'
 import { TicketPaperBlock } from './TicketPaperBlock/Component'
 import { DividerBlock } from './DividerBlock/Component'
 import { ZigZagBlock } from './ZigZagBlock/Component'
+import { SpacerBlock } from './SpacerBlock/Component'
 
 const blockComponents = {
   paragraphBlock: ParagraphBlock,
@@ -36,7 +37,8 @@ const blockComponents = {
   frameCardBlock: FrameCardBlock,
   ticketPaperBlock: TicketPaperBlock,
   dividerBlock: DividerBlock,
-  zigZagBlock: ZigZagBlock
+  zigZagBlock: ZigZagBlock,
+  spacerBlock: SpacerBlock
 }
 
 const marginByBlockType: Record<string, string> = {
