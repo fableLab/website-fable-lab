@@ -11,6 +11,7 @@ import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 import { LicenseBlock } from '../../blocks/LicenseBlock/config'
 import { ZigZagBlock } from '../../blocks/ZigZagBlock/config'
 import { SpacerBlock } from '../../blocks/SpacerBlock/config'
+import { TicketPaperBlock } from '@/blocks/TicketPaperBlock/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -97,7 +98,7 @@ export const Projects: CollectionConfig<'projects'> = {
             {
               name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, DividerBlock, ZigZagBlock, SpacerBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock, ZigZagBlock, SpacerBlock],
               required: true,
               admin: {
                 initCollapsed: true,

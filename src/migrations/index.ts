@@ -3,6 +3,7 @@ import * as migration_20250729_111839_members from './20250729_111839_members';
 import * as migration_20250911_110425_remove_required_title_from_framecard from './20250911_110425_remove_required_title_from_framecard';
 import * as migration_20250917_123404_add_size_and_border_parameters_for_image from './20250917_123404_add_size_and_border_parameters_for_image';
 import * as migration_20250917_145939_create_spacer from './20250917_145939_create_spacer';
+import * as migration_20250918_101348_add_ticket_paper_for_projets from './20250918_101348_add_ticket_paper_for_projets';
 
 export const migrations = [
   {
@@ -28,6 +29,11 @@ export const migrations = [
   {
     up: migration_20250917_145939_create_spacer.up,
     down: migration_20250917_145939_create_spacer.down,
-    name: '20250917_145939_create_spacer'
+    name: '20250917_145939_create_spacer',
+  },
+  {
+    up: migration_20250918_101348_add_ticket_paper_for_projets.up,
+    down: migration_20250918_101348_add_ticket_paper_for_projets.down,
+    name: '20250918_101348_add_ticket_paper_for_projets'
   },
 ];

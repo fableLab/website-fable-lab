@@ -515,6 +515,7 @@ export interface Project {
     | LicenseBlock
     | ImageParagraphBlock
     | FrameCardBlock
+    | TicketPaperBlock
     | DividerBlock
     | ZigZagBlock
     | SpacerBlock
@@ -1060,6 +1061,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         licenseBlock?: T | LicenseBlockSelect<T>;
         imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
         frameCardBlock?: T | FrameCardBlockSelect<T>;
+        ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
         dividerBlock?: T | DividerBlockSelect<T>;
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
