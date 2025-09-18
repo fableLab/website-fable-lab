@@ -366,7 +366,7 @@ export interface LicenseItemBlock {
  * via the `definition` "ImageParagraphBlock".
  */
 export interface ImageParagraphBlock {
-  title: string;
+  title?: string | null;
   orientation?: ('left' | 'right') | null;
   image: number | Media;
   body?: {

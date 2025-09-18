@@ -19,7 +19,6 @@ export const ImageParagraphBlock: Block = {
     {
       name: 'title',
       type: 'text',
-      required: true
     },
     {
       name: 'orientation',
