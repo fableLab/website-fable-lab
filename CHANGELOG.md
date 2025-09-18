@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.51.0](https://github.com/fableLab/website-fable-lab/compare/0.49.1...0.51.0) (2025-09-18)
+
+
+### Bug Fixes
+
+* **ImageParagraph:** remove required title field ([3360ed0](https://github.com/fableLab/website-fable-lab/commit/3360ed04f3128f0a88fb4c25601c8965e39cab78))
+
+
+### Features
+
+* **SpacerBlock:** implement spacer ([4a50414](https://github.com/fableLab/website-fable-lab/commit/4a504142e08ee8950f6ea92e3d40267718049b6c))
+
 # [0.50.0](https://github.com/fableLab/website-fable-lab/compare/0.49.1...0.50.0) (2025-09-17)
 
 
