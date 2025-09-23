@@ -72,6 +72,7 @@ export interface Config {
     users: User;
     projects: Project;
     members: Member;
+    resources: Resource;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -84,6 +85,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     members: MembersSelect<false> | MembersSelect<true>;
+    resources: ResourcesSelect<false> | ResourcesSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -562,6 +564,44 @@ export interface Member {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources".
+ */
+export interface Resource {
+  id: number;
+  name: string;
+  description: string;
+  image: number | Media;
+  blocks: (
+    | ParagraphBlock
+    | ImageBlock
+    | TitleBlock
+    | SubTitleBlock
+    | ButtonsBlock
+    | LicenseBlock
+    | ImageParagraphBlock
+    | FrameCardBlock
+    | TicketPaperBlock
+    | DividerBlock
+    | ZigZagBlock
+    | SpacerBlock
+  )[];
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
@@ -678,6 +718,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'members';
         value: number | Member;
+      } | null)
+    | ({
+        relationTo: 'resources';
+        value: number | Resource;
       } | null)
     | ({
         relationTo: 'payload-jobs';
@@ -1106,6 +1150,44 @@ export interface MembersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources_select".
+ */
+export interface ResourcesSelect<T extends boolean = true> {
+  name?: T;
+  description?: T;
+  image?: T;
+  blocks?:
+    | T
+    | {
+        paragraphBlock?: T | ParagraphBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        titleBlock?: T | TitleBlockSelect<T>;
+        subTitleBlock?: T | SubTitleBlockSelect<T>;
+        buttonsBlock?: T | ButtonsBlockSelect<T>;
+        licenseBlock?: T | LicenseBlockSelect<T>;
+        imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
+        frameCardBlock?: T | FrameCardBlockSelect<T>;
+        ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
+        dividerBlock?: T | DividerBlockSelect<T>;
+        zigZagBlock?: T | ZigZagBlockSelect<T>;
+        spacerBlock?: T | SpacerBlockSelect<T>;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs_select".
  */
 export interface PayloadJobsSelect<T extends boolean = true> {
@@ -1428,6 +1510,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'members';
           value: number | Member;
+        } | null)
+      | ({
+          relationTo: 'resources';
+          value: number | Resource;
         } | null);
     global?: string | null;
     user?: (number | null) | User;

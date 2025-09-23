@@ -4,6 +4,7 @@ import * as migration_20250911_110425_remove_required_title_from_framecard from 
 import * as migration_20250917_123404_add_size_and_border_parameters_for_image from './20250917_123404_add_size_and_border_parameters_for_image';
 import * as migration_20250917_145939_create_spacer from './20250917_145939_create_spacer';
 import * as migration_20250918_101348_add_ticket_paper_for_projets from './20250918_101348_add_ticket_paper_for_projets';
+import * as migration_20250923_080219_create_resources from './20250923_080219_create_resources';
 
 export const migrations = [
   {
@@ -34,6 +35,11 @@ export const migrations = [
   {
     up: migration_20250918_101348_add_ticket_paper_for_projets.up,
     down: migration_20250918_101348_add_ticket_paper_for_projets.down,
-    name: '20250918_101348_add_ticket_paper_for_projets'
+    name: '20250918_101348_add_ticket_paper_for_projets',
+  },
+  {
+    up: migration_20250923_080219_create_resources.up,
+    down: migration_20250923_080219_create_resources.down,
+    name: '20250923_080219_create_resources'
   },
 ];
