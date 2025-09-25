@@ -1,5 +1,13 @@
 # Changelog
 
+# [0.52.0](https://github.com/fableLab/website-fable-lab/compare/0.51.0...0.52.0) (2025-09-25)
+
+
+### Features
+
+* **Resources:** add Resources collection ([8cb1b5d](https://github.com/fableLab/website-fable-lab/commit/8cb1b5d0a8d71d89d58f36e4b97ff20d5007c427))
+* **Resources:** Filters for Resources ([5232452](https://github.com/fableLab/website-fable-lab/commit/52324528b0d1abaa27f33f28e84a4f5346cf92c5))
+
 ## [0.51.1](https://github.com/fableLab/website-fable-lab/compare/0.51.0...0.51.1) (2025-09-18)
 
 # [0.51.0](https://github.com/fableLab/website-fable-lab/compare/0.49.1...0.51.0) (2025-09-18)
