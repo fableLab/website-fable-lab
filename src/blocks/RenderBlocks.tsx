@@ -19,6 +19,7 @@ import { TicketPaperBlock } from './TicketPaperBlock/Component'
 import { DividerBlock } from './DividerBlock/Component'
 import { ZigZagBlock } from './ZigZagBlock/Component'
 import { SpacerBlock } from './SpacerBlock/Component'
+import { YoutubeVideoBlock } from './YoutubeVideoBlock/Component'
 
 const blockComponents = {
   paragraphBlock: ParagraphBlock,
@@ -38,7 +39,8 @@ const blockComponents = {
   ticketPaperBlock: TicketPaperBlock,
   dividerBlock: DividerBlock,
   zigZagBlock: ZigZagBlock,
-  spacerBlock: SpacerBlock
+  spacerBlock: SpacerBlock,
+  youtubeVideoBlock: YoutubeVideoBlock
 }
 
 const marginByBlockType: Record<string, string> = {

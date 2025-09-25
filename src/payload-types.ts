@@ -161,6 +161,7 @@ export interface Page {
     | DividerBlock
     | ZigZagBlock
     | SpacerBlock
+    | YoutubeVideoBlock
   )[];
   meta?: {
     title?: string | null;
@@ -479,6 +480,16 @@ export interface SpacerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "YoutubeVideoBlock".
+ */
+export interface YoutubeVideoBlock {
+  url: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'youtubeVideoBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -525,6 +536,7 @@ export interface Project {
     | DividerBlock
     | ZigZagBlock
     | SpacerBlock
+    | YoutubeVideoBlock
   )[];
   meta?: {
     title?: string | null;
@@ -607,6 +619,7 @@ export interface Resource {
     | DividerBlock
     | ZigZagBlock
     | SpacerBlock
+    | YoutubeVideoBlock
   )[];
   meta?: {
     title?: string | null;
@@ -842,6 +855,7 @@ export interface PagesSelect<T extends boolean = true> {
         dividerBlock?: T | DividerBlockSelect<T>;
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
+        youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
       };
   meta?:
     | T
@@ -1024,6 +1038,15 @@ export interface SpacerBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "YoutubeVideoBlock_select".
+ */
+export interface YoutubeVideoBlockSelect<T extends boolean = true> {
+  url?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
@@ -1161,6 +1184,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         dividerBlock?: T | DividerBlockSelect<T>;
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
+        youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
       };
   meta?:
     | T
@@ -1228,6 +1252,7 @@ export interface ResourcesSelect<T extends boolean = true> {
         dividerBlock?: T | DividerBlockSelect<T>;
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
+        youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
       };
   meta?:
     | T
