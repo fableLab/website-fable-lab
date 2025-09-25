@@ -3,8 +3,19 @@ import { ButtonsBlock } from '../../blocks/ButtonsBlock/config'
 
 import {
   FixedToolbarFeature,
+  HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
+  ParagraphFeature,
+  UnorderedListFeature,
+  OrderedListFeature,
+  AlignFeature,
+  BoldFeature,
+  ItalicFeature,
+  UnderlineFeature,
+  StrikethroughFeature,
+  InlineCodeFeature,
+  IndentFeature,
 } from '@payloadcms/richtext-lexical'
 
 export const ImageParagraphBlock: Block = {
@@ -42,8 +53,19 @@ export const ImageParagraphBlock: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
           ...rootFeatures,
+          HeadingFeature({ enabledHeadingSizes: ['h4'] }),
           FixedToolbarFeature(),
           InlineToolbarFeature(),
+          ParagraphFeature(),////
+          UnorderedListFeature(),
+          OrderedListFeature(),
+          AlignFeature(),
+          BoldFeature(),
+          ItalicFeature(),
+          UnderlineFeature(),
+          StrikethroughFeature(),
+          InlineCodeFeature(),
+          IndentFeature(),
         ],
       }),
     },
