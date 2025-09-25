@@ -29,14 +29,8 @@ export async function generateStaticParams() {
     },
   })
 
-  // const params = resources.docs.map(({ slug }) => {
-  //   return { slug }
-  // })
-
   const params = resources.docs.map(({ slug }) => {
     if (typeof slug === 'string') return { slug }
-    //if (slug && typeof slug.current === 'string') return { slug: slug.current }
-    //return { slug: '' }
   })
 
   return params

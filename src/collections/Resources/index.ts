@@ -81,6 +81,65 @@ export const Resources: CollectionConfig<'resources'> = {
       required: true,
     },
     {
+      name: 'creators',
+      label: 'creators',
+      type: 'select',
+      hasMany: true,
+      options: [
+        { value: 'fable-Lab', label: 'fable-Lab' },
+        { value: 'external', label: 'external' }
+      ],
+      required: true,
+      defaultValue: 'fable-Lab'
+    },
+    {
+      name: 'needs',
+      type: 'select',
+      hasMany: true,
+      admin: {
+        isClearable: true,
+      },
+      options: [
+        { label: 'Accompagner', value: 'Accompagner' },
+        { label: 'Animer un atelier', value: 'Animer un atelier' },
+        { label: 'Animer une formation', value: 'Animer une formation' },
+        { label: 'Apprendre une langue', value: 'Apprendre une langue' },
+        { label: 'Communiquer', value: 'Communiquer' },
+        { label: 'Écrire', value: 'Écrire' },
+        { label: 'Fabriquer', value: 'Fabriquer' },
+        { label: 'Se former', value: 'Se former' },
+        { label: 'S’informer', value: 'S’informer' },
+        { label: 'Sensibiliser', value: 'Sensibiliser' },
+        { label: 'Traduire', value: 'Traduire' },
+      ],
+    },
+    {
+      name: 'linguistics',
+      type: 'select',
+      hasMany: true,
+      admin: {
+        isClearable: true,
+      },
+      options: [
+        { label: 'Analphabétisme', value: 'Analphabétisme' },
+        { label: 'Illettrisme', value: 'Illettrisme' },
+        { label: 'Langage clair', value: 'Langage clair' },
+        { label: 'Multilingue', value: 'Multilingue' },
+      ],
+    },
+    {
+      name: 'languages',
+      type: 'relationship',
+      relationTo: 'languages',
+      hasMany: true
+    },
+    {
+      name: 'categories',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: true
+    },
+    {
       type: 'tabs',
       tabs: [
         {

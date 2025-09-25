@@ -73,6 +73,8 @@ export interface Config {
     projects: Project;
     members: Member;
     resources: Resource;
+    languages: Language;
+    categories: Category;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -86,6 +88,8 @@ export interface Config {
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     members: MembersSelect<false> | MembersSelect<true>;
     resources: ResourcesSelect<false> | ResourcesSelect<true>;
+    languages: LanguagesSelect<false> | LanguagesSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -571,6 +575,25 @@ export interface Resource {
   name: string;
   description: string;
   image: number | Media;
+  creators: ('fable-Lab' | 'external')[];
+  needs?:
+    | (
+        | 'Accompagner'
+        | 'Animer un atelier'
+        | 'Animer une formation'
+        | 'Apprendre une langue'
+        | 'Communiquer'
+        | 'Écrire'
+        | 'Fabriquer'
+        | 'Se former'
+        | 'S’informer'
+        | 'Sensibiliser'
+        | 'Traduire'
+      )[]
+    | null;
+  linguistics?: ('Analphabétisme' | 'Illettrisme' | 'Langage clair' | 'Multilingue')[] | null;
+  languages?: (number | Language)[] | null;
+  categories?: (number | Category)[] | null;
   blocks: (
     | ParagraphBlock
     | ImageBlock
@@ -599,6 +622,27 @@ export interface Resource {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "languages".
+ */
+export interface Language {
+  id: number;
+  name: string;
+  code: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: number;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -722,6 +766,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'resources';
         value: number | Resource;
+      } | null)
+    | ({
+        relationTo: 'languages';
+        value: number | Language;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: number | Category;
       } | null)
     | ({
         relationTo: 'payload-jobs';
@@ -1156,6 +1208,11 @@ export interface ResourcesSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   image?: T;
+  creators?: T;
+  needs?: T;
+  linguistics?: T;
+  languages?: T;
+  categories?: T;
   blocks?:
     | T
     | {
@@ -1185,6 +1242,25 @@ export interface ResourcesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "languages_select".
+ */
+export interface LanguagesSelect<T extends boolean = true> {
+  name?: T;
+  code?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
