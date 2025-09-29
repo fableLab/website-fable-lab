@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.53.0](https://github.com/fableLab/website-fable-lab/compare/0.52.1...0.53.0) (2025-09-29)
+
+
+### Features
+
+* **YoutubeVideoBlock:** implement YoutubeVideoBlock ([e6e645b](https://github.com/fableLab/website-fable-lab/commit/e6e645bdb6b847aab0e364237fba268b4c3a0323))
+
 ## [0.52.1](https://github.com/fableLab/website-fable-lab/compare/0.52.0...0.52.1) (2025-09-25)
 
 # [0.52.0](https://github.com/fableLab/website-fable-lab/compare/0.51.0...0.52.0) (2025-09-25)
