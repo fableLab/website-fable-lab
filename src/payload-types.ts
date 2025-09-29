@@ -634,6 +634,7 @@ export interface Resource {
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1265,6 +1266,7 @@ export interface ResourcesSelect<T extends boolean = true> {
   slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1609,6 +1611,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'members';
           value: number | Member;
+        } | null)
+      | ({
+          relationTo: 'resources';
+          value: number | Resource;
         } | null);
     global?: string | null;
     user?: (number | null) | User;
