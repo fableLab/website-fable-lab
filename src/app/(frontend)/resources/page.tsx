@@ -7,8 +7,14 @@ export default async function ResourcesPage() {
 
   const resources = await payload.find({
     collection: 'resources',
+    draft: false,
     depth: 1,
     limit: 100,
+    where: {
+      _status: {
+        equals: 'published'
+      }
+    },
     select: { slug: true, name: true, image: true, needs: true, linguistics: true, languages: true, categories: true, creators: true },
   });
 

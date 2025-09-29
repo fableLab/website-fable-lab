@@ -39,7 +39,12 @@ export default async function ProjectsPage({ searchParams: searchParamsPromise }
     collection: 'projects',
     depth: 1,
     page: 1,
-    limit: 10,
+    limit: 20,
+    where: {
+      _status: {
+        equals: 'published'
+      }
+    },
     ...(mediation ? {
       where: {
         mediation: {
