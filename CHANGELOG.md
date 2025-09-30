@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.54.0](https://github.com/fableLab/website-fable-lab/compare/0.53.1...0.54.0) (2025-09-30)
+
+
+### Features
+
+* **GridBlock:** implement GridBlock ([f45d0be](https://github.com/fableLab/website-fable-lab/commit/f45d0be6407a515b1a651f8aab3d59aa09e7c3fa))
+
 ## [0.53.1](https://github.com/fableLab/website-fable-lab/compare/0.53.0...0.53.1) (2025-09-30)
 
 # [0.53.0](https://github.com/fableLab/website-fable-lab/compare/0.52.1...0.53.0) (2025-09-29)
