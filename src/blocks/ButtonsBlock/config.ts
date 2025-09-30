@@ -1,6 +1,7 @@
 import type { Block } from 'payload'
 import { ButtonDownloadBlock } from '../../blocks/ButtonDownloadBlock/config'
 import { ButtonLinkBlock } from '../../blocks/ButtonLinkBlock/config'
+import { ButtonDownloadCloudBlock } from '../../blocks/ButtonDownloadCloudBlock/config'
 
 export const ButtonsBlock: Block = {
   slug: 'buttonsBlock',
@@ -16,15 +17,15 @@ export const ButtonsBlock: Block = {
       type: 'radio',
       label: 'Orientation',
       defaultValue: 'horizontal',
-       options: [
-         { value: 'horizontal', label: 'horizontal' },
-         { value: 'vertical', label: 'vertical' },
-     ],
+      options: [
+        { value: 'horizontal', label: 'horizontal' },
+        { value: 'vertical', label: 'vertical' },
+      ],
     },
     {
       type: 'blocks',
       label: 'buttons',
-      blocks: [ButtonDownloadBlock, ButtonLinkBlock],
+      blocks: [ButtonDownloadCloudBlock, ButtonDownloadBlock, ButtonLinkBlock],
       name: 'blocks'
     }
   ],

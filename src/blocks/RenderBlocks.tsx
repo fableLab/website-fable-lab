@@ -8,6 +8,7 @@ import { ImageBlock } from '@/blocks/ImageBlock/Component'
 import { TitleBlock } from '@/blocks/TitleBlock/Component'
 import { SubTitleBlock } from '@/blocks/SubTitleBlock/Component'
 import { ButtonDownloadBlock } from '@/blocks/ButtonDownloadBlock/Component'
+import { ButtonDownloadCloudBlock } from '@/blocks/ButtonDownloadCloudBlock/Component'
 import { ButtonsBlock } from '@/blocks/ButtonsBlock/Component'
 import { LicenseBlock } from '@/blocks/LicenseBlock/Component'
 import { LicenseItemBlock } from '@/blocks/LicenseItemBlock/Component'
@@ -45,7 +46,8 @@ const blockComponents = {
   spacerBlock: SpacerBlock,
   youtubeVideoBlock: YoutubeVideoBlock,
   gridBlock: GridBlock,
-  cardBlock: CardBlock
+  cardBlock: CardBlock,
+  buttonDownloadCloudBlock: ButtonDownloadCloudBlock
 }
 
 const marginByBlockType: Record<string, string> = {

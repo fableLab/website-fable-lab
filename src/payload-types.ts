@@ -321,10 +321,21 @@ export interface SubTitleBlock {
  */
 export interface ButtonsBlock {
   direction?: ('horizontal' | 'vertical') | null;
-  blocks?: (ButtonDownloadBlock | ButtonLinkBlock)[] | null;
+  blocks?: (ButtonDownloadCloudBlock | ButtonDownloadBlock | ButtonLinkBlock)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'buttonsBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ButtonDownloadCloudBlock".
+ */
+export interface ButtonDownloadCloudBlock {
+  label: string;
+  url: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'buttonDownloadCloudBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -964,9 +975,20 @@ export interface ButtonsBlockSelect<T extends boolean = true> {
   blocks?:
     | T
     | {
+        buttonDownloadCloudBlock?: T | ButtonDownloadCloudBlockSelect<T>;
         buttonDownloadBlock?: T | ButtonDownloadBlockSelect<T>;
         buttonLinkBlock?: T | ButtonLinkBlockSelect<T>;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ButtonDownloadCloudBlock_select".
+ */
+export interface ButtonDownloadCloudBlockSelect<T extends boolean = true> {
+  label?: T;
+  url?: T;
   id?: T;
   blockName?: T;
 }
