@@ -14,7 +14,7 @@ export default function Summary() {
   const [items, setItems] = useState<itemType[]>([]);
 
   useEffect(() => {
-    const headings = Array.from(document.querySelectorAll('h2[data-summary-visible], h3[data-summary-visible]'));
+    const headings = Array.from(document.querySelectorAll('h2[data-summary-visible], h3[data-summary-visible], h4[data-summary-visible]'));
 
     const newItems: itemType[] = headings.map((h) => ({
       id: h.getAttribute('id') || undefined,
@@ -31,7 +31,8 @@ export default function Summary() {
       <h3 className="text-xl underline ms-8 mb-2">Sommaire</h3>
       <ol className="list-none border-x border-t border-camelot-700 text-xl overflow-auto max-h-[65vh]">
         {items.map((item, index) => (
-          <li key={index} className={cn("border-b border-camelot-700 ", item.level === 'h2' ? "py-2 px-8 font-bold" : "py-2 ps-12 pe-8")}>
+          <li key={index} className={cn("border-b border-camelot-700 py-2 pe-8",
+            item.level === 'h2' && "px-8 font-bold", item.level === 'h3' && "ps-12", item.level === 'h4' && "ps-16")}>
             <Link href={`#${item.id}`}>{item.name}</Link>
           </li>
         ))}

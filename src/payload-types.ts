@@ -301,6 +301,8 @@ export interface Media {
  */
 export interface TitleBlock {
   name: string;
+  level?: ('h2' | 'h3' | 'h4') | null;
+  zigZag?: boolean | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'titleBlock';
@@ -954,6 +956,8 @@ export interface ImageBlockSelect<T extends boolean = true> {
  */
 export interface TitleBlockSelect<T extends boolean = true> {
   name?: T;
+  level?: T;
+  zigZag?: T;
   id?: T;
   blockName?: T;
 }

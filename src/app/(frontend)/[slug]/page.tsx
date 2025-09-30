@@ -73,7 +73,7 @@ export default async function Page({ params: paramsPromise }: Args) {
             {draft && <LivePreviewListener />}
             <div className="flex flex-col pt-8 px-6 md:px-12 2xl:px-32
             [&_h2]:text-camelot-800 [&_h3]:text-camelot-800 [&_h4]:text-camelot-800 [&_strong]:text-camelot-800  text-camelot-800
-            [&_p]:text-2xl [&_li]:text-2xl [&_h4]:text-3xl [&_h4]:font-bold">
+            [&_p]:text-2xl [&_li]:text-2xl [&_h2]:text-4xl [&_h3]:text-3xl [&_h4]:text-2xl [&_h4]:font-bold">
               <RenderBlocks blocks={blocks} />
             </div>
           </article>

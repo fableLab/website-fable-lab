@@ -68,7 +68,7 @@ export default async function Resource({ params: paramsPromise }: Args) {
             <div className="flex flex-col pt-8 px-12 2xl:px-32
               [&_h2]:text-azure-800 [&_h3]:text-azure-800 [&_h4]:text-azure-800 text-black
               [&_p]:text-2xl [&_li]:text-2xl
-              [&_h4]:text-3xl [&_h4]:font-bold">
+              [&_h2]:text-4xl [&_h3]:text-3xl [&_h4]:text-2xl [&_h4]:font-bold">
               <RenderBlocks blocks={blocks} />
             </div>
           </article>
