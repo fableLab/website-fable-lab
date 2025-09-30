@@ -70,6 +70,13 @@ export default function MembersView({ members: initialMembers }: { members: Memb
           </div>
         </div>
         <Divider color="yellow" />
+        <div className='text-2xl py-8 px-16'>
+          <p>fable-Lab est composée d’une équipe pluridisciplinaire et multiforme.</p>
+          <p>Nous rassemblons salariés et salariées, administrateurices, bénévoles et autres collaborateurices engagés.</p>
+          <p>
+            Nous avons aussi la chance d’avoir autour de nous Aicha Kouriche, Anne-Solène Chevallier, Benoit Petiet, Berivan Issa, Céleste Baudot, Damiane Pestre, Doïna Buruiana, Lucia Gentile, Malo Mofakhami, Marco Agellon, Margot Mouchet, Marie-Claude Oriol, Mounia El Kotni, Noé Gasparini, Noor Daoudi-Dramé, Saria Chémali, Suliman Abdelgadeir.
+          </p>
+        </div>
       </main >
     </div >
   )
