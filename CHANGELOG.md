@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.56.0](https://github.com/fableLab/website-fable-lab/compare/0.55.0...0.56.0) (2025-09-30)
+
+
+### Features
+
+* **Title:** implement multiple levels for Title ([af509f4](https://github.com/fableLab/website-fable-lab/commit/af509f4052b7a0e8d6fe3efffd8f9da4e64187bd))
+
 # [0.55.0](https://github.com/fableLab/website-fable-lab/compare/0.54.0...0.55.0) (2025-09-30)
 
 
