@@ -35,7 +35,7 @@ export const ImageBlock: Block = {
         { label: 'small', value: 'sm' },
         { label: 'medium', value: 'md' },
         { label: 'large', value: 'lg' },
-        { label: 'extra-large', value: 'xl' }
+        { label: 'extra-large', value: 'xl' },
       ],
       defaultValue: 'md'
     },
@@ -53,5 +53,9 @@ export const ImageBlock: Block = {
       ],
       defaultValue: 'prune'
     },
+    {
+      name: 'link',
+      type: 'text',
+    }
   ],
 }

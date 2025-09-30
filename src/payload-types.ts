@@ -162,6 +162,7 @@ export interface Page {
     | ZigZagBlock
     | SpacerBlock
     | YoutubeVideoBlock
+    | GridBlock
   )[];
   meta?: {
     title?: string | null;
@@ -212,6 +213,7 @@ export interface ImageBlock {
   align?: ('left' | 'center' | 'right') | null;
   size?: ('xs' | 'sm' | 'md' | 'lg' | 'xl') | null;
   borderColor?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune' | 'transparent') | null;
+  link?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'imageBlock';
@@ -490,6 +492,44 @@ export interface YoutubeVideoBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GridBlock".
+ */
+export interface GridBlock {
+  blocks?: (ImageBlock | CardBlock)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'gridBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CardBlock".
+ */
+export interface CardBlock {
+  color: 'yellow' | 'violet' | 'blue' | 'orange' | 'prune';
+  textColor?: ('black' | 'white' | 'yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  borderColor?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  link?: string | null;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'cardBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -537,6 +577,7 @@ export interface Project {
     | ZigZagBlock
     | SpacerBlock
     | YoutubeVideoBlock
+    | GridBlock
   )[];
   meta?: {
     title?: string | null;
@@ -620,6 +661,7 @@ export interface Resource {
     | ZigZagBlock
     | SpacerBlock
     | YoutubeVideoBlock
+    | GridBlock
   )[];
   meta?: {
     title?: string | null;
@@ -856,6 +898,7 @@ export interface PagesSelect<T extends boolean = true> {
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
         youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
+        gridBlock?: T | GridBlockSelect<T>;
       };
   meta?:
     | T
@@ -890,6 +933,7 @@ export interface ImageBlockSelect<T extends boolean = true> {
   align?: T;
   size?: T;
   borderColor?: T;
+  link?: T;
   id?: T;
   blockName?: T;
 }
@@ -1047,6 +1091,33 @@ export interface YoutubeVideoBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GridBlock_select".
+ */
+export interface GridBlockSelect<T extends boolean = true> {
+  blocks?:
+    | T
+    | {
+        imageBlock?: T | ImageBlockSelect<T>;
+        cardBlock?: T | CardBlockSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CardBlock_select".
+ */
+export interface CardBlockSelect<T extends boolean = true> {
+  color?: T;
+  textColor?: T;
+  borderColor?: T;
+  link?: T;
+  body?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
@@ -1185,6 +1256,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
         youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
+        gridBlock?: T | GridBlockSelect<T>;
       };
   meta?:
     | T
@@ -1253,6 +1325,7 @@ export interface ResourcesSelect<T extends boolean = true> {
         zigZagBlock?: T | ZigZagBlockSelect<T>;
         spacerBlock?: T | SpacerBlockSelect<T>;
         youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
+        gridBlock?: T | GridBlockSelect<T>;
       };
   meta?:
     | T

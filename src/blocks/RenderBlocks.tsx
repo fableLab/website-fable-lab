@@ -20,6 +20,9 @@ import { DividerBlock } from './DividerBlock/Component'
 import { ZigZagBlock } from './ZigZagBlock/Component'
 import { SpacerBlock } from './SpacerBlock/Component'
 import { YoutubeVideoBlock } from './YoutubeVideoBlock/Component'
+import { GridBlock } from './GridBlock/Component'
+import { CardBlock } from './CardBlock/Component'
+
 
 const blockComponents = {
   paragraphBlock: ParagraphBlock,
@@ -40,7 +43,9 @@ const blockComponents = {
   dividerBlock: DividerBlock,
   zigZagBlock: ZigZagBlock,
   spacerBlock: SpacerBlock,
-  youtubeVideoBlock: YoutubeVideoBlock
+  youtubeVideoBlock: YoutubeVideoBlock,
+  gridBlock: GridBlock,
+  cardBlock: CardBlock
 }
 
 const marginByBlockType: Record<string, string> = {
@@ -49,6 +54,7 @@ const marginByBlockType: Record<string, string> = {
   licenseItemBlock: "mb-4",
   buttonLinkBlock: "",
   buttonDownloadBlock: "",
+  gridBlock: ""
 };
 
 export const RenderBlocks: React.FC<{

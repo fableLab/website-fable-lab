@@ -81,3 +81,15 @@ export const fillSecondaryColorsMap: Record<ColorsList, string> = {
   prune: 'fill-camelot-700',
   transparent: 'fill-transparent'
 };
+
+export type TextColorsList = 'yellow' | 'violet' | 'blue' | 'orange' | 'prune' | 'white' | 'black';
+
+export const textColorsMap: Record<TextColorsList, string> = {
+  yellow: 'text-bees-400',
+  violet: 'text-lavender-400',
+  blue: 'text-azure-800',
+  orange: 'text-cinnabar-500',
+  prune: 'text-camelot-800',
+  white: 'text-white',
+  black: 'text-black'
+};

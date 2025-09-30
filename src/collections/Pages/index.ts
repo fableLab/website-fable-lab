@@ -12,6 +12,7 @@ import { LicenseBlock } from '../../blocks/LicenseBlock/config'
 import { ZigZagBlock } from '../../blocks/ZigZagBlock/config'
 import { SpacerBlock } from '../../blocks/SpacerBlock/config'
 import { YoutubeVideoBlock } from '../../blocks/YoutubeVideoBlock/config'
+import { GridBlock } from '@/blocks/GridBlock/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -78,7 +79,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'blocks',
               type: 'blocks',
-              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock, ZigZagBlock, SpacerBlock, YoutubeVideoBlock],
+              blocks: [ParagraphBlock, ImageBlock, TitleBlock, SubTitleBlock, ButtonsBlock, LicenseBlock, ImageParagraphBlock, FrameCardBlock, TicketPaperBlock, DividerBlock, ZigZagBlock, SpacerBlock, YoutubeVideoBlock, GridBlock],
 
               required: true,
               admin: {

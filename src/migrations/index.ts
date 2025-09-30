@@ -7,6 +7,7 @@ import * as migration_20250918_101348_add_ticket_paper_for_projets from './20250
 import * as migration_20250923_080219_create_resources from './20250923_080219_create_resources';
 import * as migration_20250925_132148_add_filters_for_resources from './20250925_132148_add_filters_for_resources';
 import * as migration_20250925_143858_add_youtube_video_block from './20250925_143858_add_youtube_video_block';
+import * as migration_20250930_085047_create_grid_block from './20250930_085047_create_grid_block';
 
 export const migrations = [
   {
@@ -52,6 +53,11 @@ export const migrations = [
   {
     up: migration_20250925_143858_add_youtube_video_block.up,
     down: migration_20250925_143858_add_youtube_video_block.down,
-    name: '20250925_143858_add_youtube_video_block'
+    name: '20250925_143858_add_youtube_video_block',
+  },
+  {
+    up: migration_20250930_085047_create_grid_block.up,
+    down: migration_20250930_085047_create_grid_block.down,
+    name: '20250930_085047_create_grid_block'
   },
 ];
