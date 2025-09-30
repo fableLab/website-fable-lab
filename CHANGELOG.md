@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.55.0](https://github.com/fableLab/website-fable-lab/compare/0.54.0...0.55.0) (2025-09-30)
+
+
+### Features
+
+* **ButtonDownloadCloud:** implement ButtonDownloadCloud ([cf4b6dc](https://github.com/fableLab/website-fable-lab/commit/cf4b6dc270cfb405d50603951300586c4c7ca9be))
+
 # [0.54.0](https://github.com/fableLab/website-fable-lab/compare/0.53.1...0.54.0) (2025-09-30)
 
 
