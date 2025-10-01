@@ -56,7 +56,7 @@ const marginByBlockType: Record<string, string> = {
   licenseItemBlock: "mb-4",
   buttonLinkBlock: "",
   buttonDownloadBlock: "",
-  gridBlock: ""
+  buttonDownloadCloudBlock: "",
 };
 
 export const RenderBlocks: React.FC<{

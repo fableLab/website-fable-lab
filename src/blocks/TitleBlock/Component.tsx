@@ -1,8 +1,9 @@
 import React from 'react'
 import type { TitleBlock as TitleBlockProps } from '@/payload-types'
-import { strokePrimaryColorsMap, ColorsList } from "@/constants/ColorMaps"
+import { Align } from "@/components/Align"
 
-export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag }) => {
+
+export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag, align }) => {
   const renderTitle = () => {
     switch (level) {
       case "h3":
@@ -53,7 +54,9 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag }) =
   return (
     <div className="flex items-center">
       <div className="flex-1">
-        {renderTitle()}
+        <Align orientation={align}>
+          {renderTitle()}
+        </Align>
       </div>
     </div>
   );

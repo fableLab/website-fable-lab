@@ -26,6 +26,17 @@ export const TitleBlock: Block = {
       defaultValue: 'h2'
     },
     {
+      name: 'align',
+      type: 'select',
+      label: 'Align',
+      options: [
+        { label: 'left', value: 'left' },
+        { label: 'center', value: 'center' },
+        { label: 'right', value: 'right' },
+        { label: 'full', value: 'full' },
+      ],
+    },
+    {
       name: 'zigZag',
       type: 'checkbox',
       label: 'zigZag'

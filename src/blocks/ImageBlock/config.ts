@@ -20,9 +20,10 @@ export const ImageBlock: Block = {
       type: 'select',
       label: 'Align',
       options: [
-        { label: 'gauche', value: 'left' },
+        { label: 'left', value: 'left' },
         { label: 'center', value: 'center' },
         { label: 'right', value: 'right' },
+        { label: 'full', value: 'full' }
       ],
       defaultValue: 'center'
     },
@@ -35,7 +36,7 @@ export const ImageBlock: Block = {
         { label: 'small', value: 'sm' },
         { label: 'medium', value: 'md' },
         { label: 'large', value: 'lg' },
-        { label: 'extra-large', value: 'xl' },
+        { label: 'full', value: 'xl' },
       ],
       defaultValue: 'md'
     },

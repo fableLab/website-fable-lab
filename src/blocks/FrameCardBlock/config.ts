@@ -35,6 +35,18 @@ export const FrameCardBlock: Block = {
       defaultValue: 'prune'
     },
     {
+      name: 'align',
+      type: 'select',
+      label: 'Align',
+      options: [
+        { label: 'left', value: 'left' },
+        { label: 'center', value: 'center' },
+        { label: 'right', value: 'right' },
+        { label: 'full', value: 'full' }
+      ],
+      defaultValue: 'center'
+    },
+    {
       name: 'body',
       type: 'richText',
       editor: lexicalEditor({

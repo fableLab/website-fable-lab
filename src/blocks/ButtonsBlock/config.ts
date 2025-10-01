@@ -23,6 +23,18 @@ export const ButtonsBlock: Block = {
       ],
     },
     {
+      name: 'align',
+      type: 'select',
+      label: 'Align',
+      options: [
+        { label: 'left', value: 'left' },
+        { label: 'center', value: 'center' },
+        { label: 'right', value: 'right' },
+        { label: 'full', value: 'full' }
+      ],
+      defaultValue: 'full'
+    },
+    {
       type: 'blocks',
       label: 'buttons',
       blocks: [ButtonDownloadCloudBlock, ButtonDownloadBlock, ButtonLinkBlock],

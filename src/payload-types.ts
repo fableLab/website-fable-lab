@@ -210,7 +210,7 @@ export interface ParagraphBlock {
  */
 export interface ImageBlock {
   media: number | Media;
-  align?: ('left' | 'center' | 'right') | null;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
   size?: ('xs' | 'sm' | 'md' | 'lg' | 'xl') | null;
   borderColor?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune' | 'transparent') | null;
   link?: string | null;
@@ -302,6 +302,7 @@ export interface Media {
 export interface TitleBlock {
   name: string;
   level?: ('h2' | 'h3' | 'h4') | null;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
   zigZag?: boolean | null;
   id?: string | null;
   blockName?: string | null;
@@ -323,6 +324,7 @@ export interface SubTitleBlock {
  */
 export interface ButtonsBlock {
   direction?: ('horizontal' | 'vertical') | null;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
   blocks?: (ButtonDownloadCloudBlock | ButtonDownloadBlock | ButtonLinkBlock)[] | null;
   id?: string | null;
   blockName?: string | null;
@@ -418,6 +420,7 @@ export interface ImageParagraphBlock {
 export interface FrameCardBlock {
   title?: string | null;
   color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
   body: {
     root: {
       type: string;
@@ -444,6 +447,7 @@ export interface FrameCardBlock {
  */
 export interface TicketPaperBlock {
   color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
   body: {
     root: {
       type: string;
@@ -479,6 +483,7 @@ export interface DividerBlock {
  */
 export interface ZigZagBlock {
   color?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune') | null;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'zigZagBlock';
@@ -499,6 +504,8 @@ export interface SpacerBlock {
  */
 export interface YoutubeVideoBlock {
   url: string;
+  align?: ('left' | 'center' | 'right' | 'full') | null;
+  size?: ('xs' | 'sm' | 'md' | 'lg' | 'xl') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'youtubeVideoBlock';
@@ -508,7 +515,7 @@ export interface YoutubeVideoBlock {
  * via the `definition` "GridBlock".
  */
 export interface GridBlock {
-  blocks?: (ImageBlock | CardBlock)[] | null;
+  blocks?: (ImageBlock | CardBlock | ZigZagBlock | ParagraphBlock)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'gridBlock';
@@ -957,6 +964,7 @@ export interface ImageBlockSelect<T extends boolean = true> {
 export interface TitleBlockSelect<T extends boolean = true> {
   name?: T;
   level?: T;
+  align?: T;
   zigZag?: T;
   id?: T;
   blockName?: T;
@@ -976,6 +984,7 @@ export interface SubTitleBlockSelect<T extends boolean = true> {
  */
 export interface ButtonsBlockSelect<T extends boolean = true> {
   direction?: T;
+  align?: T;
   blocks?:
     | T
     | {
@@ -1064,6 +1073,7 @@ export interface ImageParagraphBlockSelect<T extends boolean = true> {
 export interface FrameCardBlockSelect<T extends boolean = true> {
   title?: T;
   color?: T;
+  align?: T;
   body?: T;
   image?: T;
   id?: T;
@@ -1075,6 +1085,7 @@ export interface FrameCardBlockSelect<T extends boolean = true> {
  */
 export interface TicketPaperBlockSelect<T extends boolean = true> {
   color?: T;
+  align?: T;
   body?: T;
   id?: T;
   blockName?: T;
@@ -1094,6 +1105,7 @@ export interface DividerBlockSelect<T extends boolean = true> {
  */
 export interface ZigZagBlockSelect<T extends boolean = true> {
   color?: T;
+  align?: T;
   id?: T;
   blockName?: T;
 }
@@ -1112,6 +1124,8 @@ export interface SpacerBlockSelect<T extends boolean = true> {
  */
 export interface YoutubeVideoBlockSelect<T extends boolean = true> {
   url?: T;
+  align?: T;
+  size?: T;
   id?: T;
   blockName?: T;
 }
@@ -1125,6 +1139,8 @@ export interface GridBlockSelect<T extends boolean = true> {
     | {
         imageBlock?: T | ImageBlockSelect<T>;
         cardBlock?: T | CardBlockSelect<T>;
+        zigZagBlock?: T | ZigZagBlockSelect<T>;
+        paragraphBlock?: T | ParagraphBlockSelect<T>;
       };
   id?: T;
   blockName?: T;

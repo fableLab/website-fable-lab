@@ -10,6 +10,7 @@ import * as migration_20250925_143858_add_youtube_video_block from './20250925_1
 import * as migration_20250930_085047_create_grid_block from './20250930_085047_create_grid_block';
 import * as migration_20250930_090656_create_button_download_cloud from './20250930_090656_create_button_download_cloud';
 import * as migration_20250930_100639_edit_title_with_multiple_levels from './20250930_100639_edit_title_with_multiple_levels';
+import * as migration_20251001_065939_create_align_component from './20251001_065939_create_align_component';
 
 export const migrations = [
   {
@@ -70,6 +71,11 @@ export const migrations = [
   {
     up: migration_20250930_100639_edit_title_with_multiple_levels.up,
     down: migration_20250930_100639_edit_title_with_multiple_levels.down,
-    name: '20250930_100639_edit_title_with_multiple_levels'
+    name: '20250930_100639_edit_title_with_multiple_levels',
+  },
+  {
+    up: migration_20251001_065939_create_align_component.up,
+    down: migration_20251001_065939_create_align_component.down,
+    name: '20251001_065939_create_align_component'
   },
 ];

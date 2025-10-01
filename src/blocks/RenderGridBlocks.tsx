@@ -7,7 +7,7 @@ import { SubTitleBlock } from '@/blocks/SubTitleBlock/Component'
 import { ButtonDownloadBlock } from '@/blocks/ButtonDownloadBlock/Component'
 import { ZigZagBlock } from './ZigZagBlock/Component'
 import { CardBlock } from './CardBlock/Component'
-
+import { ParagraphBlock } from '@/blocks/ParagraphBlock/Component'
 
 const blockComponents = {
   imageBlock: ImageBlock,
@@ -15,7 +15,8 @@ const blockComponents = {
   subTitleBlock: SubTitleBlock,
   buttonDownloadBlock: ButtonDownloadBlock,
   zigZagBlock: ZigZagBlock,
-  cardBlock: CardBlock
+  cardBlock: CardBlock,
+  paragraphBlock: ParagraphBlock,
 }
 
 export const RenderGridBlocks: React.FC<{

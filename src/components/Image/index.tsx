@@ -2,19 +2,12 @@ import { cn } from '@/utilities/ui'
 import type { Media as MediaProps } from '@/payload-types'
 import { borderPrimaryColorsMap, ColorsList } from "@/constants/ColorMaps"
 
-export const Image: React.FC<{ media: MediaProps, full?: boolean, borderColor: ColorsList, size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl', align?: string }> = (props) => {
+export const Image: React.FC<{ media: MediaProps, full?: boolean, borderColor: ColorsList, size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' }> = (props) => {
   const {
     media,
     borderColor,
-    size,
-    align
+    size
   } = props
-
-  const alignClass: Record<string, string> = {
-    'left': 'justify-start',
-    'center': 'justify-center',
-    'right': 'justify-end',
-  };
 
   const sizes: Record<string, string> = {
     'xs': 'w-1/4',
@@ -28,7 +21,7 @@ export const Image: React.FC<{ media: MediaProps, full?: boolean, borderColor: C
     <>
       {
         media?.url ?
-          <div className={cn("flex", align && alignClass[align])}>
+          <div className={cn("flex justify-center")}>
             <figure className={cn(size && sizes[size])} >
               <img src={media?.url} alt={media.alt || ""} className={cn('w-full border-8 border-solid rounded-xl', borderColor && borderPrimaryColorsMap[borderColor])} />
               <figcaption className="text-center">{media.alt}</figcaption>

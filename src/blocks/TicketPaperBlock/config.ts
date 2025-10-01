@@ -13,31 +13,42 @@ export const TicketPaperBlock: Block = {
   imageURL: '/blocks/ticket-paper.png',
   fields: [
     {
-            name: 'color',
-            type: 'select',
-            label: 'Color',
-            options: [
-                { label: 'Jaune', value: 'yellow' },
-                { label: 'Violet', value: 'violet' },
-                { label: 'Bleu', value: 'blue' },
-                { label: 'Orange', value: 'orange' },
-                { label: 'Prune', value: 'prune' },
-            ],
-            defaultValue: 'blue',
-        },
+      name: 'color',
+      type: 'select',
+      label: 'Color',
+      options: [
+        { label: 'Jaune', value: 'yellow' },
+        { label: 'Violet', value: 'violet' },
+        { label: 'Bleu', value: 'blue' },
+        { label: 'Orange', value: 'orange' },
+        { label: 'Prune', value: 'prune' },
+      ],
+      defaultValue: 'blue',
+    },
     {
-          name: 'body',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => [
-              ...rootFeatures,
-              HeadingFeature({ enabledHeadingSizes: ['h4'] }),
-              FixedToolbarFeature(),
-              InlineToolbarFeature(),
-            ],
-          }),
-          required: true,
-        },
+      name: 'align',
+      type: 'select',
+      label: 'Align',
+      options: [
+        { label: 'left', value: 'left' },
+        { label: 'center', value: 'center' },
+        { label: 'right', value: 'right' },
+        { label: 'full', value: 'full' },
+      ],
+    },
+    {
+      name: 'body',
+      type: 'richText',
+      editor: lexicalEditor({
+        features: ({ rootFeatures }) => [
+          ...rootFeatures,
+          HeadingFeature({ enabledHeadingSizes: ['h4'] }),
+          FixedToolbarFeature(),
+          InlineToolbarFeature(),
+        ],
+      }),
+      required: true,
+    },
   ]
 
 }
