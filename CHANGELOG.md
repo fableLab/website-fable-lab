@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.62.1](https://github.com/fableLab/website-fable-lab/compare/0.62.0...0.62.1) (2025-10-01)
+
+
+### Bug Fixes
+
+* fix preview URLs ([d40f598](https://github.com/fableLab/website-fable-lab/commit/d40f5981e07edbec4c9ae9876e23ec15aebd7d79))
+
 # [0.62.0](https://github.com/fableLab/website-fable-lab/compare/0.59.1...0.62.0) (2025-10-01)
 
 
