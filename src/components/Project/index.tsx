@@ -25,7 +25,7 @@ export const Project: React.FC<PayloadCMSProjectBlockProps> = (props) => {
 
   return (
     <div className="mb-4">
-      <Link href={`/projects/${slug}`}>
+      <Link href={`/projets/${slug}`}>
         <div className="border rounded-xl border-camelot-700 w-full bg-gray-100 break-inside-avoid hover:shadow-[0px_0px_10px_6px_#FEEB1A]">
           <h5 className="text-camelot-800 text-2xl font-bold px-4 py-2">{name}</h5>
           {isMedia(image) && <img className="w-full" src={image?.url || ""} />}
