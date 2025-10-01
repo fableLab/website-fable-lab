@@ -16,7 +16,13 @@ export const Align: React.FC<{
         align === 'right' && 'justify-end'
       )}
     >
-      <div className='w-full'>
+      <div
+        className={
+          align !== 'full'
+            ? 'w-full md:w-8/12 xl:w-1/2'
+            : 'w-full'
+        }
+      >
         {children}
       </div>
     </div>
