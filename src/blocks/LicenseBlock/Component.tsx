@@ -2,13 +2,13 @@ import React from 'react'
 import type { LicenseBlock as LicenseBlockProps } from '@/payload-types'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
-import { Title } from '../../components/Title'
+import { TitleBlock } from '@/blocks/TitleBlock/Component'
 
 export const LicenseBlock: React.FC<LicenseBlockProps> = ({ blocks, description, id }) => {
 
   return (
     <section className="space-y-6">
-      <Title name="Licence libre" id={id} />
+      <TitleBlock name="Licence libre" id={id} />
       <p className="text-base">{description}</p>
       {blocks && (
         <div className='space-y-4'>

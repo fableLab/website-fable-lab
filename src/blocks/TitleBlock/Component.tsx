@@ -1,15 +1,24 @@
 import React from 'react'
-import type { TitleBlock as TitleBlockProps } from '@/payload-types'
+//import type { TitleBlock as TitleBlockProps } from '@/payload-types'
 import { Align } from "@/components/Align"
 
 
-export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag, align }) => {
+type TitleBlockProps = {
+  name: string,
+  level?: string,
+  id?: string | null | undefined
+  zigZag?: boolean,
+  align?: 'left' | 'center' | 'right' | 'full' | null | undefined
+};
+
+export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag, align, id }) => {
   const renderTitle = () => {
     switch (level) {
       case "h3":
         return (
           <h3
             className="font-bold font-basis flex items-center gap-4"
+            id={id ? id : ""}
             data-summary-visible={true}
           >
             {zigZag && <div className='flex-none'>
@@ -23,6 +32,7 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag, ali
       case "h4":
         return (
           <h4
+            id={id ? id : ""}
             className="font-bold font-basis flex items-center gap-4"
             data-summary-visible={true}
           >
@@ -37,6 +47,7 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag, ali
       default:
         return (
           <h2
+            id={id ? id : ""}
             className="font-bold font-basis flex items-center gap-4"
             data-summary-visible={true}
           >
