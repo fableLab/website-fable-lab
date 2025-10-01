@@ -33,7 +33,7 @@ export const Resource: React.FC<ResourceProps> = (props) => {
 
   return (
     <div className="mb-4">
-      <Link href={`/resources/${slug}`}>
+      <Link href={`/ressources/${slug}`}>
         <div className="rounded-xl w-full bg-azure-100 break-inside-avoid p-4">
           {isMedia(image) && <img className="w-full pb-2 rounded-xl" src={image?.url || ""} />}
           <h5 className="text-azure-800 text-xl font-bold text-center mb-2">{name}</h5>
