@@ -3,6 +3,7 @@ import React from 'react'
 import RichText from '@/components/RichText'
 import { Image } from '../../components/Image'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
+import { ColorsList } from "@/constants/ColorMaps"
 
 import type { ImageParagraphBlock as PayloadCMSImageParagraphBlockProps } from '@/payload-types'
 import type { Media as MediaBlock } from '@/payload-types'
@@ -13,10 +14,11 @@ type ImageParagraphBlockProps = {
   body: PayloadCMSImageParagraphBlockProps['body'],
   buttons: PayloadCMSImageParagraphBlockProps['buttons'],
   orientation: PayloadCMSImageParagraphBlockProps['orientation'],
+  borderColor: ColorsList
 };
 
 
-export const ImageParagraphBlock: React.FC<ImageParagraphBlockProps> = ({ title, body, image, buttons, orientation }) => {
+export const ImageParagraphBlock: React.FC<ImageParagraphBlockProps> = ({ title, body, image, buttons, orientation, borderColor }) => {
   const isImageLeft = orientation === 'left';
 
   return (
@@ -46,7 +48,7 @@ export const ImageParagraphBlock: React.FC<ImageParagraphBlockProps> = ({ title,
             size="xl"
             media={image}
             full={true}
-            borderColor='prune'
+            borderColor={borderColor}
           />
         )}
       </div>

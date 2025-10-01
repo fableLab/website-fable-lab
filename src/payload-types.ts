@@ -393,6 +393,7 @@ export interface ImageParagraphBlock {
   title?: string | null;
   orientation?: ('left' | 'right') | null;
   image: number | Media;
+  borderColor?: ('yellow' | 'violet' | 'blue' | 'orange' | 'prune' | 'transparent') | null;
   body?: {
     root: {
       type: string;
@@ -1057,6 +1058,7 @@ export interface ImageParagraphBlockSelect<T extends boolean = true> {
   title?: T;
   orientation?: T;
   image?: T;
+  borderColor?: T;
   body?: T;
   buttons?:
     | T

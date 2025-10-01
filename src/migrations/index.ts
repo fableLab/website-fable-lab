@@ -11,6 +11,7 @@ import * as migration_20250930_085047_create_grid_block from './20250930_085047_
 import * as migration_20250930_090656_create_button_download_cloud from './20250930_090656_create_button_download_cloud';
 import * as migration_20250930_100639_edit_title_with_multiple_levels from './20250930_100639_edit_title_with_multiple_levels';
 import * as migration_20251001_065939_create_align_component from './20251001_065939_create_align_component';
+import * as migration_20251001_133448_add_border_color_for_image_paragraph from './20251001_133448_add_border_color_for_image_paragraph';
 
 export const migrations = [
   {
@@ -76,6 +77,11 @@ export const migrations = [
   {
     up: migration_20251001_065939_create_align_component.up,
     down: migration_20251001_065939_create_align_component.down,
-    name: '20251001_065939_create_align_component'
+    name: '20251001_065939_create_align_component',
+  },
+  {
+    up: migration_20251001_133448_add_border_color_for_image_paragraph.up,
+    down: migration_20251001_133448_add_border_color_for_image_paragraph.down,
+    name: '20251001_133448_add_border_color_for_image_paragraph'
   },
 ];

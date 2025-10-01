@@ -48,6 +48,20 @@ export const ImageParagraphBlock: Block = {
       required: true,
     },
     {
+      name: 'borderColor',
+      type: 'select',
+      label: 'Border Color',
+      options: [
+        { label: 'Jaune', value: 'yellow' },
+        { label: 'Violet', value: 'violet' },
+        { label: 'Bleu', value: 'blue' },
+        { label: 'Orange', value: 'orange' },
+        { label: 'Prune', value: 'prune' },
+        { label: 'Transparent', value: 'transparent' },
+      ],
+      defaultValue: 'prune'
+    },
+    {
       name: 'body',
       type: 'richText',
       editor: lexicalEditor({
