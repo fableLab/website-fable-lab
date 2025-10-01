@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.58.0](https://github.com/fableLab/website-fable-lab/compare/0.57.1...0.58.0) (2025-10-01)
+
+
+### Bug Fixes
+
+* **Summary:** resolve broken anchors ([b869893](https://github.com/fableLab/website-fable-lab/commit/b86989309c9e7e2019bbe1e736bf4092dd8c8b7f))
+
+
+### Features
+
+* **OpenGraph:** edit OpenGraph informations ([adb2950](https://github.com/fableLab/website-fable-lab/commit/adb295009695520a7d88d24aaf0e87ce72a112e2))
+
 ## [0.57.2](https://github.com/fableLab/website-fable-lab/compare/0.57.1...0.57.2) (2025-10-01)
 
 
