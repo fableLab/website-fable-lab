@@ -6,8 +6,8 @@ export const LicenseItemBlock: React.FC<LicenseItemBlockProps> = ({ title, descr
 
   return (
     <div>
-      <h4 className="font-extrabold">{title}</h4>
-      <p>{description}</p>
+      <h4 className="font-extrabold !text-xl" >{title}</h4>
+      <p className='!text-xl'>{description}</p>
     </div>
   )
 }
