@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.57.2](https://github.com/fableLab/website-fable-lab/compare/0.57.1...0.57.2) (2025-10-01)
+
+
+### Bug Fixes
+
+* **Summary:** resolve broken anchors ([27f26e3](https://github.com/fableLab/website-fable-lab/commit/27f26e3b7918aa2eac73452e20b86214fb2dfebc))
+
 ## [0.57.1](https://github.com/fableLab/website-fable-lab/compare/0.57.0...0.57.1) (2025-10-01)
 
 # [0.57.0](https://github.com/fableLab/website-fable-lab/compare/0.56.1...0.57.0) (2025-10-01)
