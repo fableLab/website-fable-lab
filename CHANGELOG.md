@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.60.0](https://github.com/fableLab/website-fable-lab/compare/0.59.1...0.60.0) (2025-10-01)
+
+
+### Features
+
+* **ImageParagraph:** custom border color for ImageParagraph ([7fc77b0](https://github.com/fableLab/website-fable-lab/commit/7fc77b02a5b6dee819b981f51676241b1170c46b))
+
 ## [0.59.1](https://github.com/fableLab/website-fable-lab/compare/0.59.0...0.59.1) (2025-10-01)
 
 # [0.59.0](https://github.com/fableLab/website-fable-lab/compare/0.58.0...0.59.0) (2025-10-01)
