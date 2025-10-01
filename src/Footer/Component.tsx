@@ -5,6 +5,8 @@ import React from 'react'
 import type { Footer } from '@/payload-types'
 
 import ScrollToTop from './ScrollToTop'
+import { Instagram } from '@/components/Logo/Instagram'
+import { LinkedIn } from '@/components/Logo/LinkedIn'
 
 export const getHrefFromLink = (link: {
   type: string
@@ -72,6 +74,10 @@ export async function Footer() {
             ))
           }
         </ul>
+        <div className='text-white flex gap-1'>
+          <LinkedIn />
+          <Instagram />
+        </div>
       </div>
       <div className="md:col-span-4 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
         style={zigZagStyle}>
