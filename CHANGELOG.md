@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.63.0](https://github.com/fableLab/website-fable-lab/compare/0.62.1...0.63.0) (2025-10-01)
+
+
+### Features
+
+* **Umami:** add Umami analytics tracker ([f48c610](https://github.com/fableLab/website-fable-lab/commit/f48c610c1363821403b4f9a8ddd4474fab3d0875))
+
 ## [0.62.1](https://github.com/fableLab/website-fable-lab/compare/0.62.0...0.62.1) (2025-10-01)
 
 
