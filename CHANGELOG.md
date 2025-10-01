@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.62.0](https://github.com/fableLab/website-fable-lab/compare/0.59.1...0.62.0) (2025-10-01)
+
+
+### Bug Fixes
+
+* **Align:** fix centering bug ([e932e97](https://github.com/fableLab/website-fable-lab/commit/e932e9770ad6245051ab1c38e9b5f7b02764d233))
+
+
+### Features
+
+* **ImageParagraph:** custom border color for ImageParagraph ([39ac39f](https://github.com/fableLab/website-fable-lab/commit/39ac39f22a552566f13a05faafb450bf42757e3b))
+
 # [0.61.0](https://github.com/fableLab/website-fable-lab/compare/0.59.1...0.61.0) (2025-10-01)
 
 
