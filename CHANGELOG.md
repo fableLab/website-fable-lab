@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.57.0](https://github.com/fableLab/website-fable-lab/compare/0.56.1...0.57.0) (2025-10-01)
+
+
+### Features
+
+* **Align:** implement Align component ([dd217e3](https://github.com/fableLab/website-fable-lab/commit/dd217e32a0d1e3f88a2f3a17b6fb7e0d521111a9))
+
 ## [0.56.1](https://github.com/fableLab/website-fable-lab/compare/0.56.0...0.56.1) (2025-09-30)
 
 # [0.56.0](https://github.com/fableLab/website-fable-lab/compare/0.55.0...0.56.0) (2025-09-30)
