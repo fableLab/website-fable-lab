@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.63.2](https://github.com/fableLab/website-fable-lab/compare/0.63.1...0.63.2) (2025-10-01)
+
+
+### Bug Fixes
+
+* **Align:** fix centering bug ([ffe3ac6](https://github.com/fableLab/website-fable-lab/commit/ffe3ac6da743daecc34a49d20153746a4261e3ce))
+
 ## [0.63.1](https://github.com/fableLab/website-fable-lab/compare/0.63.0...0.63.1) (2025-10-01)
 
 
