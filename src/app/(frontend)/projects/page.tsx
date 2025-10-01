@@ -62,7 +62,7 @@ export default async function ProjectsPage({ searchParams: searchParamsPromise }
         <div className="md:col-span-9 col-span-12">
           <article className="pb-24">
             <Banner title="Nos projets de médiation" color="orange" />
-            <div className="flex flex-col pt-8 px-6 md:px-12 2xl:px-32
+            <div className="flex flex-col pt-8 px-6 md:px-12 2xl:px-32 2xl:mr-32
               [&_h2]:text-cinnabar-500 [&_h3]:text-cinnabar-500 [&_h4]:text-cinnabar-500 [&_p]:text-2xl text-black [&_a]:text-cinnabar-500
               [&_h4]:text-3xl [&_h4]:font-bold">
               <div>
@@ -73,7 +73,7 @@ export default async function ProjectsPage({ searchParams: searchParamsPromise }
 
               <div>
                 <Title name="Tous les projets" />
-                <section className="my-6 columns-1 md:columns-2 2xl:columns-3 gap-12 *:mb-12">
+                <section className="my-6 columns-1 md:columns-2 2xl:columns-4 gap-12 *:mb-12">
                   {projects.docs.map(project => (
                     <Project key={project.id} {...project} />
                   ))}

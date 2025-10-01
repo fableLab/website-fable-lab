@@ -38,7 +38,7 @@ export async function Footer() {
   }
 
   return (
-    <footer className="bg-camelot-800 grid grid-cols-12 text-white">
+    <footer className="bg-camelot-800 grid grid-cols-12 text-white border-t-2 border-white">
       <div className="md:col-span-3 col-span-12 px-8 pt-4 pb-8 md:border-r-[14px] border-white border-dashed"
         style={zigZagStyle}>
         <ul>

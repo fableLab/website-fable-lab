@@ -207,7 +207,7 @@ export default function ResourcesClient({ initialResources, languages, categorie
         <div className="md:col-span-9 col-span-12">
           <article className="pb-24">
             <Banner title="Les ressources" color="blue" />
-            <div className="flex flex-col pt-8 px-6 md:px-12 2xl:px-32
+            <div className="flex flex-col pt-8 px-6 md:px-12 2xl:px-32 2xl:mr-32
             [&_h2]:text-azure-800 [&_h3]:text-azure-800 [&_h4]:text-azure-800 [&_p]:text-2xl text-black [&_a]:text-azure-800 [&_strong]:text-azure-800
             [&_h4]:text-3xl [&_h4]:font-bold">
               <div>

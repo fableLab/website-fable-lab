@@ -1,53 +1,38 @@
-import type { Metadata } from 'next/types'
-import { Menu, Search } from 'lucide-react'
+import type { Metadata } from 'next'
 
 export default async function Home() {
   return (
-    <main className="min-h-screen bg-camelot-800 border-t border-white text-white px-6 py-10 grid grid-cols-12 gap-y-10">
-
-      <div className="hidden md:flex md:col-start-3 md:col-span-3 items-start mr-4 mt-16">
-        <img src="/zigzags/Calque_1.png" alt="Zigzag" />
-      </div>
-      <div className="col-span-12 md:col-start-6 md:col-span-7 space-y-4 md:mt-10">
-        {/* Logo */}
-        <div className="hidden md:flex">
-          <img src="/logo/logo_white.png" alt="Fable Lab Logo" className="h-10 w-auto" />
+    <div className='text-white'>
+      <div className='relative'>
+        <img src="/backgrounds/home.jpg" className='w-full object-cover h-[75vh]' />
+        <div className="absolute md:ml-[30%] ml-[15%] me-[15%] md:me-[20%] top-[45%]">
+          <img src="logo/logo_white.png" className='md:w-3/5 w-4/5 mb-4' />
+          <h2 className="text-5xl md:text-6xl 2xl:text-9xl font-bold font-serif break-words">des projets culturels pour faire société.</h2>
         </div>
-        {/* Title */}
-        <h1 className="text-4xl font-semibold leading-tight">
-          des projets culturels <br />
-          pour faire société.
-        </h1>
-        {/* Mission Block */}
-        <div className="col-span-12 lg:col-span-6 text-md space-y-2 !mb-4">
-          <h2 className="text-xl font-bold mt-10">La mission de fable-Lab ?</h2>
-          <p>
-            Que chacun et chacune d’entre nous soit plus libre grâce aux mots.<br />
-            Nous travaillons à promouvoir la lecture et l’écriture comme des <br />pratiques qui rassemblent.<br />
-            Et nous contribuons à réduire les inégalités liées à une moindre maîtrise <br />de l’expression en français.
-          </p>
-        </div>
-        {/* Search Box */}
-        <div className="col-span-12 md:col-span-6 space-y-2 !mt-10">
-          <p className="font-bold text-xl mb-4">Trouver votre ressource</p>
 
-          <div className="flex items-center w-full md:w-5/6 relative">
-            <Menu className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-camelot-800" />
-            <input
-              type="text"
-              placeholder="Je cherche une ressource, une thématique, une information..."
-              className="w-full h-16 rounded-full text-camelot-800 pl-16 pr-16 text-lg placeholder:text-camelot-800"
+        <div className='absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/12 md:w-1/12'>
+          <svg viewBox="0 0 122 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3.69469 133.238C3.69469 123.968 118.305 123.968 118.305 114.688C118.305 105.418 3.69469 105.418 3.69469 96.1383C3.69469 86.8683 118.305 86.8683 118.305 77.5883C118.305 68.3183 3.69469 68.3183 3.69469 59.0383C3.69469 49.7583 118.305 49.7683 118.305 40.4883C118.305 31.2083 3.6947 31.2083 3.6947 21.9383C3.6947 12.6583 118.305 12.6583 118.305 3.38832"
+              stroke="#FEEB1A"
+              strokeWidth="6"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
-            <Search className="absolute right-5 top-1/2 -translate-y-1/2 h-6 w-6 text-camelot-800" />
-          </div>
-
-          <div className="hidden md:flex w-5/6 justify-end pr-4">
-            <img src="/vector/Vector.png" alt="Vector" className="mr-4 mt-6" />
-          </div>
+          </svg>
         </div>
-
       </div>
-    </main>
+
+      <main className="bg-camelot-800 min-h-[75vh] flex items-center text-3xl 2xl:text-4xl">
+        <div className='md:ml-[30%] ml-[15%] me-[15%] md:me-[20%] leading-10 py-32'>
+          <h3 className="font-bold">La mission de fable-Lab ?</h3>
+          <br />
+          <p>Que chacun et chacune d’entre nous soit plus libre grâce aux mots.</p>
+          <p>Nous travaillons à promouvoir la lecture et l’écriture comme des pratiques qui rassemblent.</p>
+          <p>Et nous contribuons à réduire les inégalités liées à une moindre maîtrise de l’expression en français.</p>
+        </div>
+      </main>
+    </div >
   )
 }
 
