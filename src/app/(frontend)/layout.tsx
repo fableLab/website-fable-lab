@@ -42,6 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="fable-Lab" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script defer src="https://umami.fable-lab.org/script.js" data-website-id="d8a54f53-1ea5-480b-bc5b-9b42a88eda91"></script>
       </head>
       <body>
         <Providers>
