@@ -24,7 +24,7 @@ export const FrameCardBlock: React.FC<FrameCardProps> = ({
   return (
     <Align orientation={align}>
 
-      <div className={`flex flex-col md:flex-row gap-6 border-[6px] p-8 rounded-[22px] w-4/5 m-auto ${borderPrimaryColorsMap[color]}`}>
+      <div className={`flex flex-col md:flex-row gap-6 border-[6px] p-8 rounded-[22px] w-full md:w-4/5 md:m-auto ${borderPrimaryColorsMap[color]}`}>
         <div className={`${image ? 'w-2/3' : 'w-full'} space-y-4`}>
           {title && <h3 className="font-bold text-2xl text-black">{title}</h3>}
           {body && (
