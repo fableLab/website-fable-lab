@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       <main className="bg-camelot-800 min-h-[75vh] flex items-center text-3xl 2xl:text-4xl">
-        <div className='md:ml-[30%] ml-[15%] me-[15%] md:me-[20%] leading-10 py-32'>
+        <div className='md:ml-[30%] ml-[15%] me-[15%] md:me-[20%] leading-10 py-48'>
           <h3 className="font-bold">La mission de fable-Lab ?</h3>
           <br />
           <p>Que chacun et chacune d’entre nous soit plus libre grâce aux mots.</p>

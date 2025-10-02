@@ -36,6 +36,7 @@ export default function Home() {
 
   return (
     <section>
+      <h3 className="font-bold mt-16 mb-6">Trouver votre ressource</h3>
       <div className="relative w-full my-6">
         <input
           type="text"
