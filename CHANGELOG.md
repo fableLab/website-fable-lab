@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.64.0](https://github.com/fableLab/website-fable-lab/compare/0.63.4...0.64.0) (2025-10-02)
+
+
+### Features
+
+* **Search:** add search feature ([0f59383](https://github.com/fableLab/website-fable-lab/commit/0f593835a96e9e51a89faf80b1f4abe313dc6f20))
+
 ## [0.63.4](https://github.com/fableLab/website-fable-lab/compare/0.63.3...0.63.4) (2025-10-02)
 
 ## [0.63.3](https://github.com/fableLab/website-fable-lab/compare/0.63.2...0.63.3) (2025-10-02)
