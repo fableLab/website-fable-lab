@@ -49,7 +49,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <>
-      <header className={cn("bg-camelot-800 h-dvh w-full fixed", headerFullPage ? "" : "hidden")}>
+      <header className={cn("bg-camelot-800 h-dvh w-full fixed z-10", headerFullPage ? "" : "hidden")}>
       </header>
 
       <header className="h-20 bg-camelot-800 grid grid-cols-12 border-3 border-white z-20">
