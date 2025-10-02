@@ -1,14 +1,31 @@
-// import { Field } from 'payload'
+import { Field } from 'payload'
 
-// export const searchFields: Field[] = [
-//   {
-//     name: 'slug',
-//     type: 'text',
-//     index: true,
-//     admin: {
-//       readOnly: true,
-//     },
-//   },
+export const searchFields: Field[] = [
+  {
+    name: 'slug',
+    type: 'text',
+    index: true,
+    admin: {
+      readOnly: true,
+    },
+  },
+  {
+    name: 'description',
+    type: 'text',
+    index: true,
+    admin: {
+      readOnly: true,
+    },
+  },
+  {
+    name: 'url',
+    type: 'text',
+    index: true,
+    admin: {
+      readOnly: true,
+    },
+  },
+]
 //   {
 //     name: 'meta',
 //     label: 'Meta',

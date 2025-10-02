@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import PageClient from './page.client'
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className='text-white'>
       <div className='relative'>
@@ -30,6 +31,8 @@ export default async function Home() {
           <p>Que chacun et chacune d’entre nous soit plus libre grâce aux mots.</p>
           <p>Nous travaillons à promouvoir la lecture et l’écriture comme des pratiques qui rassemblent.</p>
           <p>Et nous contribuons à réduire les inégalités liées à une moindre maîtrise de l’expression en français.</p>
+
+          <PageClient />
         </div>
       </main>
     </div >

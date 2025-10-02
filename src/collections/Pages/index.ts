@@ -72,6 +72,10 @@ export const Pages: CollectionConfig<'pages'> = {
       required: true,
     },
     {
+      name: 'description',
+      type: 'text',
+    },
+    {
       type: 'tabs',
       tabs: [
         {

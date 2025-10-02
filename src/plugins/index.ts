@@ -5,8 +5,8 @@ import { Plugin } from 'payload'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 // import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
-// import { searchFields } from '@/search/fieldOverrides'
-// import { searchPlugin } from '@payloadcms/plugin-search'
+import { searchFields } from '@/search/fieldOverrides'
+import { searchPlugin } from '@payloadcms/plugin-search'
 // import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 // import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 // import { redirectsPlugin } from '@payloadcms/plugin-redirects'
@@ -104,14 +104,49 @@ export const plugins: Plugin[] = [
   //     },
   //   },
   // }),
-  // searchPlugin({
-  //   collections: ['posts'],
-  //   beforeSync: beforeSyncWithSearch,
-  //   searchOverrides: {
-  //     fields: ({ defaultFields }) => {
-  //       return [...defaultFields, ...searchFields]
-  //     },
-  //   },
-  // }),
+  searchPlugin({
+    collections: ['projects', 'resources', 'pages'],
+    beforeSync: ({ originalDoc, searchDoc }) => {
+      const collection = searchDoc.doc.relationTo;
+
+      // If the document is from the blog-articles collection...
+      if (collection === 'projects') {
+        return {
+          ...searchDoc,
+          slug: originalDoc.slug,
+          title: originalDoc.name,
+          description: originalDoc.description,
+          url: `/projets/${originalDoc.slug}`
+        };
+      }
+      if (collection === 'resources') {
+        return {
+          ...searchDoc,
+          slug: originalDoc.slug,
+          title: originalDoc.name,
+          description: originalDoc.description,
+          url: `/ressources/${originalDoc.slug}`
+        };
+      }
+
+      if (collection === 'pages') {
+        return {
+          ...searchDoc,
+          slug: originalDoc.slug,
+          title: originalDoc.title,
+          description: originalDoc.description,
+          url: `/${originalDoc.slug}`
+        };
+      }
+
+      // For any other collections not explicitly handled, fall back to the default
+      return searchDoc;
+    },
+    searchOverrides: {
+      fields: ({ defaultFields }) => {
+        return [...defaultFields, ...searchFields]
+      },
+    },
+  }),
   payloadCloudPlugin(),
 ]
