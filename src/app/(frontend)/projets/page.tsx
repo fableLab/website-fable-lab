@@ -35,24 +35,18 @@ export default async function ProjectsPage({ searchParams: searchParamsPromise }
     showHiddenFields: true,
   })
 
+  const where = {
+    _status: { equals: 'published' },
+    ...(mediation ? { mediation: { equals: mediation } } : {})
+  };
+
   const projects = await payload.find({
     collection: 'projects',
     depth: 1,
     page: 1,
     limit: 20,
-    where: {
-      _status: {
-        equals: 'published'
-      }
-    },
-    ...(mediation ? {
-      where: {
-        mediation: {
-          equals: mediation
-        }
-      }
-    } : {})
-  })
+    where
+  });
 
   return (
     <>
