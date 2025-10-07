@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.64.5](https://github.com/fableLab/website-fable-lab/compare/0.64.4...0.64.5) (2025-10-07)
+
+
+### Bug Fixes
+
+* **Projects:** display only published projects ([969af7d](https://github.com/fableLab/website-fable-lab/commit/969af7d56d3b766f8feb7e25cb52503cc0e38b59))
+
 ## [0.64.4](https://github.com/fableLab/website-fable-lab/compare/0.64.3...0.64.4) (2025-10-07)
 
 ## [0.64.3](https://github.com/fableLab/website-fable-lab/compare/0.64.2...0.64.3) (2025-10-07)
