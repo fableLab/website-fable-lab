@@ -19,7 +19,7 @@ export const Align: React.FC<{
       <div
         className={
           align !== 'full'
-            ? 'w-full md:w-8/12 xl:w-1/2'
+            ? 'w-full md:w-8/12'
             : 'w-full'
         }
       >
