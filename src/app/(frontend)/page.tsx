@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div className='text-white'>
       <div className='relative'>
-        <img src="/backgrounds/home.jpg" className='w-full object-cover h-[75vh]' />
-        <div className="absolute md:ml-[30%] ml-[15%] me-[15%] md:me-[20%] top-[30%] md:top-[45%]">
+        <img src="/backgrounds/home.jpg" className='w-full object-cover h-[80vh]' />
+        <div className="absolute md:ml-[30%] ml-[15%] me-[15%] md:me-[20%] top-[30%] md:top-[30%] z-10">
           <img src="logo/logo_white.png" className='md:w-3/5 w-4/5 mb-4' />
           <h2 className="text-5xl md:text-6xl 2xl:text-9xl font-bold font-serif break-words">des projets culturels pour faire société.</h2>
         </div>

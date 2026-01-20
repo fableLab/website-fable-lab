@@ -67,7 +67,7 @@ export default async function ProjectsPage({ searchParams: searchParamsPromise }
 
               <div>
                 <Title name="Tous les projets" />
-                <section className="my-6 columns-1 md:columns-2 2xl:columns-4 gap-12 *:mb-12">
+                <section className="my-6 columns-1 md:columns-2 2xl:columns-3 4xl:columns-4 gap-12 *:mb-12">
                   {projects.docs.map(project => (
                     <Project key={project.id} {...project} />
                   ))}
