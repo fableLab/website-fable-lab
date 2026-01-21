@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.64.9](https://github.com/fableLab/website-fable-lab/compare/0.64.8...0.64.9) (2026-01-21)
+
 ## [0.64.8](https://github.com/fableLab/website-fable-lab/compare/0.64.7...0.64.8) (2026-01-20)
 
 ## [0.64.7](https://github.com/fableLab/website-fable-lab/compare/0.64.6...0.64.7) (2026-01-14)
