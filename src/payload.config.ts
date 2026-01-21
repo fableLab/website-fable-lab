@@ -27,6 +27,11 @@ const dirname = path.dirname(filename)
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || process.env.NEXT_PUBLIC_SERVER_URL,
+  logger: {
+    options: {
+      level: 'debug',
+    },
+  },
   admin: {
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
@@ -70,6 +75,16 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
+  debug: true,
+  onInit: async (payload) => {
+    console.log('[PAYLOAD] Payload initialized successfully')
+    try {
+      const users = await payload.find({ collection: 'users', limit: 1 })
+      console.log(`[PAYLOAD] Database connection OK - Found ${users.totalDocs} users`)
+    } catch (error) {
+      console.error('[PAYLOAD] Database connection error:', error)
+    }
+  },
   collections: [Pages, Media, Users, Projects, Members, Resources, Languages, Categories],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, TextsPage],

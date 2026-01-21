@@ -1,4 +1,4 @@
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
+// import { payloadCloudPlugin } from '@payloadcms/payload-cloud' // Disabled - not using Payload Cloud
 import { s3Storage } from '@payloadcms/storage-s3'
 
 import { Plugin } from 'payload'
@@ -149,5 +149,5 @@ export const plugins: Plugin[] = [
       },
     },
   }),
-  payloadCloudPlugin(),
+  // payloadCloudPlugin(), // Disabled - not using Payload Cloud
 ]
