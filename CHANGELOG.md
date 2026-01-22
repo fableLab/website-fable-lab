@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.65.0](https://github.com/fableLab/website-fable-lab/compare/0.64.11...0.65.0) (2026-01-22)
+
+
+### Features
+
+* add form builder ([77274a7](https://github.com/fableLab/website-fable-lab/commit/77274a7cd2ff2e3d1d545bc76eff6c3939e058be))
+
 ## [0.64.11](https://github.com/fableLab/website-fable-lab/compare/0.64.10...0.64.11) (2026-01-22)
 
 
