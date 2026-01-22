@@ -27,6 +27,13 @@ const dirname = path.dirname(filename)
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || process.env.NEXT_PUBLIC_SERVER_URL,
+
+  csrf: [
+    process.env.PAYLOAD_PUBLIC_SERVER_URL,
+    process.env.NEXT_PUBLIC_SERVER_URL,
+    'http://localhost:3000',
+    'http://localhost:5000',
+  ].filter(Boolean) as string[],
   logger: {
     options: {
       level: 'debug',
@@ -78,15 +85,18 @@ export default buildConfig({
   debug: true,
   onInit: async (payload) => {
     console.log('[PAYLOAD] Payload initialized successfully')
-    try {
-      const users = await payload.find({ collection: 'users', limit: 1 })
-      console.log(`[PAYLOAD] Database connection OK - Found ${users.totalDocs} users`)
-    } catch (error) {
-      console.error('[PAYLOAD] Database connection error:', error)
-    }
+    payload.logger.info('🔍 [CONFIG] serverURL: ' + payload.config.serverURL)
+    payload.logger.info('🔍 [CONFIG] PAYLOAD_PUBLIC_SERVER_URL: ' + process.env.PAYLOAD_PUBLIC_SERVER_URL)
+    payload.logger.info('🔍 [CONFIG] NEXT_PUBLIC_SERVER_URL: ' + process.env.NEXT_PUBLIC_SERVER_URL)
   },
   collections: [Pages, Media, Users, Projects, Members, Resources, Languages, Categories],
-  cors: [getServerSideURL()].filter(Boolean),
+  cors: [
+    getServerSideURL(),
+    process.env.PAYLOAD_PUBLIC_SERVER_URL,
+    process.env.NEXT_PUBLIC_SERVER_URL,
+    'http://localhost:3000',
+    'http://localhost:5000',
+  ].filter(Boolean) as string[],
   globals: [Header, Footer, TextsPage],
   plugins: [
     ...plugins,
