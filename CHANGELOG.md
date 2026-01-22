@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.64.10](https://github.com/fableLab/website-fable-lab/compare/0.64.8...0.64.10) (2026-01-22)
+
+
+### Bug Fixes
+
+* add CSRF/CORS for Dokku internal requests ([c3aa2a6](https://github.com/fableLab/website-fable-lab/commit/c3aa2a630e28e8911ee48184315b07bfe1f3bbd2))
+
 ## [0.64.9](https://github.com/fableLab/website-fable-lab/compare/0.64.8...0.64.9) (2026-01-21)
 
 ## [0.64.8](https://github.com/fableLab/website-fable-lab/compare/0.64.7...0.64.8) (2026-01-20)
