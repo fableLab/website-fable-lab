@@ -11,21 +11,23 @@ export const revalidateResource: CollectionAfterChangeHook<Resource> = ({
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === 'published') {
-      const path = doc.slug === 'home' ? '/' : `/${doc.slug}`
+      const path = `/ressources/${doc.slug}`
 
       payload.logger.info(`Revalidating resource at path: ${path}`)
 
       revalidatePath(path)
+      revalidatePath('/ressources') // Revalidate list page
       revalidateTag('resources-sitemap')
     }
 
     // If the resource was previously published, we need to revalidate the old path
     if (previousDoc?._status === 'published' && doc._status !== 'published') {
-      const oldPath = previousDoc.slug === 'home' ? '/' : `/${previousDoc.slug}`
+      const oldPath = `/ressources/${previousDoc.slug}`
 
       payload.logger.info(`Revalidating old resource at path: ${oldPath}`)
 
       revalidatePath(oldPath)
+      revalidatePath('/ressources') // Revalidate list page
       revalidateTag('resources-sitemap')
     }
   }
@@ -34,8 +36,9 @@ export const revalidateResource: CollectionAfterChangeHook<Resource> = ({
 
 export const revalidateDelete: CollectionAfterDeleteHook<Resource> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = doc?.slug === 'home' ? '/' : `/${doc?.slug}`
+    const path = `/ressources/${doc?.slug}`
     revalidatePath(path)
+    revalidatePath('/ressources') // Revalidate list page
     revalidateTag('resources-sitemap')
   }
 

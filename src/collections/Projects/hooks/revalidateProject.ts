@@ -11,21 +11,23 @@ export const revalidateProject: CollectionAfterChangeHook<Project> = ({
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === 'published') {
-      const path = doc.slug === 'home' ? '/' : `/${doc.slug}`
+      const path = `/projets/${doc.slug}`
 
       payload.logger.info(`Revalidating project at path: ${path}`)
 
       revalidatePath(path)
+      revalidatePath('/projets') // Revalidate list page
       revalidateTag('projects-sitemap')
     }
 
     // If the project was previously published, we need to revalidate the old path
     if (previousDoc?._status === 'published' && doc._status !== 'published') {
-      const oldPath = previousDoc.slug === 'home' ? '/' : `/${previousDoc.slug}`
+      const oldPath = `/projets/${previousDoc.slug}`
 
       payload.logger.info(`Revalidating old project at path: ${oldPath}`)
 
       revalidatePath(oldPath)
+      revalidatePath('/projets') // Revalidate list page
       revalidateTag('projects-sitemap')
     }
   }
@@ -34,8 +36,9 @@ export const revalidateProject: CollectionAfterChangeHook<Project> = ({
 
 export const revalidateDelete: CollectionAfterDeleteHook<Project> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = doc?.slug === 'home' ? '/' : `/${doc?.slug}`
+    const path = `/projets/${doc?.slug}`
     revalidatePath(path)
+    revalidatePath('/projets') // Revalidate list page
     revalidateTag('projects-sitemap')
   }
 
