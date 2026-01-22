@@ -1,5 +1,13 @@
 # Changelog
 
+# [0.66.0](https://github.com/fableLab/website-fable-lab/compare/0.64.11...0.66.0) (2026-01-22)
+
+
+### Features
+
+* add form builder ([aefe0d2](https://github.com/fableLab/website-fable-lab/commit/aefe0d2cb6b49511b26d1e2ca9616b8a80001c3b))
+* configure email adapter ([08e66f2](https://github.com/fableLab/website-fable-lab/commit/08e66f21361672ce7ecbf896ec13204f3af3afd4))
+
 # [0.65.0](https://github.com/fableLab/website-fable-lab/compare/0.64.11...0.65.0) (2026-01-22)
 
 
