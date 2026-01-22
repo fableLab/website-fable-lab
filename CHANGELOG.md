@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.64.11](https://github.com/fableLab/website-fable-lab/compare/0.64.10...0.64.11) (2026-01-22)
+
+
+### Bug Fixes
+
+* correct revalidation paths for resources and projects ([d36309a](https://github.com/fableLab/website-fable-lab/commit/d36309ada017d50964d3ebad917757dfec7d2cdc))
+
 ## [0.64.10](https://github.com/fableLab/website-fable-lab/compare/0.64.8...0.64.10) (2026-01-22)
 
 
