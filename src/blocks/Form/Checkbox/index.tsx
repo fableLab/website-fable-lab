@@ -25,18 +25,17 @@ export const Checkbox: React.FC<
         <CheckboxUi
           defaultChecked={defaultValue}
           id={name}
+          className="rounded-none border-2 border-current shrink-0"
           {...props}
           onCheckedChange={(checked) => {
             setValue(props.name, checked)
           }}
         />
-        <Label htmlFor={name}>
-          {required && (
-            <span className="required">
-              * <span className="sr-only">(required)</span>
-            </span>
-          )}
+        <Label htmlFor={name} className="text-xl font-bold">
           {label}
+          {required && (
+            <span className="required text-red-500">*</span>
+          )}
         </Label>
       </div>
       {errors[name] && <Error name={name} />}

@@ -25,6 +25,7 @@ import { GridBlock } from './GridBlock/Component'
 import { CardBlock } from './CardBlock/Component'
 
 
+
 const blockComponents = {
   paragraphBlock: ParagraphBlock,
   formBlock: FormBlock,
@@ -47,7 +48,7 @@ const blockComponents = {
   youtubeVideoBlock: YoutubeVideoBlock,
   gridBlock: GridBlock,
   cardBlock: CardBlock,
-  buttonDownloadCloudBlock: ButtonDownloadCloudBlock
+  buttonDownloadCloudBlock: ButtonDownloadCloudBlock,
 }
 
 const marginByBlockType: Record<string, string> = {

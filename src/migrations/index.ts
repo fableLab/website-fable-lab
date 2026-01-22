@@ -13,6 +13,7 @@ import * as migration_20250930_100639_edit_title_with_multiple_levels from './20
 import * as migration_20251001_065939_create_align_component from './20251001_065939_create_align_component';
 import * as migration_20251001_133448_add_border_color_for_image_paragraph from './20251001_133448_add_border_color_for_image_paragraph';
 import * as migration_20251002_105238_add_search from './20251002_105238_add_search';
+import * as migration_20260122_155022_add_form_builder from './20260122_155022_add_form_builder';
 
 export const migrations = [
   {
@@ -88,6 +89,11 @@ export const migrations = [
   {
     up: migration_20251002_105238_add_search.up,
     down: migration_20251002_105238_add_search.down,
-    name: '20251002_105238_add_search'
+    name: '20251002_105238_add_search',
+  },
+  {
+    up: migration_20260122_155022_add_form_builder.up,
+    down: migration_20260122_155022_add_form_builder.down,
+    name: '20260122_155022_add_form_builder'
   },
 ];

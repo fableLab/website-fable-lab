@@ -7,7 +7,7 @@ import { seoPlugin } from '@payloadcms/plugin-seo'
 // import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { searchFields } from '@/search/fieldOverrides'
 import { searchPlugin } from '@payloadcms/plugin-search'
-// import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 // import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 // import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 
@@ -79,32 +79,12 @@ export const plugins: Plugin[] = [
       }),
     ]
     : []),
-  // formBuilderPlugin({
-  //   fields: {
-  //     payment: false,
-  //   },
-  //   formOverrides: {
-  //     fields: ({ defaultFields }) => {
-  //       return defaultFields.map((field) => {
-  //         if ('name' in field && field.name === 'confirmationMessage') {
-  //           return {
-  //             ...field,
-  //             editor: lexicalEditor({
-  //               features: ({ rootFeatures }) => {
-  //                 return [
-  //                   ...rootFeatures,
-  //                   FixedToolbarFeature(),
-  //                   HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-  //                 ]
-  //               },
-  //             }),
-  //           }
-  //         }
-  //         return field
-  //       })
-  //     },
-  //   },
-  // }),
+  formBuilderPlugin({
+    fields: {
+      payment: false,
+      state: false,
+    },
+  }),
   searchPlugin({
     collections: ['projects', 'resources', 'pages'],
     beforeSync: ({ originalDoc, searchDoc }) => {
