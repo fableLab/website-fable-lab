@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.66.1](https://github.com/fableLab/website-fable-lab/compare/0.66.0...0.66.1) (2026-01-26)
+
+
+### Bug Fixes
+
+* **security:** patch critical Next.js RCE vulnerability (CVE GHSA-9qr9-h5gf-34mp) ([933379f](https://github.com/fableLab/website-fable-lab/commit/933379f387c64a14bca00ee26be2fcb2de6b8404))
+
 # [0.66.0](https://github.com/fableLab/website-fable-lab/compare/0.64.11...0.66.0) (2026-01-22)
 
 
