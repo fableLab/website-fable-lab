@@ -30,8 +30,6 @@ export default async function ProjectsPage({ searchParams: searchParamsPromise }
   const textsPage = await payload.findGlobal({
     slug: 'textsPage', // required
     depth: 1,
-    fallbackLocale: false,
-    overrideAccess: false,
     showHiddenFields: true,
   })
 

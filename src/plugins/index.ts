@@ -60,25 +60,24 @@ export const plugins: Plugin[] = [
     generateTitle,
     generateURL,
   }),
-  ...(process.env.S3_BUCKET
-    ? [
-      s3Storage({
-        collections: {
-          media: true,
-        },
-        bucket: process.env.S3_BUCKET,
-        config: {
-          credentials: {
-            accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
-            secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
-          },
-          region: process.env.S3_REGION || '',
-          endpoint: process.env.S3_ENDPOINT || '',
-          forcePathStyle: true
-        },
-      }),
-    ]
-    : []),
+  s3Storage({
+    collections: {
+      media: {
+        disableLocalStorage: Boolean(process.env.S3_BUCKET),
+      },
+    },
+    enabled: Boolean(process.env.S3_BUCKET),
+    bucket: process.env.S3_BUCKET || '',
+    config: {
+      credentials: {
+        accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
+        secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
+      },
+      region: process.env.S3_REGION || '',
+      endpoint: process.env.S3_ENDPOINT || '',
+      forcePathStyle: true,
+    },
+  }),
   formBuilderPlugin({
     fields: {
       payment: false,
