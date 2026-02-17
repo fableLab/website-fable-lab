@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.67.0](https://github.com/fableLab/website-fable-lab/compare/0.66.1...0.67.0) (2026-02-17)
+
+
+### Features
+
+* add Umami tracking ([c3c28fa](https://github.com/fableLab/website-fable-lab/commit/c3c28fa9a1524a26d3ce55e82bad6ecccd8ea9ba))
+
 ## [0.66.1](https://github.com/fableLab/website-fable-lab/compare/0.66.0...0.66.1) (2026-01-26)
 
 
