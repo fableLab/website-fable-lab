@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.68.0](https://github.com/fableLab/website-fable-lab/compare/0.67.0...0.68.0) (2026-05-21)
+
+
+### Features
+
+* **ui:** add print layout ([0398abc](https://github.com/fableLab/website-fable-lab/commit/0398abc50bad2c19cfe86153b83753357ce789eb))
+
 # [0.67.0](https://github.com/fableLab/website-fable-lab/compare/0.66.1...0.67.0) (2026-02-17)
 
 
