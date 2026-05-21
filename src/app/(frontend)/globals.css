@@ -103,3 +103,26 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+@media print {
+
+  @page {
+    size: auto;
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @page :first {
+    margin-top: 0;
+  }
+
+  body {
+    margin: 1cm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

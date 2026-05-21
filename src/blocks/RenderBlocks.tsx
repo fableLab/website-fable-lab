@@ -60,36 +60,28 @@ const marginByBlockType: Record<string, string> = {
   buttonDownloadCloudBlock: "",
 };
 
-export const RenderBlocks: React.FC<{
-  blocks: any[]
-}> = (props) => {
-  const { blocks } = props
+export const RenderBlocks: React.FC<{ blocks: any[] }> = ({ blocks }) => {
+  if (!blocks?.length) return null;
 
-  const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
+  const counters = [0, 0]; // [h2, h3]
+  const numbers: (string | null)[] = blocks.map(({ blockType }) => {
+    if (blockType === 'titleBlock') { counters[0]++; counters[1] = 0; return `${counters[0]}`; }
+    if (blockType === 'subTitleBlock') { counters[1]++; return `${counters[0]}.${counters[1]}`; }
+    return null;
+  });
 
-  if (hasBlocks) {
-    return (
-      <Fragment>
-        {blocks.map((block, index) => {
-          const blockType = (block as { blockType: keyof typeof blockComponents }).blockType;
-
-
-          if (blockType && blockType in blockComponents) {
-            const Block = blockComponents[blockType]
-
-            if (Block) {
-              return (
-                <div key={index} className={cn(marginByBlockType[blockType] ?? "mb-14")}>
-                  <Block {...block} disableInnerContainer />
-                </div>
-              )
-            }
-          }
-          return null
-        })}
-      </Fragment>
-    )
-  }
-
-  return null
-}
+  return (
+    <Fragment>
+      {blocks.map((block, index) => {
+        const blockType = block.blockType as keyof typeof blockComponents;
+        const Block = blockComponents[blockType];
+        if (!Block) return null;
+        return (
+          <div key={index} className={cn(marginByBlockType[blockType] ?? "mb-14")}>
+            <Block {...block} number={numbers[index]} disableInnerContainer />
+          </div>
+        );
+      })}
+    </Fragment>
+  );
+};

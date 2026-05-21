@@ -62,7 +62,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             src={cn(headerFullPage ? "/icons/close.svg" : "/icons/menu.svg")}
             width={32}
             height={32}
-            className="float-righ flex-none mr-4 md:hidden"
+            className="float-righ flex-none mr-4 md:hidden print:hidden"
             alt="Menu icon"
             onClick={() => { setHeaderFullPage(prev => !prev) }}
           />
