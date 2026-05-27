@@ -25,6 +25,10 @@ const config = {
     'bg-success/30',
     'border-warning',
     'bg-warning/30',
+    {
+      pattern: /(bg|text|border|fill|stroke)-(perspective)-(50|100|200|300|400|500|600|700|800|900|950)/,
+      variants: ['hover', 'focus', '[&_h1]', '[&_h2]', '[&_h3]', '[&_h4]', '[&_h5]', '[&_h6]', '[&_p]', '[&_a]'],
+    },
   ],
   theme: {
     container: {
@@ -120,6 +124,19 @@ const config = {
           800: '#875b0c',
           900: '#734b10',
           950: '#432705',
+        },
+        perspective: {
+          50: '#fff8eb',
+          100: '#ffeac6',
+          200: '#ffd388',
+          300: '#ffb54a',
+          400: '#fda021',
+          500: '#f39000',
+          600: '#d77100',
+          700: '#b25102',
+          800: '#903f08',
+          900: '#76340b',
+          950: '#441900',
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',

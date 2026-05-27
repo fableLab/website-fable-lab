@@ -11,6 +11,7 @@ import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Projects } from './collections/Projects'
 import { Resources } from './collections/Resources'
+import { LabsLangs } from './collections/LabsLangs'
 import { Languages } from './collections/Languages'
 import { Categories } from './collections/Categories'
 // import { Posts } from './collections/Posts'
@@ -22,6 +23,7 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { Members } from './collections/Members'
+import { LabsLangPage } from './LabsLang/config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -107,7 +109,7 @@ export default buildConfig({
     payload.logger.info('🔍 [CONFIG] PAYLOAD_PUBLIC_SERVER_URL: ' + process.env.PAYLOAD_PUBLIC_SERVER_URL)
     payload.logger.info('🔍 [CONFIG] NEXT_PUBLIC_SERVER_URL: ' + process.env.NEXT_PUBLIC_SERVER_URL)
   },
-  collections: [Pages, Media, Users, Projects, Members, Resources, Languages, Categories],
+  collections: [Pages, Media, Users, Projects, Members, Resources, Languages, Categories, LabsLangs],
   cors: [
     getServerSideURL(),
     process.env.PAYLOAD_PUBLIC_SERVER_URL,
@@ -115,7 +117,7 @@ export default buildConfig({
     'http://localhost:3000',
     'http://localhost:5000',
   ].filter(Boolean) as string[],
-  globals: [Header, Footer, TextsPage],
+  globals: [Header, Footer, TextsPage, LabsLangPage],
   plugins: [
     ...plugins,
     // storage-adapter-placeholder

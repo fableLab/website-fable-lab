@@ -1,5 +1,7 @@
 'use client';
 import { cn } from '@/utilities/ui'
+import PrintButton from '@/components/PrintButton'
+import { ColorsList } from "@/constants/ColorMaps"
 
 
 import { useEffect, useState } from 'react';
@@ -11,7 +13,7 @@ type itemType = {
   number: string;
 };
 
-export default function Summary({ mobileOnly = false }: { mobileOnly?: boolean }) {
+export default function Summary({ mobileOnly = false, color }: { mobileOnly?: boolean, color?: ColorsList | null }) {
   const [items, setItems] = useState<itemType[]>([]);
 
   useEffect(() => {
@@ -45,6 +47,9 @@ export default function Summary({ mobileOnly = false }: { mobileOnly?: boolean }
           </li>
         ))}
       </ol>
+      <div className="mx-auto mt-8 mb-12 flex justify-center items-center">
+        { !mobileOnly && color && <PrintButton color={color||"violet"} /> }
+      </div>
     </div >
   );
 }

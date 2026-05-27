@@ -75,6 +75,7 @@ export interface Config {
     resources: Resource;
     languages: Language;
     categories: Category;
+    labslangs: Labslang;
     forms: Form;
     'form-submissions': FormSubmission;
     search: Search;
@@ -94,6 +95,7 @@ export interface Config {
     resources: ResourcesSelect<false> | ResourcesSelect<true>;
     languages: LanguagesSelect<false> | LanguagesSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    labslangs: LabslangsSelect<false> | LabslangsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
@@ -111,11 +113,13 @@ export interface Config {
     header: Header;
     footer: Footer;
     textsPage: TextsPage;
+    LabsLangPage: LabsLangPage;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     textsPage: TextsPageSelect<false> | TextsPageSelect<true>;
+    LabsLangPage: LabsLangPageSelect<false> | LabsLangPageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -924,6 +928,47 @@ export interface Category {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "labslangs".
+ */
+export interface Labslang {
+  id: number;
+  title: string;
+  description?: string | null;
+  color?: ('blue' | 'perspective') | null;
+  blocks: (
+    | ParagraphBlock
+    | ImageBlock
+    | TitleBlock
+    | SubTitleBlock
+    | ButtonsBlock
+    | LicenseBlock
+    | ImageParagraphBlock
+    | FrameCardBlock
+    | TicketPaperBlock
+    | DividerBlock
+    | ZigZagBlock
+    | SpacerBlock
+    | YoutubeVideoBlock
+    | GridBlock
+    | FormBlock
+  )[];
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "form-submissions".
  */
 export interface FormSubmission {
@@ -1115,6 +1160,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'categories';
         value: number | Category;
+      } | null)
+    | ({
+        relationTo: 'labslangs';
+        value: number | Labslang;
       } | null)
     | ({
         relationTo: 'forms';
@@ -1692,6 +1741,47 @@ export interface CategoriesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "labslangs_select".
+ */
+export interface LabslangsSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  color?: T;
+  blocks?:
+    | T
+    | {
+        paragraphBlock?: T | ParagraphBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        titleBlock?: T | TitleBlockSelect<T>;
+        subTitleBlock?: T | SubTitleBlockSelect<T>;
+        buttonsBlock?: T | ButtonsBlockSelect<T>;
+        licenseBlock?: T | LicenseBlockSelect<T>;
+        imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
+        frameCardBlock?: T | FrameCardBlockSelect<T>;
+        ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
+        dividerBlock?: T | DividerBlockSelect<T>;
+        zigZagBlock?: T | ZigZagBlockSelect<T>;
+        spacerBlock?: T | SpacerBlockSelect<T>;
+        youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
+        gridBlock?: T | GridBlockSelect<T>;
+        formBlock?: T | FormBlockSelect<T>;
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "forms_select".
  */
 export interface FormsSelect<T extends boolean = true> {
@@ -2052,6 +2142,32 @@ export interface TextsPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LabsLangPage".
+ */
+export interface LabsLangPage {
+  id: number;
+  blocks: (
+    | ParagraphBlock
+    | ImageBlock
+    | TitleBlock
+    | SubTitleBlock
+    | ButtonsBlock
+    | LicenseBlock
+    | ImageParagraphBlock
+    | FrameCardBlock
+    | TicketPaperBlock
+    | DividerBlock
+    | ZigZagBlock
+    | SpacerBlock
+    | YoutubeVideoBlock
+    | GridBlock
+  )[];
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -2157,6 +2273,34 @@ export interface TextsPageSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LabsLangPage_select".
+ */
+export interface LabsLangPageSelect<T extends boolean = true> {
+  blocks?:
+    | T
+    | {
+        paragraphBlock?: T | ParagraphBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        titleBlock?: T | TitleBlockSelect<T>;
+        subTitleBlock?: T | SubTitleBlockSelect<T>;
+        buttonsBlock?: T | ButtonsBlockSelect<T>;
+        licenseBlock?: T | LicenseBlockSelect<T>;
+        imageParagraphBlock?: T | ImageParagraphBlockSelect<T>;
+        frameCardBlock?: T | FrameCardBlockSelect<T>;
+        ticketPaperBlock?: T | TicketPaperBlockSelect<T>;
+        dividerBlock?: T | DividerBlockSelect<T>;
+        zigZagBlock?: T | ZigZagBlockSelect<T>;
+        spacerBlock?: T | SpacerBlockSelect<T>;
+        youtubeVideoBlock?: T | YoutubeVideoBlockSelect<T>;
+        gridBlock?: T | GridBlockSelect<T>;
+      };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "TaskSchedulePublish".
  */
 export interface TaskSchedulePublish {
@@ -2179,6 +2323,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'resources';
           value: number | Resource;
+        } | null)
+      | ({
+          relationTo: 'labslangs';
+          value: number | Labslang;
         } | null);
     global?: string | null;
     user?: (number | null) | User;

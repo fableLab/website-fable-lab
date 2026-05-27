@@ -1,26 +1,32 @@
-import { PayloadRequest, CollectionSlug } from 'payload'
+import type { PayloadRequest, CollectionSlug, GlobalSlug } from 'payload'
 
-const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  projects: '/projets',
+const collectionRoutes: Partial<Record<CollectionSlug, string>> = {
+  pages:     '',
+  projects:  '/projets',
   resources: '/ressources',
-  pages: '',
+  labslangs: '/labslang'
 }
 
-type Props = {
-  collection: keyof typeof collectionPrefixMap
-  slug: string
-  req: PayloadRequest
+const globalRoutes: Partial<Record<GlobalSlug, string>> = {
+  LabsLangPage: '/labslang',
 }
 
-export const generatePreviewPath = ({ collection, slug }: Props) => {
-  const encodedParams = new URLSearchParams({
-    slug,
-    collection,
-    path: `${collectionPrefixMap[collection]}/${slug}`,
-    previewSecret: process.env.PREVIEW_SECRET || '',
+type Props =
+  | { collection: keyof typeof collectionRoutes; slug: string; global?: never; req: PayloadRequest }
+  | { global: keyof typeof globalRoutes; collection?: never; slug?: never; req: PayloadRequest }
+
+export const generatePreviewPath = (props: Props): string => {
+  const path = props.global
+    ? (globalRoutes[props.global] ?? '/')
+    : `${collectionRoutes[props.collection] ?? ''}/${props.slug}`
+
+  const params = new URLSearchParams({
+    slug: props.slug ?? '',
+    collection: props.collection ?? '',
+    global: props.global ?? '',
+    path,
+    previewSecret: process.env.PREVIEW_SECRET ?? '',
   })
 
-  const url = `/next/preview?${encodedParams.toString()}`
-
-  return url
+  return `/next/preview?${params.toString()}`
 }
