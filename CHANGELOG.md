@@ -1,5 +1,13 @@
 # Changelog
 
+# [0.69.0](https://github.com/fableLab/website-fable-lab/compare/0.67.0...0.69.0) (2026-06-04)
+
+
+### Features
+
+* **Labs&Lang:** add subsite Labs&Lang ([5791a5f](https://github.com/fableLab/website-fable-lab/commit/5791a5f0e58bfdfc7c0dca674841f2b99071aabb))
+* **ui:** add print layout ([7507a20](https://github.com/fableLab/website-fable-lab/commit/7507a207f68963a0df380a2f01b1688aa65a8620))
+
 # [0.68.0](https://github.com/fableLab/website-fable-lab/compare/0.67.0...0.68.0) (2026-05-21)
 
 
