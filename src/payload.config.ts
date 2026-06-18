@@ -36,6 +36,7 @@ export default buildConfig({
     process.env.NEXT_PUBLIC_SERVER_URL,
     'http://localhost:3000',
     'http://localhost:5000',
+    'https://labslang.fable-lab.org',
   ].filter(Boolean) as string[],
   logger: {
     options: {
@@ -116,6 +117,7 @@ export default buildConfig({
     process.env.NEXT_PUBLIC_SERVER_URL,
     'http://localhost:3000',
     'http://localhost:5000',
+    'https://labslang.fable-lab.org',
   ].filter(Boolean) as string[],
   globals: [Header, Footer, TextsPage, LabsLangPage],
   plugins: [
