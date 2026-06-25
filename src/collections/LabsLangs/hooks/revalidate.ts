@@ -12,23 +12,23 @@ export const revalidateLabsLangs: CollectionAfterChangeHook<Labslang> = ({
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === 'published') {
-      const path = `/labslangs/${doc.slug}`
+      const path = `/labslang/${doc.slug}`
 
       payload.logger.info(`Revalidating LabsLang page at path: ${path}`)
 
       revalidatePath(path)
-      revalidatePath('/labslangs') // Revalidate list page
+      revalidatePath('/labslang') // Revalidate list page
       revalidateTag('labslangs-sitemap')
     }
 
     // If the project was previously published, we need to revalidate the old path
     if (previousDoc?._status === 'published' && doc._status !== 'published') {
-      const oldPath = `/labslangs/${previousDoc.slug}`
+      const oldPath = `/labslang/${previousDoc.slug}`
 
       payload.logger.info(`Revalidating old labslang page at path: ${oldPath}`)
 
       revalidatePath(oldPath)
-      revalidatePath('/labslangs') // Revalidate list page
+      revalidatePath('/labslang') // Revalidate list page
       revalidateTag('labslangs-sitemap')
     }
   }
@@ -37,9 +37,9 @@ export const revalidateLabsLangs: CollectionAfterChangeHook<Labslang> = ({
 
 export const revalidateDelete: CollectionAfterDeleteHook<Labslang> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = `/labslangs/${doc?.slug}`
+    const path = `/labslang/${doc?.slug}`
     revalidatePath(path)
-    revalidatePath('/labslangs') // Revalidate list page
+    revalidatePath('/labslang') // Revalidate list page
     revalidateTag('labslangs-sitemap')
   }
 
