@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.70.0](https://github.com/fableLab/website-fable-lab/compare/0.69.0...0.70.0) (2026-06-25)
+
+
+### Bug Fixes
+
+* **print:** fix cross-browser print layout ([5d20bce](https://github.com/fableLab/website-fable-lab/commit/5d20bcedae54412634c7d3658e2a687d33667b6b))
+
+
+### Features
+
+* **ui:** add partner for the Labs&Lang project ([558ad12](https://github.com/fableLab/website-fable-lab/commit/558ad12dd96d8e636a35a1e8b9fdefe646ccaeaf))
+
 # [0.69.0](https://github.com/fableLab/website-fable-lab/compare/0.67.0...0.69.0) (2026-06-04)
 
 
