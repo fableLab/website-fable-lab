@@ -64,10 +64,10 @@ export default async function Page({ params: paramsPromise }: Args) {
       <PageClient />
 
       <aside className="grid grid-cols-12 flex-grow">
-        <div className="md:col-span-3 col-span-0 bg-lavender-200">
+        <div className="md:col-span-3 col-span-0 bg-lavender-200 print:hidden">
           <Summary />
         </div>
-        <div className="md:col-span-9 col-span-12">
+        <div className="md:col-span-9 col-span-12 print:!col-span-12">
           <article className="pb-24">
             <Banner title={page.title} color="violet" />
             <Summary mobileOnly={true} />

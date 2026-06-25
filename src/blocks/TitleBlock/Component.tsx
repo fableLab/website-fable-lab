@@ -29,7 +29,7 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({ name, level, zigZag, ali
         <Align orientation={align}>
           <Tag id={id || ''} className="font-bold font-basis flex items-center gap-4" data-summary-visible data-summary-name={name} data-summary-number={number}>
             {zigZag && <ZigZagSvg />}
-            {number && <span className="md:hidden print:inline">{number}.</span>}
+            {number && <span className="md:hidden print:!inline">{number}.</span>}
             {name}
           </Tag>
         </Align>

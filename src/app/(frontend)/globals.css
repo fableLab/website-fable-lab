@@ -106,19 +106,30 @@ html[data-theme='light'] {
 
 @media print {
 
+  /* Zero page margin so browsers have no margin area to draw their
+     headers/footers (date, URL, "Page X of Y") in. Inner spacing is handled
+     by the body padding below. */
   @page {
     size: auto;
     margin: 0;
-    margin-top: 30px;
-    margin-bottom: 30px;
   }
 
-  @page :first {
-    margin-top: 0;
+  html,
+  body {
+    min-height: 0 !important;
+    height: auto !important;
   }
 
   body {
-    margin: 1cm;
+    margin: 0;
+    padding: 1cm;
+  }
+
+  /* CSS grid containers don't paginate across print pages: the article grid
+     item gets pushed whole, leaving a blank first page. Fall back to normal
+     block flow in print so content fragments correctly. */
+  aside.grid {
+    display: block !important;
   }
 
   * {
