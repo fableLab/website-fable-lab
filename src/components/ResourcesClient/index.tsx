@@ -37,6 +37,7 @@ type ResourcesClientProps = {
     id: number;
     slug?: string | null | undefined;
     name: string;
+    description: string;
     image: number | Media;
     creators: ("fable-Lab" | "external")[];
     needs?: ("Accompagner" | "Animer un atelier" | "Animer une formation" | "Apprendre une langue" | "Communiquer" | "Écrire" | "Fabriquer" | "Se former" | "S’informer" | "Sensibiliser" | "Traduire")[] | null | undefined;
@@ -64,6 +65,7 @@ function isCategory(cat: number | Category): cat is Category {
 }
 
 export default function ResourcesClient({ initialResources, languages, categories }: ResourcesClientProps) {
+  const [query, setQuery] = useState('');
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({
     needs: [],
     linguistics: [],
@@ -94,7 +96,17 @@ export default function ResourcesClient({ initialResources, languages, categorie
     creators: Creator[];
   };
 
+  const normalizedQuery = query.trim().toLowerCase();
+
   const filteredResources = initialResources.filter((r) => {
+    if (
+      normalizedQuery &&
+      !r.name.toLowerCase().includes(normalizedQuery) &&
+      !r.description.toLowerCase().includes(normalizedQuery)
+    ) {
+      return false;
+    }
+
     return (Object.entries(filters) as [FilterKeys, string[]][])
       .every(([category, values]) => {
         if (values.length === 0) return true;
@@ -115,26 +127,22 @@ export default function ResourcesClient({ initialResources, languages, categorie
   return (
     <>
       <aside className="grid grid-cols-12 flex-grow">
-        <div className="md:col-span-3 col-span-12 bg-azure-100 px-6 py-16">
-          <h3 className="text-camelot-800 text-2xl font-bold mb-4" >Chercher une ressource</h3>
+        <div className="md:col-span-3 col-span-12 bg-azure-100 px-6 pb-16">
+          <h3 className="text-camelot-800 text-2xl font-bold my-4" >Chercher une ressource</h3>
 
-          <aside className='text-azure-800'>
-            <div className="flex gap-4">
-              <button
-                onClick={() => toggleFilter("creators", "fable-Lab")}
-                className={cn("px-4 py-2 rounded-xl", filters.creators.includes("fable-Lab") ? 'bg-azure-800 text-white' : 'bg-white')}
-              >
-                Ressource fable-Lab
-              </button>
-
-              <button
-                onClick={() => toggleFilter("creators", "external")}
-                className={cn("px-4 py-2 rounded-xl", filters.creators.includes("external") ? 'bg-azure-800 text-white' : 'bg-white')}
-              >
-                Ressource extérieure
-              </button>
-            </div>
-          </aside>
+          <div className="relative w-full mb-6">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="text-camelot-800 placeholder-camelot-800 bg-white rounded-full ps-5 pe-12 py-3 w-full outline-none focus:ring-0"
+              placeholder="Rechercher une ressource..."
+            />
+            <svg className="w-6 h-6 text-camelot-800 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+              viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26.8568 28.8919L18.4743 20.5094C17.809 21.0416 17.0439 21.463 16.179 21.7734C15.3142 22.0839 14.3939 22.2391 13.4181 22.2391C11.001 22.2391 8.95524 21.402 7.28095 19.7277C5.60667 18.0534 4.76953 16.0077 4.76953 13.5905C4.76953 11.1733 5.60667 9.1276 7.28095 7.45332C8.95524 5.77904 11.001 4.94189 13.4181 4.94189C15.8353 4.94189 17.881 5.77904 19.5553 7.45332C21.2296 9.1276 22.0668 11.1733 22.0668 13.5905C22.0668 14.5662 21.9115 15.4865 21.6011 16.3514C21.2906 17.2163 20.8693 17.9813 20.337 18.6466L28.7195 27.0291L26.8568 28.8919ZM13.4181 19.578C15.0813 19.578 16.4951 18.9959 17.6593 17.8317C18.8235 16.6674 19.4056 15.2537 19.4056 13.5905C19.4056 11.9273 18.8235 10.5136 17.6593 9.34936C16.4951 8.18512 15.0813 7.60301 13.4181 7.60301C11.7549 7.60301 10.3412 8.18512 9.177 9.34936C8.01276 10.5136 7.43064 11.9273 7.43064 13.5905C7.43064 15.2537 8.01276 16.6674 9.177 17.8317C10.3412 18.9959 11.7549 19.578 13.4181 19.578Z" fill="#802D45" />
+            </svg>
+          </div>
 
           <p className="text-camelot-800 text-xl font-bold my-4">Besoins</p>
           <aside className='text-azure-800'>
@@ -203,6 +211,25 @@ export default function ResourcesClient({ initialResources, languages, categorie
               </button>
             ))}
           </aside>
+
+          <p className="text-camelot-800 text-xl font-bold my-4">Producteur</p>
+          <aside className='text-azure-800'>
+            <div className="flex gap-4">
+              <button
+                onClick={() => toggleFilter("creators", "fable-Lab")}
+                className={cn("px-4 py-2 rounded-xl", filters.creators.includes("fable-Lab") ? 'bg-azure-800 text-white' : 'bg-white')}
+              >
+                Ressource fable-Lab
+              </button>
+
+              <button
+                onClick={() => toggleFilter("creators", "external")}
+                className={cn("px-4 py-2 rounded-xl", filters.creators.includes("external") ? 'bg-azure-800 text-white' : 'bg-white')}
+              >
+                Ressource extérieure
+              </button>
+            </div>
+          </aside>
         </div>
         <div className="md:col-span-9 col-span-12">
           <article className="pb-24">
@@ -219,11 +246,15 @@ export default function ResourcesClient({ initialResources, languages, categorie
 
               <div>
                 <Title name="Toutes les ressources" />
-                <section className="my-6 columns-1 md:columns-3 2xl:columns-3 gap-12 *:mb-12">
-                  {filteredResources.map(resource => (
-                    <Resource key={resource.id} {...resource} />
-                  ))}
-                </section>
+                {filteredResources.length === 0 ? (
+                  <p className="my-6">Désolé, aucune ressource ne correspond à cette recherche.</p>
+                ) : (
+                  <section className="my-6 columns-1 md:columns-3 2xl:columns-3 gap-12 *:mb-12">
+                    {filteredResources.map(resource => (
+                      <Resource key={resource.id} {...resource} />
+                    ))}
+                  </section>
+                )}
               </div>
             </div>
           </article>

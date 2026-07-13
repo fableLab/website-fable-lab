@@ -15,7 +15,7 @@ export default async function ResourcesPage() {
         equals: 'published'
       }
     },
-    select: { slug: true, name: true, image: true, needs: true, linguistics: true, languages: true, categories: true, creators: true },
+    select: { slug: true, name: true, description: true, image: true, needs: true, linguistics: true, languages: true, categories: true, creators: true },
   });
 
   const languages = await payload.find({
