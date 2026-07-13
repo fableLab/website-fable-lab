@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.70.1](https://github.com/fableLab/website-fable-lab/compare/0.70.0...0.70.1) (2026-07-13)
+
+
+### Bug Fixes
+
+* **labslang:** revalidate correct path ([040594f](https://github.com/fableLab/website-fable-lab/commit/040594f1ca28220f045d50981cd7d65360ad61c8))
+
 # [0.70.0](https://github.com/fableLab/website-fable-lab/compare/0.69.0...0.70.0) (2026-06-25)
 
 
