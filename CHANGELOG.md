@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.73.1](https://github.com/fableLab/website-fable-lab/compare/0.73.0...0.73.1) (2026-10-29)
+
+
+### Bug Fixes
+
+* **theme:** disable dark theme until it is properly designed ([13f206a](https://github.com/fableLab/website-fable-lab/commit/13f206a3cd50e695f57a726d209a75260bb5492f))
+
 # [0.73.0](https://github.com/fableLab/website-fable-lab/compare/0.72.0...0.73.0) (2026-10-29)
 
 
