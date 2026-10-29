@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.72.0](https://github.com/fableLab/website-fable-lab/compare/0.71.0...0.72.0) (2026-10-29)
+
+
+### Features
+
+* **mcp:** add payload mcp plugin for pages and labslangs ([9d3e18e](https://github.com/fableLab/website-fable-lab/commit/9d3e18e2fa868b6ff937c78c5d4046c5165d5eea))
+
 ## [0.71.1](https://github.com/fableLab/website-fable-lab/compare/0.71.0...0.71.1) (2026-10-29)
 
 # [0.71.0](https://github.com/fableLab/website-fable-lab/compare/0.70.1...0.71.0) (2026-10-29)
