@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.73.0](https://github.com/fableLab/website-fable-lab/compare/0.72.0...0.73.0) (2026-10-29)
+
+
+### Features
+
+* **labslang:** allow ordering methodological guide pages ([4b7f9b2](https://github.com/fableLab/website-fable-lab/commit/4b7f9b2f606c6d2762936dbc4f84a6f8fb94b730))
+
 # [0.72.0](https://github.com/fableLab/website-fable-lab/compare/0.71.0...0.72.0) (2026-10-29)
 
 
