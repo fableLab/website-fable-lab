@@ -8,6 +8,7 @@ import { seoPlugin } from '@payloadcms/plugin-seo'
 import { searchFields } from '@/search/fieldOverrides'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { mcpPlugin } from '@payloadcms/plugin-mcp'
 // import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 // import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 
@@ -16,6 +17,7 @@ import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 
 import { Page, Project } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
+import { authenticated } from '@/access/authenticated'
 
 type Titleable = { title?: string; name?: string }
 
@@ -127,6 +129,27 @@ export const plugins: Plugin[] = [
         return [...defaultFields, ...searchFields]
       },
     },
+  }),
+  mcpPlugin({
+    collections: {
+      pages: {
+        enabled: { find: true, create: true, update: true, delete: false },
+      },
+      labslangs: {
+        enabled: { find: true, create: true, update: true, delete: false },
+      },
+    },
+    overrideApiKeyCollection: (collection) => ({
+      ...collection,
+      access: {
+        ...collection.access,
+        admin: authenticated,
+        create: authenticated,
+        read: authenticated,
+        update: authenticated,
+        delete: authenticated,
+      },
+    }),
   }),
   // payloadCloudPlugin(), // Disabled - not using Payload Cloud
 ]
