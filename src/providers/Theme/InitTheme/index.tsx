@@ -27,17 +27,18 @@ export const InitTheme: React.FC = () => {
     }
 
     var themeToSet = '${defaultTheme}'
-    var preference = window.localStorage.getItem('${themeLocalStorageKey}')
-
-    if (themeIsValid(preference)) {
-      themeToSet = preference
-    } else {
-      var implicitPreference = getImplicitPreference()
-
-      if (implicitPreference) {
-        themeToSet = implicitPreference
-      }
-    }
+    // TODO: dark theme is disabled until it is properly designed, the site is always light for now
+    // var preference = window.localStorage.getItem('${themeLocalStorageKey}')
+    //
+    // if (themeIsValid(preference)) {
+    //   themeToSet = preference
+    // } else {
+    //   var implicitPreference = getImplicitPreference()
+    //
+    //   if (implicitPreference) {
+    //     themeToSet = implicitPreference
+    //   }
+    // }
 
     document.documentElement.setAttribute('data-theme', themeToSet)
   })();

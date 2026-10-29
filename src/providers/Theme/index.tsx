@@ -34,18 +34,19 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   useEffect(() => {
-    let themeToSet: Theme = defaultTheme
-    const preference = window.localStorage.getItem(themeLocalStorageKey)
-
-    if (themeIsValid(preference)) {
-      themeToSet = preference
-    } else {
-      const implicitPreference = getImplicitPreference()
-
-      if (implicitPreference) {
-        themeToSet = implicitPreference
-      }
-    }
+    // TODO: dark theme is disabled until it is properly designed, the site is always light for now
+    const themeToSet: Theme = defaultTheme
+    // const preference = window.localStorage.getItem(themeLocalStorageKey)
+    //
+    // if (themeIsValid(preference)) {
+    //   themeToSet = preference
+    // } else {
+    //   const implicitPreference = getImplicitPreference()
+    //
+    //   if (implicitPreference) {
+    //     themeToSet = implicitPreference
+    //   }
+    // }
 
     document.documentElement.setAttribute('data-theme', themeToSet)
     setThemeState(themeToSet)
