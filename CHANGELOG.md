@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.71.0](https://github.com/fableLab/website-fable-lab/compare/0.70.1...0.71.0) (2026-10-29)
+
+
+### Features
+
+* **resources:** add search input field ([3f677d4](https://github.com/fableLab/website-fable-lab/commit/3f677d4f58d1f33e8e5c38b018fd7aa85ea75a9d))
+
 ## [0.70.1](https://github.com/fableLab/website-fable-lab/compare/0.70.0...0.70.1) (2026-07-13)
 
 
