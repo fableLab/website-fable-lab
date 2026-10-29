@@ -35,6 +35,8 @@ export const LabsLangs: CollectionConfig<'labslangs'> = {
   labels: {
     plural: 'Labs&Lang 🇪🇺🇧🇪🇫🇷',
   },
+  // Enables drag & drop ordering in the admin list, used to sort the methodological guide
+  orderable: true,
   access: {
     create: authenticated,
     delete: authenticated,

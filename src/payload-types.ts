@@ -262,6 +262,7 @@ export interface ImageBlock {
 export interface Media {
   id: number;
   alt?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -947,6 +948,7 @@ export interface Category {
  */
 export interface Labslang {
   id: number;
+  _order?: string | null;
   title: string;
   description?: string | null;
   color?: ('blue' | 'perspective') | null;
@@ -1586,6 +1588,7 @@ export interface FormBlockSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -1830,6 +1833,7 @@ export interface CategoriesSelect<T extends boolean = true> {
  * via the `definition` "labslangs_select".
  */
 export interface LabslangsSelect<T extends boolean = true> {
+  _order?: T;
   title?: T;
   description?: T;
   color?: T;

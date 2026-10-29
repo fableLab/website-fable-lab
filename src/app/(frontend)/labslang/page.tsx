@@ -19,6 +19,7 @@ export default async function LabsLangPage() {
     draft: false,
     depth: 1,
     limit: 100,
+    sort: '_order',
     where: {
       _status: {
         equals: 'published'
